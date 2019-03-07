@@ -9,7 +9,19 @@ Victor Delaplaine
 Using A RAT MCU Created int CPE233, to input a set of data from a solar panel and have a bubble sort algorithm run every 5 min finding the highest voltage position.
 
 
+
+
 ## Mapping Values - PER 2 
+
+### Table 1 - SW mapping to rotational of servo
+ | SW  | Duty Cycle  | Rotation(Degrees)  | 
+ |-----|-------------|--------------------|
+ | 12  |     5%      |   0 °              |  
+ | 19  |     7.8%    |   90 °             |  
+ | 25  |  10.157 %   |   180 °            |  
+
+
+
 
 ### Input to Circuit 
 
