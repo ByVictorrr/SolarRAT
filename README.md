@@ -9,8 +9,13 @@ Victor Delaplaine
 Using A RAT MCU Created int CPE233, to input a set of data from a solar panel and have a bubble sort algorithm run every 5 min finding the highest voltage position.
 
 
-## IDEAS
+## Mapping Values - PER 2 
 
+### Input to Circuit 
+
+* SW = 35 => 7.8 % duty cycle = > rotate motor 90 degrees (Well 7.5 % duty cycle should)
+
+* SW =  => 10.2 % duty cycle = > rotate motor 180 degrees (Well 10 % duty cycle should)
 
 ## FirmWare
 
