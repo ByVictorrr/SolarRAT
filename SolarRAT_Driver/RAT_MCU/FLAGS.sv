@@ -1,4 +1,4 @@
-`include "/home/victor/CPE233/Modules/mux_2t1_nb.v"
+`include "Modules/mux_2t1_nb.v"
 
 /*
  * FLAGS
@@ -36,10 +36,9 @@ module FLAGS(
 	input FLG_Z_LD,
 	input Z,
 	input FLG_LD_SEL,
-    	input FLG_SHAD_LD,
+    input FLG_SHAD_LD,
 	output reg C_FLAG,
 	output reg Z_FLAG
-	
 	);
 
 
