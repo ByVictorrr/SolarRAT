@@ -11,7 +11,12 @@ Javier Flores
 Using A RAT MCU Created int CPE233, to input a set of data from a solar panel and have a bubble sort algorithm run every 5 min finding the highest voltage position.
 
 
+## SolarRAT_Driver
 
+This module interacts with a arduino, its outputs are digital writes the arduino
+controlling the servo motor. The Driver has a architecre of 8 bits length and
+its first 4 bits are the data of light intensity (in Volts) and corresponding to
+the 4 least bits is the location
 
 ## Mapping Values - PER 2 
 

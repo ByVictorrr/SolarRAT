@@ -1,13 +1,13 @@
-`include "/home/victor/CPE233/Modules/mux_4t1_nb.v"
-`include "/home/victor/CPE233/Modules/mux_2t1_nb.v"	
-`include "/home/victor/CPE233/RAT/RAT4/ALU.sv"
-`include "/home/victor/CPE233/RAT/RAT8/CONTROL_UNIT.sv"
-`include "/home/victor/CPE233/RAT/RAT8/FLAGS.sv"
-`include "/home/victor/CPE233/RAT/RAT2/ProgCounter.sv"
-`include "/home/victor/CPE233/RAT/RAT1/ProgRom.sv"
-`include "/home/victor/CPE233/RAT/RAT3/REG_FILE.sv"
-`include "/home/victor/CPE233/RAT/RAT3/SCRATCH_RAM.sv"
-`include "/home/victor/CPE233/RAT/RAT7/Stack_Pointer.sv"
+`include "../Modules/mux_4t1_nb.v"
+`include "../Modules/mux_2t1_nb.v"	
+`include "ALU.sv"
+`include "CONTROL_UNIT.sv"
+`include "FLAGS.sv"
+`include "ProgCounter.sv"
+`include "ProgRom.sv"
+`include "REG_FILE.sv"
+`include "SCRATCH_RAM.sv"
+`include "Stack_Pointer.sv"
 //////////////////////////////////////////////////////////////////////////////////
 // Engineer: Victor Delaplaine
 // 

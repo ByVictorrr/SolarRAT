@@ -3,6 +3,7 @@
 `include "Modules/univ_sseg.v"
 `include "Modules/debounce_one_shot.sv"
 `include "XADC/XADC.v"
+`include "../PER/dataOut.sv"
 
 //////////////////////////////////////////////////////////////////////////////
 // Company: Cal Poly
@@ -24,6 +25,7 @@ module SolarRAT_Driver(
     input [7:0] SWITCHES,
     input vauxp6, //for wizard adc
     input vauxn6,
+    output [7:0] Arduino_Data;
     output [7:0] LEDS,
     output [3:0] ANODES,
     output [7:0] CATHODES
@@ -40,7 +42,7 @@ module SolarRAT_Driver(
     // In future labs you can add more port IDs
     localparam LEDS_ID      = 8'h40;
     localparam SEG_ID       = 8'h81;
-    localparam SERVO_ID    = 8'h22;
+    localparam ARDUINO_ID   = 8'h22;
     
     // Signals for connecting RAT_MCU to RAT_wrapper /////////////////////////
     logic [7:0] s_output_port;
@@ -93,8 +95,8 @@ module SolarRAT_Driver(
                 r_leds <= s_output_port;
 	    else if (s_port_id == SEG_ID)
 	        r_seg <= s_output_port;
-	    else if (s_port_id == LIGHT_ID)
-    	        r_pwm <= s_output_port;
+	    else if (s_port_id == ARDUINO_ID)
+    	        r_arduino <= s_output_port;
             end
         end
     
@@ -118,7 +120,8 @@ debounce_one_shot ONESHOT(
     		.BTN(BTNL),
     		.DB_BTN(s_interrupt)
     );
- 
+
+//Analog to ditial converter  
 XADC WIZARD(
         .CLK100MHZ(CLK),
         .vauxp6(vauxp6),
@@ -130,6 +133,15 @@ XADC WIZARD(
         .data_digital(LIGHT_IN)
     );
     
+
+dataOut(
+    .clk(CLK),
+    .sw(SWITCHES),
+    .data(Arduino_Data) //being inputted to the arduino view inputs
+    );
+    
+    
+
     // Connect Signals ///////////////////////////////////////////////////////
     assign s_reset = BTNR;
     //assign s_interrupt = 1'b0;  // no interrupt used yet

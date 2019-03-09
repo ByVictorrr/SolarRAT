@@ -72,11 +72,7 @@ module XADC(
     always @(posedge(CLK100MHZ)) begin            
         if(ready == 1'b1) begin
             case (data[15:12]) // data[15:12] is voltage
-            15:  
-            begin
-                led <= 16'b11;
-                data_digital <= 15;
-            end
+            15:   led <= 16'b11;
             14:  led <= 16'b111;
             13:  led <= 16'b1111;
             12:  led <= 16'b11111;
@@ -93,6 +89,7 @@ module XADC(
             1: led <= 16'b1111111111111111; // if lowest voltage differential, light up all LEDs                        
             default: led <= 16'b0; 
             endcase
+	data_digital = data[15:12];
         end
     end
     
