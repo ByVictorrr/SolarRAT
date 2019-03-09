@@ -45,7 +45,7 @@ arduino_sweep: .BYTE 12 ; 0x01 ... 0x0C (12th)
 ;--------------------------------------------
 
 .CSEG
-.ORG 0x01
+.ORG 0x0D
 
 
 
@@ -92,18 +92,18 @@ reset_sweep:
 
 
 ;--------------------------------------------------------------------
-; Final Project: Delay
-; Author: Victor Delaplaine
-; Date: 1/23/19
-; Description : Delays for .5s
+;------------------------------------------------------------------------------------
+; delay subroutine
+; Delays for a given input of paramets R6, R7, R8
+; Parameters : R6 - outer count variable  (C1)
+; 			   R7 - middle count variable  (C2)
+;              R8 - inner count variable  (C3)
+;	      
+;	
+; Return : Nothing 
+; Tweaked Parmeter : R6,R7,R8
 ;
-;
-;
-; Register uses:
-; R0 - reads in value X: (X)
-; R1 - outer count variable  (C1)
-; R2 - middle count variable  (C2)
-; R3 - inner count variable  (C3)
+
 
 ;--------------------------------------------------------------------
 
@@ -119,17 +119,16 @@ reset_sweep:
 
 
 .CSEG
-.ORG 0x01 
+.ORG 0x69
 
-sweep:		IN R0, IN_PORT ; X = IN_PORT
-		MOV R1, COUNT_OUTER ; R1 = OUTER_COUNT
+delay:	MOV R6, COUNT_OUTER ; R1 = OUTER_COUNT
 
-outer_loop:	MOV R2, COUNT_MIDDLE
+outer_loop:	MOV R7, COUNT_MIDDLE
 				
  	
-middle_loop:	MOV R3, COUNT_INNER
+middle_loop:	MOV R8, COUNT_INNER
 		
-inner_loop:	SUB R3, 1 
+inner_loop:	SUB R8, 1 
 		CLC
 		CLC
 		CLC
