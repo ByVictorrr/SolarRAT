@@ -1,5 +1,5 @@
-`include "../Modules/mux_4t1_nb.v"
-`include "../Modules/mux_2t1_nb.v"	
+/*`include "Modules/mux_4t1_nb.v"
+`include "Modules/mux_2t1_nb.v"	
 `include "ALU.sv"
 `include "CONTROL_UNIT.sv"
 `include "FLAGS.sv"
@@ -8,6 +8,7 @@
 `include "REG_FILE.sv"
 `include "SCRATCH_RAM.sv"
 `include "Stack_Pointer.sv"
+*/
 //////////////////////////////////////////////////////////////////////////////////
 // Engineer: Victor Delaplaine
 // 

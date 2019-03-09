@@ -27,7 +27,7 @@ eval( EAInclude(ISEJScriptLib) );
 
 
 ISEStep( "vivado",
-         "-log RAT_MCU.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source RAT_MCU.tcl" );
+         "-log SolarRAT_Driver.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source SolarRAT_Driver.tcl" );
 
 
 

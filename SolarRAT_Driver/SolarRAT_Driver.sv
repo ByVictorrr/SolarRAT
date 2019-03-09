@@ -1,9 +1,11 @@
-`include "RAT_MCU/RAT_MCU.sv"
+/*`include "RAT_MCU/RAT_MCU.sv"
 `include "/Modules/mux_2t1_nb.v"
 `include "Modules/univ_sseg.v"
-`include "Modules/debounce_one_shot.sv"
+`include "PER/debounce_one_shot.sv"
 `include "XADC/XADC.v"
 `include "../PER/dataOut.sv"
+*/
+
 
 //////////////////////////////////////////////////////////////////////////////
 // Company: Cal Poly
@@ -22,27 +24,28 @@ module SolarRAT_Driver(
     input CLK,
     input BTNL,
     input BTNR,
-    input [7:0] SWITCHES,
+    input [7:0] SW,
     input vauxp6, //for wizard adc
     input vauxn6,
-    output [7:0] Arduino_Data;
-    output [7:0] LEDS,
-    output [3:0] ANODES,
-    output [7:0] CATHODES
+    output [7:0] Arduino_Data,
+    output [15:0] led,
+    output [3:0] an,
+    output [6:0] seg,
+    output dp
     );
     
     // INPUT PORT IDS ////////////////////////////////////////////////////////
     // Right now, the only possible inputs are the switches
     // In future labs you can add more port IDs, and you'll have
     // to add constants here for the mux below
-    localparam SWITCHES_ID = 8'hFF;
-    localparam LIGHT_ID     = 8'h21;
+    localparam SW_ID = 8'hFF;
+    localparam LIGHT_ID     = 8'h96;
        
     // OUTPUT PORT IDS ///////////////////////////////////////////////////////
     // In future labs you can add more port IDs
-    localparam LEDS_ID      = 8'h40;
+    localparam led_ID      = 8'h40;
     localparam SEG_ID       = 8'h81;
-    localparam ARDUINO_ID   = 8'h22;
+    localparam ARDUINO_ID   = 8'h69;
     
     // Signals for connecting RAT_MCU to RAT_wrapper /////////////////////////
     logic [7:0] s_output_port;
@@ -59,7 +62,7 @@ module SolarRAT_Driver(
     logic [7:0]   s_input_port;
     logic [7:0]   r_leds = 8'h00;
     logic [7:0]   r_seg = 8'h00;
-    logic [7:0]   r_pwm = 8'b00;
+    logic [7:0]   r_arduino = 8'b00;
     
     
     // Declare RAT_CPU ///////////////////////////////////////////////////////
@@ -80,8 +83,8 @@ module SolarRAT_Driver(
 
     // MUX for selecting what input to read //////////////////////////////////
     always_comb begin
-        if (s_port_id == SWITCHES_ID)
-            s_input_port = SWITCHES;
+        if (s_port_id == SW_ID)
+            s_input_port = SW;
         else if (s_port_id == LIGHT_ID)
             s_input_port = LIGHT_IN;
 	else
@@ -91,7 +94,7 @@ module SolarRAT_Driver(
 //MUX and output reg
     always_ff @ (posedge CLK) begin
         if (IO_STRB == 1'b1) begin
-            if (s_port_id == LEDS_ID)
+            if (s_port_id == led_ID)
                 r_leds <= s_output_port;
 	    else if (s_port_id == SEG_ID)
 	        r_seg <= s_output_port;
@@ -110,8 +113,8 @@ univ_sseg Univ(
      	.mod_sel(0),                                                                                  
      	.sign(0),                                                                                           
      	.clk(CLK),                                                                                            
-    	.ssegs(CATHODES),                                                                               
-    	.disp_en(ANODES) 
+    	.ssegs(seg),                                                                               
+    	.disp_en(an) 
 );
 */
 
@@ -134,20 +137,13 @@ XADC WIZARD(
     );
     
 
-dataOut(
-    .clk(CLK),
-    .sw(SWITCHES),
-    .data(Arduino_Data) //being inputted to the arduino view inputs
-    );
-    
-    
-
     // Connect Signals ///////////////////////////////////////////////////////
     assign s_reset = BTNR;
     //assign s_interrupt = 1'b0;  // no interrupt used yet
      
     // Output Assignments ////////////////////////////////////////////////////
-    assign LEDS = r_leds;
+    assign led = r_leds;
     assign SEV_SEG =r_seg;
+    assign Arduino_Data = r_arduino;
       
     endmodule

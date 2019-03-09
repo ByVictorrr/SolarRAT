@@ -20,7 +20,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='/home/victor/SolarRAT_Driver/SolarRAT_Driver.runs/synth_1'
+HD_PWD='/home/victor/SolarRAT/SolarRAT_Driver/SolarRAT_Driver/SolarRAT_Driver.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
@@ -36,4 +36,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log RAT_MCU.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source RAT_MCU.tcl
+EAStep vivado -log SolarRAT_Driver.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source SolarRAT_Driver.tcl

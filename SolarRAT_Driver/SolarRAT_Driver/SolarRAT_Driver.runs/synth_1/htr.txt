@@ -6,4 +6,4 @@
 # Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 #
 
-vivado -log RAT_MCU.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source RAT_MCU.tcl
+vivado -log SolarRAT_Driver.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source SolarRAT_Driver.tcl

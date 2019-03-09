@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="photoresistor_xadc_synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1552122769">
-  <File Type="VDS-TIMING-PB" Name="photoresistor_xadc_timing_summary_synth.pb"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="photoresistor_xadc_timing_summary_synth.rpt"/>
-  <File Type="RDS-DCP" Name="photoresistor_xadc.dcp"/>
-  <File Type="REPORTS-TCL" Name="photoresistor_xadc_reports.tcl"/>
-  <File Type="PA-TCL" Name="photoresistor_xadc.tcl"/>
-  <File Type="RDS-RDS" Name="photoresistor_xadc.vds"/>
-  <File Type="RDS-PROPCONSTRS" Name="photoresistor_xadc_drc_synth.rpt"/>
-  <File Type="RDS-UTIL" Name="photoresistor_xadc_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="photoresistor_xadc_utilization_synth.pb"/>
+  <File Type="RDS-UTIL" Name="photoresistor_xadc_utilization_synth.rpt"/>
+  <File Type="RDS-RDS" Name="photoresistor_xadc.vds"/>
+  <File Type="RDS-DCP" Name="photoresistor_xadc.dcp"/>
+  <File Type="PA-TCL" Name="photoresistor_xadc.tcl"/>
+  <File Type="REPORTS-TCL" Name="photoresistor_xadc_reports.tcl"/>
   <FileSet Name="sources" Type="BlockSrcs" RelSrcDir="$PSRCDIR/photoresistor_xadc">
     <File Path="$PSRCDIR/sources_1/ip/photoresistor_xadc/photoresistor_xadc.xci">
       <FileInfo>
@@ -36,9 +33,7 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018">
-      <Desc>Vivado Synthesis Defaults</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
     <Step Id="synth_design"/>
   </Strategy>
 </GenRun>

@@ -17,16 +17,20 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
+set_param synth.incrementalSynthesisCache ./.Xil/Vivado-19989-TheShell/incrSyn
+set_msg_config -id {Synth 8-256} -limit 10000
+set_msg_config -id {Synth 8-638} -limit 10000
 create_project -in_memory -part xc7a35tcpg236-1
 
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir /home/victor/SolarRAT_Driver/SolarRAT_Driver.cache/wt [current_project]
-set_property parent.project_path /home/victor/SolarRAT_Driver/SolarRAT_Driver.xpr [current_project]
+set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
+set_property webtalk.parent_dir /home/victor/SolarRAT/SolarRAT_Driver/SolarRAT_Driver/SolarRAT_Driver.cache/wt [current_project]
+set_property parent.project_path /home/victor/SolarRAT/SolarRAT_Driver/SolarRAT_Driver/SolarRAT_Driver.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property ip_output_repo /home/victor/SolarRAT_Driver/SolarRAT_Driver.cache/ip [current_project]
+set_property ip_output_repo /home/victor/SolarRAT/SolarRAT_Driver/SolarRAT_Driver/SolarRAT_Driver.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 read_verilog -library xil_defaultlib -sv {
   /home/victor/SolarRAT/SolarRAT_Driver/RAT_MCU/ALU.sv
@@ -35,15 +39,30 @@ read_verilog -library xil_defaultlib -sv {
   /home/victor/SolarRAT/SolarRAT_Driver/RAT_MCU/I.sv
   /home/victor/SolarRAT/SolarRAT_Driver/RAT_MCU/ProgCounter.sv
   /home/victor/SolarRAT/SolarRAT_Driver/RAT_MCU/ProgRom.sv
+  /home/victor/SolarRAT/SolarRAT_Driver/RAT_MCU/RAT_MCU.sv
   /home/victor/SolarRAT/SolarRAT_Driver/RAT_MCU/REG_FILE.sv
   /home/victor/SolarRAT/SolarRAT_Driver/RAT_MCU/SCRATCH_RAM.sv
   /home/victor/SolarRAT/SolarRAT_Driver/RAT_MCU/Stack_Pointer.sv
-  /home/victor/SolarRAT/SolarRAT_Driver/RAT_MCU/RAT_MCU.sv
+  /home/victor/SolarRAT/SolarRAT_Driver/PER/dataOut.sv
+  /home/victor/SolarRAT/SolarRAT_Driver/PER/debounce_one_shot.sv
+  /home/victor/SolarRAT/SolarRAT_Driver/SolarRAT_Driver.sv
 }
 read_verilog -library xil_defaultlib {
+  /home/victor/SolarRAT/SolarRAT_Driver/XADC/DigitToSeg.v
+  /home/victor/SolarRAT/SolarRAT_Driver/XADC/XADC.v
+  /home/victor/SolarRAT/SolarRAT_Driver/XADC/bin2dec.v
+  /home/victor/SolarRAT/SolarRAT_Driver/XADC/counter3bit.v
+  /home/victor/SolarRAT/SolarRAT_Driver/XADC/decoder3_8.v
+  /home/victor/SolarRAT/SolarRAT_Driver/XADC/mux4_4bus.v
   /home/victor/SolarRAT/SolarRAT_Driver/Modules/mux_2t1_nb.v
   /home/victor/SolarRAT/SolarRAT_Driver/Modules/mux_4t1_nb.v
+  /home/victor/SolarRAT/SolarRAT_Driver/XADC/segClkDevider.v
+  /home/victor/SolarRAT/SolarRAT_Driver/XADC/sevensegdecoder.v
 }
+read_ip -quiet /home/victor/SolarRAT/SolarRAT_Driver/SolarRAT_Driver/SolarRAT_Driver.srcs/sources_1/ip/photoresistor_xadc/photoresistor_xadc.xci
+set_property used_in_implementation false [get_files -all /home/victor/SolarRAT/SolarRAT_Driver/SolarRAT_Driver/SolarRAT_Driver.srcs/sources_1/ip/photoresistor_xadc/photoresistor_xadc_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/victor/SolarRAT/SolarRAT_Driver/SolarRAT_Driver/SolarRAT_Driver.srcs/sources_1/ip/photoresistor_xadc/photoresistor_xadc.xdc]
+
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
 # design are intentionally left as such for best results. Dcp files will be
@@ -52,15 +71,18 @@ read_verilog -library xil_defaultlib {
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
+read_xdc /home/victor/SolarRAT/SolarRAT_Driver/Basys3_Master.xdc
+set_property used_in_implementation false [get_files /home/victor/SolarRAT/SolarRAT_Driver/Basys3_Master.xdc]
+
 set_param ips.enableIPCacheLiteLoad 0
 close [open __synthesis_is_running__ w]
 
-synth_design -top RAT_MCU -part xc7a35tcpg236-1
+synth_design -top SolarRAT_Driver -part xc7a35tcpg236-1
 
 
 # disable binary constraint mode for synth run checkpoints
 set_param constraints.enableBinaryConstraints false
-write_checkpoint -force -noxdef RAT_MCU.dcp
-create_report "synth_1_synth_report_utilization_0" "report_utilization -file RAT_MCU_utilization_synth.rpt -pb RAT_MCU_utilization_synth.pb"
+write_checkpoint -force -noxdef SolarRAT_Driver.dcp
+create_report "synth_1_synth_report_utilization_0" "report_utilization -file SolarRAT_Driver_utilization_synth.rpt -pb SolarRAT_Driver_utilization_synth.pb"
 file delete __synthesis_is_running__
 close [open __synthesis_is_complete__ w]
