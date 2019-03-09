@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1552174295">
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <File Type="BG-DRC" Name="SolarRAT_Driver.drc"/>
+  <File Type="BG-BGN" Name="SolarRAT_Driver.bgn"/>
+  <File Type="BITSTR-SYSDEF" Name="SolarRAT_Driver.sysdef"/>
+  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
+  <File Type="BITSTR-LTX" Name="SolarRAT_Driver.ltx"/>
+  <File Type="BITSTR-MMI" Name="SolarRAT_Driver.mmi"/>
+  <File Type="BITSTR-BMM" Name="SolarRAT_Driver_bd.bmm"/>
+  <File Type="BITSTR-NKY" Name="SolarRAT_Driver.nky"/>
+  <File Type="BITSTR-RBT" Name="SolarRAT_Driver.rbt"/>
+  <File Type="BITSTR-MSK" Name="SolarRAT_Driver.msk"/>
+  <File Type="BG-BIN" Name="SolarRAT_Driver.bin"/>
+  <File Type="BG-BIT" Name="SolarRAT_Driver.bit"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="SolarRAT_Driver_bus_skew_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="SolarRAT_Driver_bus_skew_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="SolarRAT_Driver_bus_skew_postroute_physopted.rpt"/>
+  <File Type="RDI-RDI" Name="SolarRAT_Driver.vdi"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="SolarRAT_Driver_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="SolarRAT_Driver_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="SolarRAT_Driver_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="SolarRAT_Driver_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="SolarRAT_Driver_postroute_physopt.dcp"/>
+  <File Type="ROUTE-BUS-SKEW" Name="SolarRAT_Driver_bus_skew_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="SolarRAT_Driver_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-SIMILARITY" Name="SolarRAT_Driver_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-TIMING-RPX" Name="SolarRAT_Driver_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-TIMING-PB" Name="SolarRAT_Driver_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="SolarRAT_Driver_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="SolarRAT_Driver_route_status.pb"/>
+  <File Type="ROUTE-STATUS" Name="SolarRAT_Driver_route_status.rpt"/>
+  <File Type="ROUTE-PWR-RPX" Name="SolarRAT_Driver_power_routed.rpx"/>
+  <File Type="ROUTE-PWR-SUM" Name="SolarRAT_Driver_power_summary_routed.pb"/>
+  <File Type="ROUTE-PWR" Name="SolarRAT_Driver_power_routed.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="SolarRAT_Driver_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="SolarRAT_Driver_methodology_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="SolarRAT_Driver_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-RPX" Name="SolarRAT_Driver_drc_routed.rpx"/>
+  <File Type="ROUTE-DRC-PB" Name="SolarRAT_Driver_drc_routed.pb"/>
+  <File Type="ROUTE-DRC" Name="SolarRAT_Driver_drc_routed.rpt"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="SolarRAT_Driver_routed_bb.dcp"/>
+  <File Type="ROUTE-DCP" Name="SolarRAT_Driver_routed.dcp"/>
+  <File Type="ROUTE-ERROR-DCP" Name="SolarRAT_Driver_routed_error.dcp"/>
+  <File Type="PHYSOPT-TIMING" Name="SolarRAT_Driver_timing_summary_physopted.rpt"/>
+  <File Type="PHYSOPT-DRC" Name="SolarRAT_Driver_drc_physopted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="SolarRAT_Driver_physopt.dcp"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="SolarRAT_Driver_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="SolarRAT_Driver_postplace_pwropt.dcp"/>
+  <File Type="PLACE-TIMING" Name="SolarRAT_Driver_timing_summary_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="SolarRAT_Driver_incremental_reuse_pre_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="SolarRAT_Driver_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-CTRL" Name="SolarRAT_Driver_control_sets_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="SolarRAT_Driver_utilization_placed.pb"/>
+  <File Type="PLACE-UTIL" Name="SolarRAT_Driver_utilization_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="SolarRAT_Driver_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-IO" Name="SolarRAT_Driver_io_placed.rpt"/>
+  <File Type="PLACE-DCP" Name="SolarRAT_Driver_placed.dcp"/>
+  <File Type="PWROPT-TIMING" Name="SolarRAT_Driver_timing_summary_pwropted.rpt"/>
+  <File Type="PWROPT-DRC" Name="SolarRAT_Driver_drc_pwropted.rpt"/>
+  <File Type="PWROPT-DCP" Name="SolarRAT_Driver_pwropt.dcp"/>
+  <File Type="OPT-TIMING" Name="SolarRAT_Driver_timing_summary_opted.rpt"/>
+  <File Type="OPT-HWDEF" Name="SolarRAT_Driver.hwdef"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="SolarRAT_Driver_methodology_drc_opted.rpt"/>
+  <File Type="OPT-DRC" Name="SolarRAT_Driver_drc_opted.rpt"/>
+  <File Type="OPT-DCP" Name="SolarRAT_Driver_opt.dcp"/>
+  <File Type="INIT-TIMING" Name="SolarRAT_Driver_timing_summary_init.rpt"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="SolarRAT_Driver_bus_skew_routed.rpx"/>
+  <File Type="REPORTS-TCL" Name="SolarRAT_Driver_reports.tcl"/>
+  <File Type="ROUTE-BUS-SKEW-PB" Name="SolarRAT_Driver_bus_skew_routed.pb"/>
+  <File Type="PA-TCL" Name="SolarRAT_Driver.tcl"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PPRDIR/../XADC/DigitToSeg.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../XADC/XADC.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../XADC/bin2dec.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../XADC/counter3bit.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../XADC/decoder3_8.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../XADC/mux4_4bus.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../Modules/mux_2t1_nb.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../Modules/mux_4t1_nb.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../XADC/segClkDevider.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../XADC/sevensegdecoder.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../RAT_MCU/ALU.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../RAT_MCU/CONTROL_UNIT.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../RAT_MCU/FLAGS.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../RAT_MCU/I.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../RAT_MCU/ProgCounter.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../RAT_MCU/ProgRom.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../RAT_MCU/RAT_MCU.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../RAT_MCU/REG_FILE.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../RAT_MCU/SCRATCH_RAM.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../RAT_MCU/Stack_Pointer.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../PER/debounce_one_shot.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../SolarRAT_Driver.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../ASM/main.mem">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="SolarRAT_Driver"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PPRDIR/../Basys3_Master.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
+    <Step Id="init_design"/>
+    <Step Id="opt_design"/>
+    <Step Id="power_opt_design"/>
+    <Step Id="place_design"/>
+    <Step Id="post_place_power_opt_design"/>
+    <Step Id="phys_opt_design"/>
+    <Step Id="route_design"/>
+    <Step Id="post_route_phys_opt_design"/>
+    <Step Id="write_bitstream"/>
+  </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="photoresistor_xadc"/>
+</GenRun>

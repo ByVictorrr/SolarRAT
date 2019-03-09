@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1552172563">
+<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1552174235">
   <File Type="VDS-TIMING-PB" Name="SolarRAT_Driver_timing_summary_synth.pb"/>
   <File Type="VDS-TIMINGSUMMARY" Name="SolarRAT_Driver_timing_summary_synth.rpt"/>
   <File Type="RDS-DCP" Name="SolarRAT_Driver.dcp"/>
@@ -151,13 +151,6 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../PER/dataOut.sv">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <File Path="$PPRDIR/../PER/debounce_one_shot.sv">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -172,19 +165,9 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../Modules/reg_nb.v">
+    <File Path="$PPRDIR/../ASM/main.mem">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PPRDIR/../SolarRAT/SolarRAT_Driver/Modules/debounce_one_shot.sv">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>

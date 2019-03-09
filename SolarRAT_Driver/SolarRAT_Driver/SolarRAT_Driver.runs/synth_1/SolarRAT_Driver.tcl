@@ -18,6 +18,7 @@ proc create_report { reportName command } {
   }
 }
 set_param synth.incrementalSynthesisCache ./.Xil/Vivado-19989-TheShell/incrSyn
+set_msg_config -id {Common 17-41} -limit 10000000
 set_msg_config -id {Synth 8-256} -limit 10000
 set_msg_config -id {Synth 8-638} -limit 10000
 create_project -in_memory -part xc7a35tcpg236-1
@@ -32,6 +33,7 @@ set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property ip_output_repo /home/victor/SolarRAT/SolarRAT_Driver/SolarRAT_Driver/SolarRAT_Driver.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
+read_mem /home/victor/SolarRAT/SolarRAT_Driver/ASM/main.mem
 read_verilog -library xil_defaultlib -sv {
   /home/victor/SolarRAT/SolarRAT_Driver/RAT_MCU/ALU.sv
   /home/victor/SolarRAT/SolarRAT_Driver/RAT_MCU/CONTROL_UNIT.sv
@@ -43,7 +45,6 @@ read_verilog -library xil_defaultlib -sv {
   /home/victor/SolarRAT/SolarRAT_Driver/RAT_MCU/REG_FILE.sv
   /home/victor/SolarRAT/SolarRAT_Driver/RAT_MCU/SCRATCH_RAM.sv
   /home/victor/SolarRAT/SolarRAT_Driver/RAT_MCU/Stack_Pointer.sv
-  /home/victor/SolarRAT/SolarRAT_Driver/PER/dataOut.sv
   /home/victor/SolarRAT/SolarRAT_Driver/PER/debounce_one_shot.sv
   /home/victor/SolarRAT/SolarRAT_Driver/SolarRAT_Driver.sv
 }

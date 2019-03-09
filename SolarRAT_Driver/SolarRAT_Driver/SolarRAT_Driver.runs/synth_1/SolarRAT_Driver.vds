@@ -2,8 +2,8 @@
 # Vivado v2018.2 (64-bit)
 # SW Build 2258646 on Thu Jun 14 20:02:38 MDT 2018
 # IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
-# Start of session at: Sat Mar  9 15:02:45 2019
-# Process ID: 22570
+# Start of session at: Sat Mar  9 15:30:37 2019
+# Process ID: 27893
 # Current directory: /home/victor/SolarRAT/SolarRAT_Driver/SolarRAT_Driver/SolarRAT_Driver.runs/synth_1
 # Command line: vivado -log SolarRAT_Driver.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source SolarRAT_Driver.tcl
 # Log file: /home/victor/SolarRAT/SolarRAT_Driver/SolarRAT_Driver/SolarRAT_Driver.runs/synth_1/SolarRAT_Driver.vds
@@ -15,18 +15,16 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 22600 
+INFO: Helper process launched with PID 27918 
 WARNING: [Synth 8-2490] overwriting previous definition of module XADC [/home/victor/SolarRAT/SolarRAT_Driver/XADC/XADC.v:23]
-WARNING: [Synth 8-2490] overwriting previous definition of module mux_2t1_nb [/home/victor/SolarRAT/SolarRAT_Driver/Modules/mux_2t1_nb.v:32]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1270.672 ; gain = 93.008 ; free physical = 10823 ; free virtual = 16805
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1270.668 ; gain = 93.008 ; free physical = 10764 ; free virtual = 16804
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'SolarRAT_Driver' [/home/victor/SolarRAT/SolarRAT_Driver/SolarRAT_Driver.sv:23]
-	Parameter SWITCHES_ID bound to: 8'b11111111 
-	Parameter LIGHT_ID bound to: 8'b00100001 
-	Parameter led_ID bound to: 8'b01000000 
+	Parameter SW_ID bound to: 8'b11111111 
+	Parameter LIGHT_ID bound to: 8'b10010110 
 	Parameter SEG_ID bound to: 8'b10000001 
-	Parameter ARDUINO_ID bound to: 8'b00100010 
+	Parameter ARDUINO_ID bound to: 8'b01101001 
 INFO: [Synth 8-6157] synthesizing module 'RAT_MCU' [/home/victor/SolarRAT/SolarRAT_Driver/RAT_MCU/RAT_MCU.sv:31]
 INFO: [Synth 8-6157] synthesizing module 'CONTROL_UNIT' [/home/victor/SolarRAT/SolarRAT_Driver/RAT_MCU/CONTROL_UNIT.sv:20]
 INFO: [Synth 8-226] default block is never used [/home/victor/SolarRAT/SolarRAT_Driver/RAT_MCU/CONTROL_UNIT.sv:122]
@@ -46,7 +44,7 @@ INFO: [Synth 8-6157] synthesizing module 'ProgCounter' [/home/victor/SolarRAT/So
 INFO: [Synth 8-6155] done synthesizing module 'ProgCounter' (4#1) [/home/victor/SolarRAT/SolarRAT_Driver/RAT_MCU/ProgCounter.sv:23]
 INFO: [Synth 8-6157] synthesizing module 'ProgRom' [/home/victor/SolarRAT/SolarRAT_Driver/RAT_MCU/ProgRom.sv:21]
 INFO: [Synth 8-5534] Detected attribute (* rom_style = "{distributed | block}" *) [/home/victor/SolarRAT/SolarRAT_Driver/RAT_MCU/ProgRom.sv:28]
-INFO: [Synth 8-3876] $readmem data file '/home/victor/CPE233/RAT/RAT8/tests/Exp9_10.mem' is read successfully [/home/victor/SolarRAT/SolarRAT_Driver/RAT_MCU/ProgRom.sv:32]
+INFO: [Synth 8-3876] $readmem data file 'main.mem' is read successfully [/home/victor/SolarRAT/SolarRAT_Driver/RAT_MCU/ProgRom.sv:32]
 INFO: [Synth 8-6155] done synthesizing module 'ProgRom' (5#1) [/home/victor/SolarRAT/SolarRAT_Driver/RAT_MCU/ProgRom.sv:21]
 INFO: [Synth 8-6157] synthesizing module 'FLAGS' [/home/victor/SolarRAT/SolarRAT_Driver/RAT_MCU/FLAGS.sv:30]
 INFO: [Synth 8-6157] synthesizing module 'mux_2t1_nb' [/home/victor/SolarRAT/SolarRAT_Driver/Modules/mux_2t1_nb.v:32]
@@ -79,8 +77,8 @@ INFO: [Synth 8-6157] synthesizing module 'XADC' [/home/victor/SolarRAT/SolarRAT_
 	Parameter S_IDLE bound to: 0 - type: integer 
 	Parameter S_FRAME_WAIT bound to: 1 - type: integer 
 	Parameter S_CONVERSION bound to: 2 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'photoresistor_xadc' [/home/victor/SolarRAT/SolarRAT_Driver/SolarRAT_Driver/SolarRAT_Driver.runs/synth_1/.Xil/Vivado-22570-TheShell/realtime/photoresistor_xadc_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'photoresistor_xadc' (14#1) [/home/victor/SolarRAT/SolarRAT_Driver/SolarRAT_Driver/SolarRAT_Driver.runs/synth_1/.Xil/Vivado-22570-TheShell/realtime/photoresistor_xadc_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'photoresistor_xadc' [/home/victor/SolarRAT/SolarRAT_Driver/SolarRAT_Driver/SolarRAT_Driver.runs/synth_1/.Xil/Vivado-27893-TheShell/realtime/photoresistor_xadc_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'photoresistor_xadc' (14#1) [/home/victor/SolarRAT/SolarRAT_Driver/SolarRAT_Driver/SolarRAT_Driver.runs/synth_1/.Xil/Vivado-27893-TheShell/realtime/photoresistor_xadc_stub.v:5]
 WARNING: [Synth 8-350] instance 'XLXI_7' of module 'photoresistor_xadc' requires 21 connections, but only 13 given [/home/victor/SolarRAT/SolarRAT_Driver/XADC/XADC.v:54]
 INFO: [Synth 8-155] case statement is not full and has no default [/home/victor/SolarRAT/SolarRAT_Driver/XADC/XADC.v:98]
 INFO: [Synth 8-6157] synthesizing module 'bin2dec' [/home/victor/SolarRAT/SolarRAT_Driver/XADC/bin2dec.v:19]
@@ -106,43 +104,16 @@ INFO: [Synth 8-6155] done synthesizing module 'decoder_3_8' (20#1) [/home/victor
 INFO: [Synth 8-6155] done synthesizing module 'DigitToSeg' (21#1) [/home/victor/SolarRAT/SolarRAT_Driver/XADC/DigitToSeg.v:23]
 WARNING: [Synth 8-3848] Net Address_in in module/entity XADC does not have driver. [/home/victor/SolarRAT/SolarRAT_Driver/XADC/XADC.v:37]
 INFO: [Synth 8-6155] done synthesizing module 'XADC' (22#1) [/home/victor/SolarRAT/SolarRAT_Driver/XADC/XADC.v:23]
-WARNING: [Synth 8-689] width (8) of port connection 'led' does not match port width (16) of module 'XADC' [/home/victor/SolarRAT/SolarRAT_Driver/SolarRAT_Driver.sv:131]
-WARNING: [Synth 8-689] width (1) of port connection 'an' does not match port width (4) of module 'XADC' [/home/victor/SolarRAT/SolarRAT_Driver/SolarRAT_Driver.sv:132]
-WARNING: [Synth 8-689] width (32) of port connection 'dp' does not match port width (1) of module 'XADC' [/home/victor/SolarRAT/SolarRAT_Driver/SolarRAT_Driver.sv:133]
-WARNING: [Synth 8-2900] ignoring illegal expression in output port connection [/home/victor/SolarRAT/SolarRAT_Driver/SolarRAT_Driver.sv:133]
-WARNING: [Synth 8-689] width (1) of port connection 'seg' does not match port width (7) of module 'XADC' [/home/victor/SolarRAT/SolarRAT_Driver/SolarRAT_Driver.sv:134]
-INFO: [Synth 8-6157] synthesizing module 'dataOut' [/home/victor/SolarRAT/SolarRAT_Driver/PER/dataOut.sv:23]
-INFO: [Synth 8-6155] done synthesizing module 'dataOut' (23#1) [/home/victor/SolarRAT/SolarRAT_Driver/PER/dataOut.sv:23]
-WARNING: [Synth 8-689] width (8) of port connection 'sw' does not match port width (2) of module 'dataOut' [/home/victor/SolarRAT/SolarRAT_Driver/SolarRAT_Driver.sv:141]
-WARNING: [Synth 8-689] width (8) of port connection 'data' does not match port width (1) of module 'dataOut' [/home/victor/SolarRAT/SolarRAT_Driver/SolarRAT_Driver.sv:142]
-WARNING: [Synth 8-6014] Unused sequential element r_seg_reg was removed.  [/home/victor/SolarRAT/SolarRAT_Driver/SolarRAT_Driver.sv:99]
-WARNING: [Synth 8-6014] Unused sequential element r_arduino_reg was removed.  [/home/victor/SolarRAT/SolarRAT_Driver/SolarRAT_Driver.sv:101]
-WARNING: [Synth 8-3848] Net ANODES in module/entity SolarRAT_Driver does not have driver. [/home/victor/SolarRAT/SolarRAT_Driver/SolarRAT_Driver.sv:32]
-WARNING: [Synth 8-3848] Net CATHODES in module/entity SolarRAT_Driver does not have driver. [/home/victor/SolarRAT/SolarRAT_Driver/SolarRAT_Driver.sv:33]
-INFO: [Synth 8-6155] done synthesizing module 'SolarRAT_Driver' (24#1) [/home/victor/SolarRAT/SolarRAT_Driver/SolarRAT_Driver.sv:23]
-WARNING: [Synth 8-3917] design SolarRAT_Driver has port Arduino_Data[7] driven by constant 0
-WARNING: [Synth 8-3917] design SolarRAT_Driver has port Arduino_Data[6] driven by constant 0
-WARNING: [Synth 8-3917] design SolarRAT_Driver has port Arduino_Data[5] driven by constant 0
-WARNING: [Synth 8-3917] design SolarRAT_Driver has port Arduino_Data[4] driven by constant 0
-WARNING: [Synth 8-3917] design SolarRAT_Driver has port Arduino_Data[3] driven by constant 0
-WARNING: [Synth 8-3917] design SolarRAT_Driver has port Arduino_Data[2] driven by constant 0
-WARNING: [Synth 8-3917] design SolarRAT_Driver has port Arduino_Data[1] driven by constant 0
-WARNING: [Synth 8-3331] design dataOut has unconnected port clk
+WARNING: [Synth 8-689] width (32) of port connection 'dp' does not match port width (1) of module 'XADC' [/home/victor/SolarRAT/SolarRAT_Driver/SolarRAT_Driver.sv:131]
+WARNING: [Synth 8-2900] ignoring illegal expression in output port connection [/home/victor/SolarRAT/SolarRAT_Driver/SolarRAT_Driver.sv:131]
+WARNING: [Synth 8-689] width (8) of port connection 'data_digital' does not match port width (4) of module 'XADC' [/home/victor/SolarRAT/SolarRAT_Driver/SolarRAT_Driver.sv:133]
+WARNING: [Synth 8-6014] Unused sequential element r_seg_reg was removed.  [/home/victor/SolarRAT/SolarRAT_Driver/SolarRAT_Driver.sv:97]
+WARNING: [Synth 8-3848] Net dp in module/entity SolarRAT_Driver does not have driver. [/home/victor/SolarRAT/SolarRAT_Driver/SolarRAT_Driver.sv:35]
+INFO: [Synth 8-6155] done synthesizing module 'SolarRAT_Driver' (23#1) [/home/victor/SolarRAT/SolarRAT_Driver/SolarRAT_Driver.sv:23]
 WARNING: [Synth 8-3331] design counter3bit has unconnected port rst
-WARNING: [Synth 8-3331] design SolarRAT_Driver has unconnected port ANODES[3]
-WARNING: [Synth 8-3331] design SolarRAT_Driver has unconnected port ANODES[2]
-WARNING: [Synth 8-3331] design SolarRAT_Driver has unconnected port ANODES[1]
-WARNING: [Synth 8-3331] design SolarRAT_Driver has unconnected port ANODES[0]
-WARNING: [Synth 8-3331] design SolarRAT_Driver has unconnected port CATHODES[7]
-WARNING: [Synth 8-3331] design SolarRAT_Driver has unconnected port CATHODES[6]
-WARNING: [Synth 8-3331] design SolarRAT_Driver has unconnected port CATHODES[5]
-WARNING: [Synth 8-3331] design SolarRAT_Driver has unconnected port CATHODES[4]
-WARNING: [Synth 8-3331] design SolarRAT_Driver has unconnected port CATHODES[3]
-WARNING: [Synth 8-3331] design SolarRAT_Driver has unconnected port CATHODES[2]
-WARNING: [Synth 8-3331] design SolarRAT_Driver has unconnected port CATHODES[1]
-WARNING: [Synth 8-3331] design SolarRAT_Driver has unconnected port CATHODES[0]
+WARNING: [Synth 8-3331] design SolarRAT_Driver has unconnected port dp
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1304.797 ; gain = 127.133 ; free physical = 10836 ; free virtual = 16819
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1304.793 ; gain = 127.133 ; free physical = 10777 ; free virtual = 16817
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -172,10 +143,10 @@ WARNING: [Synth 8-3295] tying undriven pin segment1:in8[0] to constant 0 [/home/
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1304.797 ; gain = 127.133 ; free physical = 10837 ; free virtual = 16820
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1304.793 ; gain = 127.133 ; free physical = 10778 ; free virtual = 16819
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1304.797 ; gain = 127.133 ; free physical = 10837 ; free virtual = 16820
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1304.793 ; gain = 127.133 ; free physical = 10778 ; free virtual = 16819
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -185,55 +156,7 @@ Initializing timing engine
 Parsing XDC File [/home/victor/SolarRAT/SolarRAT_Driver/SolarRAT_Driver/SolarRAT_Driver.srcs/sources_1/ip/photoresistor_xadc/photoresistor_xadc/photoresistor_xadc_in_context.xdc] for cell 'WIZARD/XLXI_7'
 Finished Parsing XDC File [/home/victor/SolarRAT/SolarRAT_Driver/SolarRAT_Driver/SolarRAT_Driver.srcs/sources_1/ip/photoresistor_xadc/photoresistor_xadc/photoresistor_xadc_in_context.xdc] for cell 'WIZARD/XLXI_7'
 Parsing XDC File [/home/victor/SolarRAT/SolarRAT_Driver/Basys3_Master.xdc]
-WARNING: [Vivado 12-584] No ports matched 'CLK100MHZ'. [/home/victor/SolarRAT/SolarRAT_Driver/Basys3_Master.xdc:7]
-WARNING: [Vivado 12-584] No ports matched 'CLK100MHZ'. [/home/victor/SolarRAT/SolarRAT_Driver/Basys3_Master.xdc:8]
-WARNING: [Vivado 12-584] No ports matched 'CLK100MHZ'. [/home/victor/SolarRAT/SolarRAT_Driver/Basys3_Master.xdc:9]
-WARNING: [Vivado 12-584] No ports matched 'sw[0]'. [/home/victor/SolarRAT/SolarRAT_Driver/Basys3_Master.xdc:12]
-WARNING: [Vivado 12-584] No ports matched 'sw[0]'. [/home/victor/SolarRAT/SolarRAT_Driver/Basys3_Master.xdc:13]
-WARNING: [Vivado 12-584] No ports matched 'sw[1]'. [/home/victor/SolarRAT/SolarRAT_Driver/Basys3_Master.xdc:14]
-WARNING: [Vivado 12-584] No ports matched 'sw[1]'. [/home/victor/SolarRAT/SolarRAT_Driver/Basys3_Master.xdc:15]
-WARNING: [Vivado 12-584] No ports matched 'led[8]'. [/home/victor/SolarRAT/SolarRAT_Driver/Basys3_Master.xdc:63]
-WARNING: [Vivado 12-584] No ports matched 'led[8]'. [/home/victor/SolarRAT/SolarRAT_Driver/Basys3_Master.xdc:64]
-WARNING: [Vivado 12-584] No ports matched 'led[9]'. [/home/victor/SolarRAT/SolarRAT_Driver/Basys3_Master.xdc:65]
-WARNING: [Vivado 12-584] No ports matched 'led[9]'. [/home/victor/SolarRAT/SolarRAT_Driver/Basys3_Master.xdc:66]
-WARNING: [Vivado 12-584] No ports matched 'led[10]'. [/home/victor/SolarRAT/SolarRAT_Driver/Basys3_Master.xdc:67]
-WARNING: [Vivado 12-584] No ports matched 'led[10]'. [/home/victor/SolarRAT/SolarRAT_Driver/Basys3_Master.xdc:68]
-WARNING: [Vivado 12-584] No ports matched 'led[11]'. [/home/victor/SolarRAT/SolarRAT_Driver/Basys3_Master.xdc:69]
-WARNING: [Vivado 12-584] No ports matched 'led[11]'. [/home/victor/SolarRAT/SolarRAT_Driver/Basys3_Master.xdc:70]
-WARNING: [Vivado 12-584] No ports matched 'led[12]'. [/home/victor/SolarRAT/SolarRAT_Driver/Basys3_Master.xdc:71]
-WARNING: [Vivado 12-584] No ports matched 'led[12]'. [/home/victor/SolarRAT/SolarRAT_Driver/Basys3_Master.xdc:72]
-WARNING: [Vivado 12-584] No ports matched 'led[13]'. [/home/victor/SolarRAT/SolarRAT_Driver/Basys3_Master.xdc:73]
-WARNING: [Vivado 12-584] No ports matched 'led[13]'. [/home/victor/SolarRAT/SolarRAT_Driver/Basys3_Master.xdc:74]
-WARNING: [Vivado 12-584] No ports matched 'led[14]'. [/home/victor/SolarRAT/SolarRAT_Driver/Basys3_Master.xdc:75]
-WARNING: [Vivado 12-584] No ports matched 'led[14]'. [/home/victor/SolarRAT/SolarRAT_Driver/Basys3_Master.xdc:76]
-WARNING: [Vivado 12-584] No ports matched 'led[15]'. [/home/victor/SolarRAT/SolarRAT_Driver/Basys3_Master.xdc:77]
-WARNING: [Vivado 12-584] No ports matched 'led[15]'. [/home/victor/SolarRAT/SolarRAT_Driver/Basys3_Master.xdc:78]
-WARNING: [Vivado 12-584] No ports matched 'seg[0]'. [/home/victor/SolarRAT/SolarRAT_Driver/Basys3_Master.xdc:82]
-WARNING: [Vivado 12-584] No ports matched 'seg[0]'. [/home/victor/SolarRAT/SolarRAT_Driver/Basys3_Master.xdc:83]
-WARNING: [Vivado 12-584] No ports matched 'seg[1]'. [/home/victor/SolarRAT/SolarRAT_Driver/Basys3_Master.xdc:84]
-WARNING: [Vivado 12-584] No ports matched 'seg[1]'. [/home/victor/SolarRAT/SolarRAT_Driver/Basys3_Master.xdc:85]
-WARNING: [Vivado 12-584] No ports matched 'seg[2]'. [/home/victor/SolarRAT/SolarRAT_Driver/Basys3_Master.xdc:86]
-WARNING: [Vivado 12-584] No ports matched 'seg[2]'. [/home/victor/SolarRAT/SolarRAT_Driver/Basys3_Master.xdc:87]
-WARNING: [Vivado 12-584] No ports matched 'seg[3]'. [/home/victor/SolarRAT/SolarRAT_Driver/Basys3_Master.xdc:88]
-WARNING: [Vivado 12-584] No ports matched 'seg[3]'. [/home/victor/SolarRAT/SolarRAT_Driver/Basys3_Master.xdc:89]
-WARNING: [Vivado 12-584] No ports matched 'seg[4]'. [/home/victor/SolarRAT/SolarRAT_Driver/Basys3_Master.xdc:90]
-WARNING: [Vivado 12-584] No ports matched 'seg[4]'. [/home/victor/SolarRAT/SolarRAT_Driver/Basys3_Master.xdc:91]
-WARNING: [Vivado 12-584] No ports matched 'seg[5]'. [/home/victor/SolarRAT/SolarRAT_Driver/Basys3_Master.xdc:92]
-WARNING: [Vivado 12-584] No ports matched 'seg[5]'. [/home/victor/SolarRAT/SolarRAT_Driver/Basys3_Master.xdc:93]
-WARNING: [Vivado 12-584] No ports matched 'seg[6]'. [/home/victor/SolarRAT/SolarRAT_Driver/Basys3_Master.xdc:94]
-WARNING: [Vivado 12-584] No ports matched 'seg[6]'. [/home/victor/SolarRAT/SolarRAT_Driver/Basys3_Master.xdc:95]
-WARNING: [Vivado 12-584] No ports matched 'dp'. [/home/victor/SolarRAT/SolarRAT_Driver/Basys3_Master.xdc:97]
-WARNING: [Vivado 12-584] No ports matched 'dp'. [/home/victor/SolarRAT/SolarRAT_Driver/Basys3_Master.xdc:98]
-WARNING: [Vivado 12-584] No ports matched 'an[0]'. [/home/victor/SolarRAT/SolarRAT_Driver/Basys3_Master.xdc:100]
-WARNING: [Vivado 12-584] No ports matched 'an[0]'. [/home/victor/SolarRAT/SolarRAT_Driver/Basys3_Master.xdc:101]
-WARNING: [Vivado 12-584] No ports matched 'an[1]'. [/home/victor/SolarRAT/SolarRAT_Driver/Basys3_Master.xdc:102]
-WARNING: [Vivado 12-584] No ports matched 'an[1]'. [/home/victor/SolarRAT/SolarRAT_Driver/Basys3_Master.xdc:103]
-WARNING: [Vivado 12-584] No ports matched 'an[2]'. [/home/victor/SolarRAT/SolarRAT_Driver/Basys3_Master.xdc:104]
-WARNING: [Vivado 12-584] No ports matched 'an[2]'. [/home/victor/SolarRAT/SolarRAT_Driver/Basys3_Master.xdc:105]
-WARNING: [Vivado 12-584] No ports matched 'an[3]'. [/home/victor/SolarRAT/SolarRAT_Driver/Basys3_Master.xdc:106]
-WARNING: [Vivado 12-584] No ports matched 'an[3]'. [/home/victor/SolarRAT/SolarRAT_Driver/Basys3_Master.xdc:107]
 Finished Parsing XDC File [/home/victor/SolarRAT/SolarRAT_Driver/Basys3_Master.xdc]
-WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [/home/victor/SolarRAT/SolarRAT_Driver/Basys3_Master.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/SolarRAT_Driver_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/victor/SolarRAT/SolarRAT_Driver/Basys3_Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/SolarRAT_Driver_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/SolarRAT_Driver_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
@@ -241,23 +164,23 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1630.133 ; gain = 0.000 ; free physical = 10597 ; free virtual = 16580
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1635.121 ; gain = 0.000 ; free physical = 10522 ; free virtual = 16569
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:22 . Memory (MB): peak = 1630.133 ; gain = 452.469 ; free physical = 10668 ; free virtual = 16651
+Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:21 . Memory (MB): peak = 1635.121 ; gain = 457.461 ; free physical = 10605 ; free virtual = 16647
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:22 . Memory (MB): peak = 1630.133 ; gain = 452.469 ; free physical = 10668 ; free virtual = 16651
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:21 . Memory (MB): peak = 1635.121 ; gain = 457.461 ; free physical = 10605 ; free virtual = 16647
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 Applied set_property DONT_TOUCH = true for WIZARD/XLXI_7. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:22 . Memory (MB): peak = 1630.133 ; gain = 452.469 ; free physical = 10670 ; free virtual = 16653
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:21 . Memory (MB): peak = 1635.121 ; gain = 457.461 ; free physical = 10607 ; free virtual = 16649
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'PS_reg' in module 'CONTROL_UNIT'
 INFO: [Synth 8-5545] ROM "FLG_SHAD_LD" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
@@ -284,8 +207,6 @@ INFO: [Synth 8-5545] ROM "count" won't be mapped to RAM because address size (32
 INFO: [Synth 8-5545] ROM "clk_div" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'XADC__mod'
 INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "data" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
-INFO: [Synth 8-5546] ROM "r_leds" won't be mapped to RAM because it is too sparse
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -327,7 +248,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'XADC__mod'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:23 . Memory (MB): peak = 1630.133 ; gain = 452.469 ; free physical = 10658 ; free virtual = 16641
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:23 . Memory (MB): peak = 1635.121 ; gain = 457.461 ; free physical = 10595 ; free virtual = 16637
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -358,7 +279,7 @@ Detailed RTL Component Info :
 	               18 Bit    Registers := 1     
 	               16 Bit    Registers := 4     
 	               10 Bit    Registers := 1     
-	                8 Bit    Registers := 2     
+	                8 Bit    Registers := 3     
 	                4 Bit    Registers := 2     
 	                3 Bit    Registers := 1     
 	                2 Bit    Registers := 1     
@@ -374,7 +295,7 @@ Detailed RTL Component Info :
 	   2 Input     10 Bit        Muxes := 1     
 	   3 Input     10 Bit        Muxes := 1     
 	   5 Input      8 Bit        Muxes := 2     
-	   3 Input      8 Bit        Muxes := 1     
+	   3 Input      8 Bit        Muxes := 2     
 	   2 Input      8 Bit        Muxes := 3     
 	   4 Input      4 Bit        Muxes := 6     
 	  25 Input      4 Bit        Muxes := 1     
@@ -392,8 +313,8 @@ Detailed RTL Component Info :
 	  28 Input      1 Bit        Muxes := 1     
 	  27 Input      1 Bit        Muxes := 1     
 	   5 Input      1 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 16    
-	   3 Input      1 Bit        Muxes := 10    
+	   2 Input      1 Bit        Muxes := 14    
+	   3 Input      1 Bit        Muxes := 11    
 	   6 Input      1 Bit        Muxes := 7     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
@@ -405,10 +326,12 @@ Hierarchical RTL Component report
 Module SolarRAT_Driver 
 Detailed RTL Component Info : 
 +---Registers : 
+	                8 Bit    Registers := 1     
 	                1 Bit    Registers := 1     
 +---Muxes : 
+	   3 Input      8 Bit        Muxes := 1     
 	   2 Input      8 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 1     
+	   3 Input      1 Bit        Muxes := 1     
 Module CONTROL_UNIT 
 Detailed RTL Component Info : 
 +---Muxes : 
@@ -553,10 +476,6 @@ Detailed RTL Component Info :
 	   3 Input      2 Bit        Muxes := 1     
 	   2 Input      2 Bit        Muxes := 1     
 	   3 Input      1 Bit        Muxes := 6     
-Module dataOut 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
@@ -585,130 +504,11 @@ WARNING: [Synth 8-6014] Unused sequential element b2d_din_reg was removed.  [/ho
 DSP Report: Generating DSP m_b2d/data1, operation Mode is: A2*(B:0x3e8).
 DSP Report: register b2d_din_reg is absorbed into DSP m_b2d/data1.
 DSP Report: operator m_b2d/data1 is absorbed into DSP m_b2d/data1.
-INFO: [Synth 8-5546] ROM "r_leds" won't be mapped to RAM because it is too sparse
-WARNING: [Synth 8-3917] design SolarRAT_Driver has port Arduino_Data[7] driven by constant 0
-WARNING: [Synth 8-3917] design SolarRAT_Driver has port Arduino_Data[6] driven by constant 0
-WARNING: [Synth 8-3917] design SolarRAT_Driver has port Arduino_Data[5] driven by constant 0
-WARNING: [Synth 8-3917] design SolarRAT_Driver has port Arduino_Data[4] driven by constant 0
-WARNING: [Synth 8-3917] design SolarRAT_Driver has port Arduino_Data[3] driven by constant 0
-WARNING: [Synth 8-3917] design SolarRAT_Driver has port Arduino_Data[2] driven by constant 0
-WARNING: [Synth 8-3917] design SolarRAT_Driver has port Arduino_Data[1] driven by constant 0
-WARNING: [Synth 8-3331] design SolarRAT_Driver has unconnected port ANODES[3]
-WARNING: [Synth 8-3331] design SolarRAT_Driver has unconnected port ANODES[2]
-WARNING: [Synth 8-3331] design SolarRAT_Driver has unconnected port ANODES[1]
-WARNING: [Synth 8-3331] design SolarRAT_Driver has unconnected port ANODES[0]
-WARNING: [Synth 8-3331] design SolarRAT_Driver has unconnected port CATHODES[7]
-WARNING: [Synth 8-3331] design SolarRAT_Driver has unconnected port CATHODES[6]
-WARNING: [Synth 8-3331] design SolarRAT_Driver has unconnected port CATHODES[5]
-WARNING: [Synth 8-3331] design SolarRAT_Driver has unconnected port CATHODES[4]
-WARNING: [Synth 8-3331] design SolarRAT_Driver has unconnected port CATHODES[3]
-WARNING: [Synth 8-3331] design SolarRAT_Driver has unconnected port CATHODES[2]
-WARNING: [Synth 8-3331] design SolarRAT_Driver has unconnected port CATHODES[1]
-WARNING: [Synth 8-3331] design SolarRAT_Driver has unconnected port CATHODES[0]
+INFO: [Synth 8-5546] ROM "O120" won't be mapped to RAM because it is too sparse
+WARNING: [Synth 8-3331] design SolarRAT_Driver has unconnected port dp
 INFO: [Synth 8-3886] merging instance 'WIZARD/led_reg[0]' (FDE) to 'WIZARD/led_reg[1]'
-WARNING: [Synth 8-3332] Sequential element (m_b2d/div_reg[28]) is unused and will be removed from module XADC__mod.
-WARNING: [Synth 8-3332] Sequential element (m_b2d/div_reg[27]) is unused and will be removed from module XADC__mod.
-WARNING: [Synth 8-3332] Sequential element (m_b2d/div_reg[26]) is unused and will be removed from module XADC__mod.
-WARNING: [Synth 8-3332] Sequential element (m_b2d/div_reg[25]) is unused and will be removed from module XADC__mod.
-WARNING: [Synth 8-3332] Sequential element (m_b2d/div_reg[24]) is unused and will be removed from module XADC__mod.
-WARNING: [Synth 8-3332] Sequential element (m_b2d/div_reg[23]) is unused and will be removed from module XADC__mod.
-WARNING: [Synth 8-3332] Sequential element (m_b2d/div_reg[22]) is unused and will be removed from module XADC__mod.
-WARNING: [Synth 8-3332] Sequential element (m_b2d/div_reg[21]) is unused and will be removed from module XADC__mod.
-WARNING: [Synth 8-3332] Sequential element (m_b2d/div_reg[20]) is unused and will be removed from module XADC__mod.
-WARNING: [Synth 8-3332] Sequential element (m_b2d/div_reg[19]) is unused and will be removed from module XADC__mod.
-WARNING: [Synth 8-3332] Sequential element (m_b2d/div_reg[18]) is unused and will be removed from module XADC__mod.
-WARNING: [Synth 8-3332] Sequential element (m_b2d/div_reg[17]) is unused and will be removed from module XADC__mod.
-WARNING: [Synth 8-3332] Sequential element (m_b2d/div_reg[16]) is unused and will be removed from module XADC__mod.
-WARNING: [Synth 8-3332] Sequential element (m_b2d/div_reg[15]) is unused and will be removed from module XADC__mod.
-WARNING: [Synth 8-3332] Sequential element (m_b2d/div_reg[14]) is unused and will be removed from module XADC__mod.
-WARNING: [Synth 8-3332] Sequential element (m_b2d/div_reg[13]) is unused and will be removed from module XADC__mod.
-WARNING: [Synth 8-3332] Sequential element (m_b2d/div_reg[12]) is unused and will be removed from module XADC__mod.
-WARNING: [Synth 8-3332] Sequential element (m_b2d/div_reg[11]) is unused and will be removed from module XADC__mod.
-WARNING: [Synth 8-3332] Sequential element (m_b2d/div_reg[10]) is unused and will be removed from module XADC__mod.
-WARNING: [Synth 8-3332] Sequential element (m_b2d/div_reg[9]) is unused and will be removed from module XADC__mod.
-WARNING: [Synth 8-3332] Sequential element (m_b2d/div_reg[8]) is unused and will be removed from module XADC__mod.
-WARNING: [Synth 8-3332] Sequential element (m_b2d/div_reg[7]) is unused and will be removed from module XADC__mod.
-WARNING: [Synth 8-3332] Sequential element (m_b2d/div_reg[6]) is unused and will be removed from module XADC__mod.
-WARNING: [Synth 8-3332] Sequential element (m_b2d/div_reg[5]) is unused and will be removed from module XADC__mod.
-WARNING: [Synth 8-3332] Sequential element (m_b2d/div_reg[4]) is unused and will be removed from module XADC__mod.
-WARNING: [Synth 8-3332] Sequential element (m_b2d/div_reg[3]) is unused and will be removed from module XADC__mod.
-WARNING: [Synth 8-3332] Sequential element (m_b2d/div_reg[2]) is unused and will be removed from module XADC__mod.
-WARNING: [Synth 8-3332] Sequential element (m_b2d/div_reg[1]) is unused and will be removed from module XADC__mod.
-WARNING: [Synth 8-3332] Sequential element (m_b2d/div_reg[0]) is unused and will be removed from module XADC__mod.
-WARNING: [Synth 8-3332] Sequential element (m_b2d/data_reg[28]) is unused and will be removed from module XADC__mod.
-WARNING: [Synth 8-3332] Sequential element (m_b2d/data_reg[27]) is unused and will be removed from module XADC__mod.
-WARNING: [Synth 8-3332] Sequential element (m_b2d/data_reg[26]) is unused and will be removed from module XADC__mod.
-WARNING: [Synth 8-3332] Sequential element (m_b2d/data_reg[25]) is unused and will be removed from module XADC__mod.
-WARNING: [Synth 8-3332] Sequential element (m_b2d/data_reg[24]) is unused and will be removed from module XADC__mod.
-WARNING: [Synth 8-3332] Sequential element (m_b2d/data_reg[23]) is unused and will be removed from module XADC__mod.
-WARNING: [Synth 8-3332] Sequential element (m_b2d/data_reg[22]) is unused and will be removed from module XADC__mod.
-WARNING: [Synth 8-3332] Sequential element (m_b2d/data_reg[21]) is unused and will be removed from module XADC__mod.
-WARNING: [Synth 8-3332] Sequential element (m_b2d/data_reg[20]) is unused and will be removed from module XADC__mod.
-WARNING: [Synth 8-3332] Sequential element (m_b2d/data_reg[19]) is unused and will be removed from module XADC__mod.
-WARNING: [Synth 8-3332] Sequential element (m_b2d/data_reg[18]) is unused and will be removed from module XADC__mod.
-WARNING: [Synth 8-3332] Sequential element (m_b2d/data_reg[17]) is unused and will be removed from module XADC__mod.
-WARNING: [Synth 8-3332] Sequential element (m_b2d/data_reg[16]) is unused and will be removed from module XADC__mod.
-WARNING: [Synth 8-3332] Sequential element (m_b2d/data_reg[15]) is unused and will be removed from module XADC__mod.
-WARNING: [Synth 8-3332] Sequential element (m_b2d/data_reg[14]) is unused and will be removed from module XADC__mod.
-WARNING: [Synth 8-3332] Sequential element (m_b2d/data_reg[13]) is unused and will be removed from module XADC__mod.
-WARNING: [Synth 8-3332] Sequential element (m_b2d/data_reg[12]) is unused and will be removed from module XADC__mod.
-WARNING: [Synth 8-3332] Sequential element (m_b2d/data_reg[11]) is unused and will be removed from module XADC__mod.
-WARNING: [Synth 8-3332] Sequential element (m_b2d/data_reg[10]) is unused and will be removed from module XADC__mod.
-WARNING: [Synth 8-3332] Sequential element (m_b2d/data_reg[9]) is unused and will be removed from module XADC__mod.
-WARNING: [Synth 8-3332] Sequential element (m_b2d/data_reg[8]) is unused and will be removed from module XADC__mod.
-WARNING: [Synth 8-3332] Sequential element (m_b2d/data_reg[7]) is unused and will be removed from module XADC__mod.
-WARNING: [Synth 8-3332] Sequential element (m_b2d/data_reg[6]) is unused and will be removed from module XADC__mod.
-WARNING: [Synth 8-3332] Sequential element (m_b2d/data_reg[5]) is unused and will be removed from module XADC__mod.
-WARNING: [Synth 8-3332] Sequential element (m_b2d/data_reg[4]) is unused and will be removed from module XADC__mod.
-WARNING: [Synth 8-3332] Sequential element (m_b2d/data_reg[3]) is unused and will be removed from module XADC__mod.
-WARNING: [Synth 8-3332] Sequential element (m_b2d/data_reg[2]) is unused and will be removed from module XADC__mod.
-WARNING: [Synth 8-3332] Sequential element (m_b2d/data_reg[1]) is unused and will be removed from module XADC__mod.
-WARNING: [Synth 8-3332] Sequential element (m_b2d/data_reg[0]) is unused and will be removed from module XADC__mod.
-WARNING: [Synth 8-3332] Sequential element (m_b2d/mod_reg[3]) is unused and will be removed from module XADC__mod.
-WARNING: [Synth 8-3332] Sequential element (m_b2d/mod_reg[2]) is unused and will be removed from module XADC__mod.
-WARNING: [Synth 8-3332] Sequential element (m_b2d/mod_reg[1]) is unused and will be removed from module XADC__mod.
-WARNING: [Synth 8-3332] Sequential element (m_b2d/mod_reg[0]) is unused and will be removed from module XADC__mod.
-WARNING: [Synth 8-3332] Sequential element (m_b2d/dout_reg[15]) is unused and will be removed from module XADC__mod.
-WARNING: [Synth 8-3332] Sequential element (m_b2d/dout_reg[14]) is unused and will be removed from module XADC__mod.
-WARNING: [Synth 8-3332] Sequential element (m_b2d/dout_reg[13]) is unused and will be removed from module XADC__mod.
-WARNING: [Synth 8-3332] Sequential element (m_b2d/dout_reg[12]) is unused and will be removed from module XADC__mod.
-WARNING: [Synth 8-3332] Sequential element (m_b2d/dout_reg[11]) is unused and will be removed from module XADC__mod.
-WARNING: [Synth 8-3332] Sequential element (m_b2d/dout_reg[10]) is unused and will be removed from module XADC__mod.
-WARNING: [Synth 8-3332] Sequential element (m_b2d/dout_reg[9]) is unused and will be removed from module XADC__mod.
-WARNING: [Synth 8-3332] Sequential element (m_b2d/dout_reg[8]) is unused and will be removed from module XADC__mod.
-WARNING: [Synth 8-3332] Sequential element (m_b2d/dout_reg[7]) is unused and will be removed from module XADC__mod.
-WARNING: [Synth 8-3332] Sequential element (m_b2d/dout_reg[6]) is unused and will be removed from module XADC__mod.
-WARNING: [Synth 8-3332] Sequential element (m_b2d/dout_reg[5]) is unused and will be removed from module XADC__mod.
-WARNING: [Synth 8-3332] Sequential element (m_b2d/dout_reg[4]) is unused and will be removed from module XADC__mod.
-WARNING: [Synth 8-3332] Sequential element (m_b2d/dout_reg[3]) is unused and will be removed from module XADC__mod.
-WARNING: [Synth 8-3332] Sequential element (m_b2d/dout_reg[2]) is unused and will be removed from module XADC__mod.
-WARNING: [Synth 8-3332] Sequential element (m_b2d/dout_reg[1]) is unused and will be removed from module XADC__mod.
-WARNING: [Synth 8-3332] Sequential element (m_b2d/dout_reg[0]) is unused and will be removed from module XADC__mod.
-WARNING: [Synth 8-3332] Sequential element (sseg_data_reg[15]) is unused and will be removed from module XADC__mod.
-WARNING: [Synth 8-3332] Sequential element (sseg_data_reg[14]) is unused and will be removed from module XADC__mod.
-WARNING: [Synth 8-3332] Sequential element (sseg_data_reg[13]) is unused and will be removed from module XADC__mod.
-WARNING: [Synth 8-3332] Sequential element (sseg_data_reg[12]) is unused and will be removed from module XADC__mod.
-WARNING: [Synth 8-3332] Sequential element (sseg_data_reg[11]) is unused and will be removed from module XADC__mod.
-WARNING: [Synth 8-3332] Sequential element (sseg_data_reg[10]) is unused and will be removed from module XADC__mod.
-WARNING: [Synth 8-3332] Sequential element (sseg_data_reg[9]) is unused and will be removed from module XADC__mod.
-WARNING: [Synth 8-3332] Sequential element (sseg_data_reg[8]) is unused and will be removed from module XADC__mod.
-WARNING: [Synth 8-3332] Sequential element (sseg_data_reg[7]) is unused and will be removed from module XADC__mod.
-WARNING: [Synth 8-3332] Sequential element (sseg_data_reg[6]) is unused and will be removed from module XADC__mod.
-WARNING: [Synth 8-3332] Sequential element (sseg_data_reg[5]) is unused and will be removed from module XADC__mod.
-WARNING: [Synth 8-3332] Sequential element (sseg_data_reg[4]) is unused and will be removed from module XADC__mod.
-WARNING: [Synth 8-3332] Sequential element (sseg_data_reg[3]) is unused and will be removed from module XADC__mod.
-WARNING: [Synth 8-3332] Sequential element (sseg_data_reg[2]) is unused and will be removed from module XADC__mod.
-WARNING: [Synth 8-3332] Sequential element (sseg_data_reg[1]) is unused and will be removed from module XADC__mod.
-WARNING: [Synth 8-3332] Sequential element (sseg_data_reg[0]) is unused and will be removed from module XADC__mod.
-WARNING: [Synth 8-3332] Sequential element (segment1/XLXI_47/count_reg[31]) is unused and will be removed from module XADC__mod.
-WARNING: [Synth 8-3332] Sequential element (segment1/XLXI_47/count_reg[30]) is unused and will be removed from module XADC__mod.
-WARNING: [Synth 8-3332] Sequential element (segment1/XLXI_47/count_reg[29]) is unused and will be removed from module XADC__mod.
-WARNING: [Synth 8-3332] Sequential element (segment1/XLXI_47/count_reg[28]) is unused and will be removed from module XADC__mod.
-WARNING: [Synth 8-3332] Sequential element (segment1/XLXI_47/count_reg[27]) is unused and will be removed from module XADC__mod.
-WARNING: [Synth 8-3332] Sequential element (segment1/XLXI_47/count_reg[26]) is unused and will be removed from module XADC__mod.
-INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:26 . Memory (MB): peak = 1630.133 ; gain = 452.469 ; free physical = 10631 ; free virtual = 16619
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:26 . Memory (MB): peak = 1635.121 ; gain = 457.461 ; free physical = 10575 ; free virtual = 16620
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -757,13 +557,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:22 ; elapsed = 00:00:34 . Memory (MB): peak = 1630.133 ; gain = 452.469 ; free physical = 10509 ; free virtual = 16504
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:24 ; elapsed = 00:00:35 . Memory (MB): peak = 1637.121 ; gain = 459.461 ; free physical = 10425 ; free virtual = 16469
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:22 ; elapsed = 00:00:34 . Memory (MB): peak = 1630.133 ; gain = 452.469 ; free physical = 10509 ; free virtual = 16504
+Finished Timing Optimization : Time (s): cpu = 00:00:24 ; elapsed = 00:00:36 . Memory (MB): peak = 1652.137 ; gain = 474.477 ; free physical = 10418 ; free virtual = 16462
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -795,7 +595,7 @@ INFO: [Synth 8-3886] merging instance 'MCU/PROM/PROG_IR_reg_rep_bsel[5]' (FD) to
 INFO: [Synth 8-3886] merging instance 'MCU/PROM/PROG_IR_reg_rep_bsel[4]' (FD) to 'MCU/PROM/PROG_IR_reg[4]'
 INFO: [Synth 8-3886] merging instance 'MCU/PROM/PROG_IR_reg_rep_bsel[3]' (FD) to 'MCU/PROM/PROG_IR_reg[3]'
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:22 ; elapsed = 00:00:34 . Memory (MB): peak = 1638.141 ; gain = 460.477 ; free physical = 10506 ; free virtual = 16501
+Finished Technology Mapping : Time (s): cpu = 00:00:25 ; elapsed = 00:00:37 . Memory (MB): peak = 1670.152 ; gain = 492.492 ; free physical = 10416 ; free virtual = 16461
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -829,35 +629,20 @@ CRITICAL WARNING: [Synth 8-4442] BlackBox module \WIZARD/XLXI_7  has unconnected
 CRITICAL WARNING: [Synth 8-4442] BlackBox module \WIZARD/XLXI_7  has unconnected pin vp_in
 CRITICAL WARNING: [Synth 8-4442] BlackBox module \WIZARD/XLXI_7  has unconnected pin vn_in
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:23 ; elapsed = 00:00:35 . Memory (MB): peak = 1638.141 ; gain = 460.477 ; free physical = 10507 ; free virtual = 16502
+Finished IO Insertion : Time (s): cpu = 00:00:25 ; elapsed = 00:00:37 . Memory (MB): peak = 1670.152 ; gain = 492.492 ; free physical = 10416 ; free virtual = 16460
 ---------------------------------------------------------------------------------
-CRITICAL WARNING: [Synth 8-3352] multi-driven net led_OBUF[7] with 1st driver pin 'r_leds_reg[7]/Q' [/home/victor/SolarRAT/SolarRAT_Driver/SolarRAT_Driver.sv:97]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net led_OBUF[7] with 2nd driver pin 'WIZARD/led_reg[7]/Q' [/home/victor/SolarRAT/SolarRAT_Driver/XADC/XADC.v:75]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net led_OBUF[6] with 1st driver pin 'r_leds_reg[6]/Q' [/home/victor/SolarRAT/SolarRAT_Driver/SolarRAT_Driver.sv:97]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net led_OBUF[6] with 2nd driver pin 'WIZARD/led_reg[6]/Q' [/home/victor/SolarRAT/SolarRAT_Driver/XADC/XADC.v:75]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net led_OBUF[5] with 1st driver pin 'r_leds_reg[5]/Q' [/home/victor/SolarRAT/SolarRAT_Driver/SolarRAT_Driver.sv:97]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net led_OBUF[5] with 2nd driver pin 'WIZARD/led_reg[5]/Q' [/home/victor/SolarRAT/SolarRAT_Driver/XADC/XADC.v:75]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net led_OBUF[4] with 1st driver pin 'r_leds_reg[4]/Q' [/home/victor/SolarRAT/SolarRAT_Driver/SolarRAT_Driver.sv:97]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net led_OBUF[4] with 2nd driver pin 'WIZARD/led_reg[4]/Q' [/home/victor/SolarRAT/SolarRAT_Driver/XADC/XADC.v:75]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net led_OBUF[3] with 1st driver pin 'r_leds_reg[3]/Q' [/home/victor/SolarRAT/SolarRAT_Driver/SolarRAT_Driver.sv:97]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net led_OBUF[3] with 2nd driver pin 'WIZARD/led_reg[3]/Q' [/home/victor/SolarRAT/SolarRAT_Driver/XADC/XADC.v:75]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net led_OBUF[2] with 1st driver pin 'r_leds_reg[2]/Q' [/home/victor/SolarRAT/SolarRAT_Driver/SolarRAT_Driver.sv:97]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net led_OBUF[2] with 2nd driver pin 'WIZARD/led_reg[2]/Q' [/home/victor/SolarRAT/SolarRAT_Driver/XADC/XADC.v:75]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net led_OBUF[0] with 1st driver pin 'r_leds_reg[0]/Q' [/home/victor/SolarRAT/SolarRAT_Driver/SolarRAT_Driver.sv:97]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net led_OBUF[0] with 2nd driver pin 'r_leds_reg[1]/Q' [/home/victor/SolarRAT/SolarRAT_Driver/SolarRAT_Driver.sv:97]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net led_OBUF[0] with 3rd driver pin 'WIZARD/led_reg[1]/Q' [/home/victor/SolarRAT/SolarRAT_Driver/XADC/XADC.v:75]
 
 Report Check Netlist: 
 +------+------------------+-------+---------+-------+------------------+
 |      |Item              |Errors |Warnings |Status |Description       |
 +------+------------------+-------+---------+-------+------------------+
-|1     |multi_driven_nets |      0|        7|Failed |Multi driven nets |
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:23 ; elapsed = 00:00:35 . Memory (MB): peak = 1638.141 ; gain = 460.477 ; free physical = 10507 ; free virtual = 16502
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:25 ; elapsed = 00:00:37 . Memory (MB): peak = 1670.152 ; gain = 492.492 ; free physical = 10416 ; free virtual = 16460
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -869,25 +654,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:23 ; elapsed = 00:00:35 . Memory (MB): peak = 1638.141 ; gain = 460.477 ; free physical = 10507 ; free virtual = 16502
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:26 ; elapsed = 00:00:37 . Memory (MB): peak = 1670.152 ; gain = 492.492 ; free physical = 10416 ; free virtual = 16460
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:23 ; elapsed = 00:00:35 . Memory (MB): peak = 1638.141 ; gain = 460.477 ; free physical = 10507 ; free virtual = 16502
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:26 ; elapsed = 00:00:37 . Memory (MB): peak = 1670.152 ; gain = 492.492 ; free physical = 10416 ; free virtual = 16460
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:23 ; elapsed = 00:00:35 . Memory (MB): peak = 1638.141 ; gain = 460.477 ; free physical = 10507 ; free virtual = 16502
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:26 ; elapsed = 00:00:37 . Memory (MB): peak = 1670.152 ; gain = 492.492 ; free physical = 10416 ; free virtual = 16460
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:23 ; elapsed = 00:00:35 . Memory (MB): peak = 1638.141 ; gain = 460.477 ; free physical = 10507 ; free virtual = 16502
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:26 ; elapsed = 00:00:37 . Memory (MB): peak = 1670.152 ; gain = 492.492 ; free physical = 10416 ; free virtual = 16460
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -906,51 +691,55 @@ Report Cell Usage:
 +------+-------------------+------+
 |1     |photoresistor_xadc |     1|
 |2     |BUFG               |     2|
-|3     |CARRY4             |    20|
-|4     |LUT1               |     4|
-|5     |LUT2               |    34|
-|6     |LUT3               |    32|
-|7     |LUT4               |    48|
-|8     |LUT5               |    71|
-|9     |LUT6               |   109|
-|10    |MUXF7              |    11|
-|11    |MUXF8              |     4|
-|12    |RAM256X1S          |    10|
-|13    |RAM32X1D           |     8|
-|14    |RAMB18E1_1         |     1|
-|15    |FDRE               |    98|
-|16    |FDSE               |     1|
-|17    |IBUF               |    13|
-|18    |OBUF               |    16|
-|19    |OBUFT              |    12|
+|3     |CARRY4             |   168|
+|4     |DSP48E1            |     1|
+|5     |LUT1               |    19|
+|6     |LUT2               |   163|
+|7     |LUT3               |   246|
+|8     |LUT4               |   196|
+|9     |LUT5               |   149|
+|10    |LUT6               |   360|
+|11    |MUXF7              |    10|
+|12    |MUXF8              |     4|
+|13    |RAM256X1S          |    10|
+|14    |RAM32X1D           |     8|
+|15    |RAMB18E1_1         |     1|
+|16    |FDRE               |   236|
+|17    |FDSE               |     1|
+|18    |IBUF               |    13|
+|19    |OBUF               |    35|
+|20    |OBUFT              |     1|
 +------+-------------------+------+
 
 Report Instance Areas: 
-+------+-------------+------------------+------+
-|      |Instance     |Module            |Cells |
-+------+-------------+------------------+------+
-|1     |top          |                  |   524|
-|2     |  MCU        |RAT_MCU           |   314|
-|3     |    CU       |CONTROL_UNIT      |    16|
-|4     |    INTR_REG |I                 |     1|
-|5     |    PC       |ProgCounter       |   194|
-|6     |    RF       |REG_FILE          |    46|
-|7     |    SCR      |SCRATCH_RAM       |    10|
-|8     |    SP       |Stack_Pointer     |    24|
-|9     |    alu      |ALU               |    13|
-|10    |    flag     |FLAGS             |    10|
-|11    |  ONESHOT    |debounce_one_shot |    34|
-|12    |  WIZARD     |XADC__mod         |   122|
-|13    |    m_b2d    |bin2dec           |    14|
-+------+-------------+------------------+------+
++------+--------------+------------------+------+
+|      |Instance      |Module            |Cells |
++------+--------------+------------------+------+
+|1     |top           |                  |  1653|
+|2     |  MCU         |RAT_MCU           |   310|
+|3     |    CU        |CONTROL_UNIT      |    16|
+|4     |    INTR_REG  |I                 |     1|
+|5     |    PC        |ProgCounter       |   193|
+|6     |    RF        |REG_FILE          |    43|
+|7     |    SCR       |SCRATCH_RAM       |    10|
+|8     |    SP        |Stack_Pointer     |    24|
+|9     |    alu       |ALU               |    13|
+|10    |    flag      |FLAGS             |    10|
+|11    |  ONESHOT     |debounce_one_shot |    34|
+|12    |  WIZARD      |XADC__mod         |  1248|
+|13    |    m_b2d     |bin2dec           |  1017|
+|14    |    segment1  |DigitToSeg        |   103|
+|15    |      XLXI_47 |segClkDevider     |    82|
+|16    |      XLXI_49 |counter3bit       |    21|
++------+--------------+------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:23 ; elapsed = 00:00:35 . Memory (MB): peak = 1638.141 ; gain = 460.477 ; free physical = 10507 ; free virtual = 16502
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:26 ; elapsed = 00:00:37 . Memory (MB): peak = 1670.152 ; gain = 492.492 ; free physical = 10416 ; free virtual = 16460
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 25 critical warnings and 160 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:16 ; elapsed = 00:00:20 . Memory (MB): peak = 1638.141 ; gain = 135.141 ; free physical = 10560 ; free virtual = 16555
-Synthesis Optimization Complete : Time (s): cpu = 00:00:23 ; elapsed = 00:00:35 . Memory (MB): peak = 1638.148 ; gain = 460.477 ; free physical = 10560 ; free virtual = 16555
+Synthesis finished with 0 errors, 10 critical warnings and 4 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:18 ; elapsed = 00:00:22 . Memory (MB): peak = 1670.152 ; gain = 162.164 ; free physical = 10486 ; free virtual = 16530
+Synthesis Optimization Complete : Time (s): cpu = 00:00:26 ; elapsed = 00:00:37 . Memory (MB): peak = 1670.160 ; gain = 492.492 ; free physical = 10486 ; free virtual = 16530
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 67 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 215 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
@@ -960,11 +749,11 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   RAM32X1D => RAM32X1D (RAMD32, RAMD32): 8 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-122 Infos, 225 Warnings, 25 Critical Warnings and 0 Errors encountered.
+117 Infos, 33 Warnings, 10 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:25 ; elapsed = 00:00:36 . Memory (MB): peak = 1638.148 ; gain = 472.305 ; free physical = 10559 ; free virtual = 16555
+synth_design: Time (s): cpu = 00:00:28 ; elapsed = 00:00:39 . Memory (MB): peak = 1670.160 ; gain = 504.320 ; free physical = 10490 ; free virtual = 16534
 WARNING: [Constraints 18-5210] No constraint will be written out.
 INFO: [Common 17-1381] The checkpoint '/home/victor/SolarRAT/SolarRAT_Driver/SolarRAT_Driver/SolarRAT_Driver.runs/synth_1/SolarRAT_Driver.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file SolarRAT_Driver_utilization_synth.rpt -pb SolarRAT_Driver_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 1662.152 ; gain = 0.000 ; free physical = 10561 ; free virtual = 16557
-INFO: [Common 17-206] Exiting Vivado at Sat Mar  9 15:03:31 2019...
+report_utilization: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.03 . Memory (MB): peak = 1694.164 ; gain = 0.000 ; free physical = 10491 ; free virtual = 16534
+INFO: [Common 17-206] Exiting Vivado at Sat Mar  9 15:31:25 2019...

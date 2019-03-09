@@ -21,6 +21,7 @@
 //////////////////////////////////////////////////////////////////////////////
 
 module SolarRAT_Driver(
+
     input CLK,
     input BTNL,
     input BTNR,
@@ -43,7 +44,6 @@ module SolarRAT_Driver(
        
     // OUTPUT PORT IDS ///////////////////////////////////////////////////////
     // In future labs you can add more port IDs
-    localparam led_ID      = 8'h40;
     localparam SEG_ID       = 8'h81;
     localparam ARDUINO_ID   = 8'h69;
     
@@ -55,12 +55,11 @@ module SolarRAT_Driver(
     logic s_reset;
     logic s_clk_50 = 1'b0;     // 50 MHz clock
     logic [7:0] SEV_SEG; 
-    logic [3:0] LIGHT_IN;
+    logic [7:0] LIGHT_IN;
     
     
     // Register definitions for output devices ///////////////////////////////
     logic [7:0]   s_input_port;
-    logic [7:0]   r_leds = 8'h00;
     logic [7:0]   r_seg = 8'h00;
     logic [7:0]   r_arduino = 8'b00;
     
@@ -86,7 +85,7 @@ module SolarRAT_Driver(
         if (s_port_id == SW_ID)
             s_input_port = SW;
         else if (s_port_id == LIGHT_ID)
-            s_input_port = LIGHT_IN;
+            s_input_port = {LIGHT_IN,4'b000};
 	else
 	    s_input_port = 0;
     end
@@ -94,9 +93,7 @@ module SolarRAT_Driver(
 //MUX and output reg
     always_ff @ (posedge CLK) begin
         if (IO_STRB == 1'b1) begin
-            if (s_port_id == led_ID)
-                r_leds <= s_output_port;
-	    else if (s_port_id == SEG_ID)
+	       if (s_port_id == SEG_ID)
 	        r_seg <= s_output_port;
 	    else if (s_port_id == ARDUINO_ID)
     	        r_arduino <= s_output_port;
@@ -142,7 +139,6 @@ XADC WIZARD(
     //assign s_interrupt = 1'b0;  // no interrupt used yet
      
     // Output Assignments ////////////////////////////////////////////////////
-    assign led = r_leds;
     assign SEV_SEG =r_seg;
     assign Arduino_Data = r_arduino;
       
