@@ -1,0 +1,26 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:02:38 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Sat Mar  9 01:16:02 2019
+# Process ID: 11074
+# Current directory: /home/victor/SolarRAT_Driver/SolarRAT_Driver.runs/synth_1
+# Command line: vivado -log RAT_MCU.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source RAT_MCU.tcl
+# Log file: /home/victor/SolarRAT_Driver/SolarRAT_Driver.runs/synth_1/RAT_MCU.vds
+# Journal file: /home/victor/SolarRAT_Driver/SolarRAT_Driver.runs/synth_1/vivado.jou
+#-----------------------------------------------------------
+source RAT_MCU.tcl -notrace
+Command: synth_design -top RAT_MCU -part xc7a35tcpg236-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 11095 
+ERROR: [Synth 8-1766] cannot open include file /home/victor/CPE233/Modules/mux_2t1_nb.v [/home/victor/SolarRAT/SolarRAT_Driver/RAT_MCU/FLAGS.sv:1]
+INFO: [Synth 8-2350] module FLAGS ignored due to previous errors [/home/victor/SolarRAT/SolarRAT_Driver/RAT_MCU/FLAGS.sv:30]
+Failed to read verilog '/home/victor/SolarRAT/SolarRAT_Driver/RAT_MCU/FLAGS.sv'
+INFO: [Common 17-83] Releasing license: Synthesis
+3 Infos, 0 Warnings, 0 Critical Warnings and 2 Errors encountered.
+synth_design failed
+ERROR: [Common 17-69] Command failed: Vivado Synthesis failed
+INFO: [Common 17-206] Exiting Vivado at Sat Mar  9 01:16:11 2019...
