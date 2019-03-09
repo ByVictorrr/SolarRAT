@@ -46,5 +46,5 @@ inner_loop:	SUB R3, 1
 		BRNE middle_loop
 		BRNE outer_loop
 		
-output:		OUT R0, OUT_PORT ; (OUT_PORT = res)
+return:		RET
 
