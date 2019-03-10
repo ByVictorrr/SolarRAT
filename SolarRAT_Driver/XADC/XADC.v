@@ -24,6 +24,7 @@ module XADC(
     input CLK100MHZ,
     input vauxp6,
     input vauxn6,
+    input [1:0] sw,
     output reg [15:0] led,
     output [3:0] an,
     output dp,
@@ -51,7 +52,7 @@ module XADC(
     wire b2d_done;
 
     //xadc instantiation connect the eoc_out .den_in to get continuous conversion
-   photoresistor_xadc  XLXI_7 (
+    photoresistor_xadc  XLXI_7 (
         .daddr_in(Address_in), //addresses can be found in the artix 7 XADC user guide DRP register space
         .dclk_in(CLK100MHZ), 
         .den_in(enable), 
@@ -60,6 +61,8 @@ module XADC(
         .busy_out(),                    
         .vauxp6(vauxp6),
         .vauxn6(vauxn6),
+        .vn_in(vn_in), 
+        .vp_in(vp_in), 
         .alarm_out(), 
         .do_out(data), 
         //.reset_in(),
@@ -71,25 +74,25 @@ module XADC(
     //led visual dmm              
     always @(posedge(CLK100MHZ)) begin            
         if(ready == 1'b1) begin
-            case (data[15:12]) // data[15:12] is voltage
-            15:   led <= 16'b11;
-            14:  led <= 16'b111;
-            13:  led <= 16'b1111;
-            12:  led <= 16'b11111;
-            11:  led <= 16'b111111;
-            10:  led <= 16'b1111111; 
-            9:  led <= 16'b11111111;
+            case (data[15:12])
+            1:  led <= 16'b11;
+            2:  led <= 16'b111;
+            3:  led <= 16'b1111;
+            4:  led <= 16'b11111;
+            5:  led <= 16'b111111;
+            6:  led <= 16'b1111111; 
+            7:  led <= 16'b11111111;
             8:  led <= 16'b111111111;
-            7:  led <= 16'b1111111111;
-            6: led <= 16'b11111111111;
-            5: led <= 16'b111111111111;
-            4: led <= 16'b1111111111111;
-            3: led <= 16'b11111111111111;
-            2: led <= 16'b111111111111111;
-            1: led <= 16'b1111111111111111; // if lowest voltage differential, light up all LEDs                        
-            default: led <= 16'b0; 
+            9:  led <= 16'b1111111111;
+            10: led <= 16'b11111111111;
+            11: led <= 16'b111111111111;
+            12: led <= 16'b1111111111111;
+            13: led <= 16'b11111111111111;
+            14: led <= 16'b111111111111111;
+            15: led <= 16'b1111111111111111;                        
+            default: led <= 16'b1; 
             endcase
-	data_digital = data[15:12];
+            data_digital <= data[15:12];
         end
     end
     
@@ -131,7 +134,15 @@ module XADC(
         .dout(b2d_dout)
     );
       
-
+    always @(posedge(CLK100MHZ)) begin
+        case(sw)
+        0: Address_in <= 8'h16;
+        1: Address_in <= 8'h17;
+        2: Address_in <= 8'h1e;
+        3: Address_in <= 8'h1f;
+        endcase
+    end
+    
     DigitToSeg segment1(
         .in1(sseg_data[3:0]),
         .in2(sseg_data[7:4]),
@@ -146,6 +157,4 @@ module XADC(
         .dp(dp),
         .seg(seg)
     );
-    
-  
 endmodule
