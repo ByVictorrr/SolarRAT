@@ -26,9 +26,14 @@ Since the Rat MCU completes one instruction / 40ns, and we want the function del
 ![gen equation delay](https://latex.codecogs.com/gif.latex?N_%7B1%2C2%2C3tot%7D%20%3D%20%5B%5B%5B%5BN_%7B3%7D*C_%7B3%7D%5D&plus;N_%7B2%7D%20%5D%20*C_%7B2%7D%5D%20&plus;%20N_1%5D*%20C_1%20&plus;%20N_%7Bol%7D%20%250)
 
 where N_i corresonds to the ith loop
+
 where C_i corresponds to the ith loop
 
-i=1(outermost),2(middle),3(inner)
+i=1(outermost),
+
+2(middle),
+
+3(inner)
 
 ![eqn 2s Delay](https://latex.codecogs.com/gif.latex?C_1%3D%5Cfrac%7B50000000-N_o%7D%7BC_2%5Cleft%28N_2&plus;N_3C_3%5Cright%29&plus;N_1%7D%3B%5Cquad%20%5C%3AN_3%5Cne%20%5Cfrac%7B-N_1-N_2C_2%7D%7BC_3C_2%7D)
 
