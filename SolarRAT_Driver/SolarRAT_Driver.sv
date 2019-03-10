@@ -29,7 +29,7 @@ module SolarRAT_Driver(
     input vauxp6, //for wizard adc
     input vauxn6,
     output [7:0] Arduino_Data,
-    output [15:0] led,
+    output reg [15:0] led,
     output [3:0] an,
     output [6:0] seg,
     output dp
@@ -55,7 +55,7 @@ module SolarRAT_Driver(
     logic s_reset;
     logic s_clk_50 = 1'b0;     // 50 MHz clock
     logic [7:0] SEV_SEG; 
-    logic [7:0] LIGHT_IN;
+    logic [3:0] LIGHT_IN;
     
     
     // Register definitions for output devices ///////////////////////////////
@@ -123,14 +123,15 @@ debounce_one_shot ONESHOT(
 
 //Analog to ditial converter  
 XADC WIZARD(
-        .CLK100MHZ(CLK),
-        .vauxp6(vauxp6),
-        .vauxn6(vauxn6),
-        .led(led),
-        .an(an),
-        .dp(0),
-        .seg(seg),
-        .data_digital(LIGHT_IN)
+    .CLK100MHZ(CLK),
+    .vauxp6(vauxp6),
+    .vauxn6(vauxn6),
+   .sw(SW[1:0]),
+    .led(led),
+    .an(an),
+    .dp(dp),
+    .seg(seg),
+    .data_digital(LIGHT_IN)
     );
     
 
