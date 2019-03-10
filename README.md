@@ -21,7 +21,9 @@ the 4 least bits is the location
 
 ## Delay time - 2S
 
-- <img src="https://latex.codecogs.com/gif.latex?O_t=\text { C_1=\frac{50000000-N_o}{C_2\left(N_2+N_3C_3\right)+N_1};\quad \:N_3\ne \frac{-N_1-N_2C_2}{C_3C_2} } t " /> 
+![eqn 2s Delay(https://latex.codecogs.com/gif.latex?C_1%3D%5Cfrac%7B50000000-N_o%7D%7BC_2%5Cleft%28N_2&plus;N_3C_3%5Cright%29&plus;N_1%7D%3B%5Cquad%20%5C%3AN_3%5Cne%20%5Cfrac%7B-N_1-N_2C_2%7D%7BC_3C_2%7D)
+
+
 
 ## Mapping Values - PER 2 
 
