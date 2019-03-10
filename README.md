@@ -18,6 +18,12 @@ controlling the servo motor. The Driver has a architecre of 8 bits length and
 its first 4 bits are the data of light intensity (in Volts) and corresponding to
 the 4 least bits is the location
 
+
+## Delay time - 2S
+
+- <img src="https://latex.codecogs.com/gif.latex?O_t=\text { 
+$C_1=\frac{50000000-N_o}{C_2\left(N_2+N_3C_3\right)+N_1};\quad \:N_3\ne \frac{-N_1-N_2C_2}{C_3C_2}$ } t " /> 
+
 ## Mapping Values - PER 2 
 
 ### Table 1 - SW mapping to rotational of servo
