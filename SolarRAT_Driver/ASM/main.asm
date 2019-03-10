@@ -103,20 +103,18 @@ reset_sweep:
 ; Return : Nothing 
 ; Tweaked Parmeter : R6,R7,R8
 ;
-
-
 ;--------------------------------------------------------------------
 
-.EQU IN_PORT = 0x9A
-.EQU OUT_PORT = 0x42
+.EQU COUNT_INNER = 236
+.EQU COUNT_MIDDLE = 176
+.EQU COUNT_OUTER = 201
+;N_inner = 6
+;N_middle = 4
+;N_outer = 10
 
-.EQU COUNT_INNER = 108
-.EQU COUNT_MIDDLE = 232
-.EQU COUNT_OUTER = 246
-;N_inner = 5
-;N_middle = 3
-;N_outer = 2
-
+;3 inner
+;2 middle
+;1 outer
 
 .CSEG
 .ORG 0x69
@@ -132,10 +130,21 @@ inner_loop:	SUB R8, 1
 		CLC
 		CLC
 		CLC
+		CLC
 		BRNE inner_loop
 		
 		CLC
+		CLC
 		BRNE middle_loop
+		
+		CLC
+		CLC
+		CLC
+		CLC
+		CLC
+		CLC
+		CLC
+		CLC
 		BRNE outer_loop
 		
 return:		RET
