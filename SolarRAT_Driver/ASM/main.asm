@@ -23,6 +23,7 @@ arduino_sweep: .BYTE 12 ; 0x01 ... 0x0C (12th)
 ;-----PORT DECLARATIONS----------------------
 .EQU LIGHT_PORT  =  0x96
 .EQU ARDUINO_PORT = 0x69
+.EQU SWITCH_PORT = 0x22
 ;--------------------------------------------
 
 ;----CONSTANT DECLARATION-------------------
@@ -39,6 +40,7 @@ arduino_sweep: .BYTE 12 ; 0x01 ... 0x0C (12th)
 
 
 main:
+	SEI ; set interupts
 	CALL sweep
 	CALL delay
 	CALL bubble_sort
@@ -100,7 +102,7 @@ sweep_loop:
 reset_sweep:
 	MOV R1, 0
 	OUT R1, ARDUINO_PORT
-	BRN end
+	RET
 
 
 
@@ -230,15 +232,44 @@ swap:   ;swap(arr[ADD_i], arr[ADD_i+1])
 ;
 ; Tweaked parameters:
 ; R17 - best location[3:0]
+; R31 - using for zero 
 ;--------------------------------------------------------------------
 
 goBestLocation:
-		wsp 0
+		WSP R31 ; reg that has value of 0
 		POP R17
 		OUT R17, ARDUINO_PORT
 		CALL delay 	
 		RET 
-end:
+		
+		
+;---------------------------------------------
+
+;-----------------------------------------------------------------------------
+; ISR - allows someone to go in manual mode, turn servo using SW's 45 degrees each
+;
+; Tweaked parameters:
+; R18 - {1,0,0,0,0,SW[2],SW[1:0]} 
+; - first bit tells arduino isr mode
+; - SW[2] tells us to go back from isr mode if high
+;--------------------------------------------------------------------
+
+ISR:
+	IN R18, SWITCH_PORT
+	OR R18, 128
+	OUT R18, ARDUINO_PORT
+	CALL delay
+	AND R18, 4 ; check if we need to return from isr
+	
+	CMP R18, 4
+	
+	;z == 1 if they are equal thus SW[2] is high
+	BRNE ISR
+	RETIE
+	
+.CSEG
+.ORG 0x3FF
+BRN ISR
 
 	
 
