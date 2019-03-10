@@ -42,27 +42,18 @@ Using the guess in check method for all parameters we get:
 
 ![plugging in to 2s delay](https://latex.codecogs.com/gif.latex?C_1%28N_%7Bol%7D%20%3D2%20%2CN_1%20%3D%2010%2C%20N_2%20%3D%204%2C%20N_3%3D%206%2C%20C_2%20%3D%20176%2C%20C_3%20%3D236%20%29%20%5Capprox%20201%250)
 
-## Mapping Values - PER 2 
 
-### Table 1 - SW mapping to rotational of servo
+### Table 1 - 
  | SW  | Duty Cycle  | Rotation(Degrees)  | 
  |-----|-------------|--------------------|
- | 12  |     5%      |   0 °              |  
- | 19  |     7.8%    |   90 °             |  
- | 25  |  10.157 %   |   180 °            |  
+ |   |     %      |    °              |  
+ |   |    %    |    °             |  
+ |   |   %   |    °            |  
 
-
-
-
-### Input to Circuit 
-
-* SW = 35 => 7.8 % duty cycle = > rotate motor 90 degrees (Well 7.5 % duty cycle should)
-
-* SW =  => 10.2 % duty cycle = > rotate motor 180 degrees (Well 10 % duty cycle should)
 
 ## FirmWare
 
-[Servo Driver]
+[SolarRAT Driver](https://github.com/ByVictorrr/SolarRAT/blob/master/SolarRAT_Driver/ASM/main.asm)
 
 
 ## Hardware
