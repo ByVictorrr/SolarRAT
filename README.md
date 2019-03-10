@@ -5,7 +5,7 @@ Julio Tena
 
 Victor Delaplaine
 
-Javier Flores
+Javier Flores 
 
 ## Mechanism
 Using A RAT MCU Created int CPE233, to input a set of data from a solar panel and have a bubble sort algorithm run every 5 min finding the highest voltage position.
@@ -19,7 +19,22 @@ its first 4 bits are the data of light intensity (in Volts) and corresponding to
 the 4 least bits is the location
 
 
-## Delay time - 2S
+
+### Table 1 - 
+ | SW  | Duty Cycle  | Rotation(Degrees)  | 
+ |-----|-------------|--------------------|
+ |   |     %      |    °              |  
+ |   |    %    |    °             |  
+ |   |   %   |    °            |  
+
+
+## FirmWare
+
+[SolarRAT Driver](https://github.com/ByVictorrr/SolarRAT/blob/master/SolarRAT_Driver/ASM/main.asm)
+
+[Flow Chart of firmware](https://github.com/ByVictorrr/SolarRAT/tree/master/SolarRAT_Driver/ASM/Flowcharts/images/main.png)
+
+### Delay time - 2S
 
 Since the Rat MCU completes one instruction / 40ns, and we want the function delay to delay 2s so equating a general equation below gives us an equation below that.
 
@@ -43,17 +58,7 @@ Using the guess in check method for all parameters we get:
 ![plugging in to 2s delay](https://latex.codecogs.com/gif.latex?C_1%28N_%7Bol%7D%20%3D2%20%2CN_1%20%3D%2010%2C%20N_2%20%3D%204%2C%20N_3%3D%206%2C%20C_2%20%3D%20176%2C%20C_3%20%3D236%20%29%20%5Capprox%20201%250)
 
 
-### Table 1 - 
- | SW  | Duty Cycle  | Rotation(Degrees)  | 
- |-----|-------------|--------------------|
- |   |     %      |    °              |  
- |   |    %    |    °             |  
- |   |   %   |    °            |  
 
-
-## FirmWare
-
-[SolarRAT Driver](https://github.com/ByVictorrr/SolarRAT/blob/master/SolarRAT_Driver/ASM/main.asm)
 
 
 ## Hardware
