@@ -1,6 +1,6 @@
 # SolarRAT
 
-![solar rat logo]()
+![solar rat logo](https://github.com/ByVictorrr/SolarRAT/blob/master/images/SolarRat_Logo.png)
 
 ### Project designed by:
 Julio Tena
