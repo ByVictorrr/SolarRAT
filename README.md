@@ -40,7 +40,7 @@ the 4 least bits is the location
  |1100                  |    180°                  | 
  
 ### Table 2 - isr (manual mode)
- |  output (from basys3)       | Servo Rotation(Degrees)  | 
+ |  output (from basys3)      | Servo Rotation(Degrees)  | 
  |----------------------------|--------------------------|
  |10000_0_00                  |    0°                    |  
  |10000_0_01                  |    60°                   |  
