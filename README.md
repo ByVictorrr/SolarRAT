@@ -42,19 +42,18 @@ the 4 least bits is the location
 ### Table 2 - isr (manual mode)
  |  output (from basys3)      | Servo Rotation(Degrees)  | 
  |----------------------------|--------------------------|
- |10000_0_00                  |    0°                    |  
- |10000_0_01                  |    60°                   |  
- |10000_0_10                  |    120°                  |  
- |10000_0_11                  |    180°                  | 
- |10000_1_00                  |    OFF°                  |  
- |10000_1_01                  |    OFF°                  |  
- |10000_1_10                  |    OFF°                  |  
- |10000_1_11                  |    OFF°                  | 
+ |100000_00                  |    0°                    |  
+ |100000_01                  |    60°                   |  
+ |100000_10                  |    120°                  |  
+ |100000_11                  |    180°                  | 
+ |000000_00                  |    OFF°                  |  
+ |000000_01                  |    OFF°                  |  
+ |000000_10                  |    OFF°                  |  
+ |000000_11                  |    OFF°                  | 
 
 
 * Note that in the table above for our manual mode, we use output[2] to indicate turn off manual mode.
 * Note that output[7] tells the arduino that we currently in manual mode.
-* Note that output[1:0] tells how many degrees shown in table 2 you want the motor to turn.
 
 ## FirmWare
 
