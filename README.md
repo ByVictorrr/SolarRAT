@@ -1,5 +1,7 @@
 # SolarRAT
 
+![solar rat logo]()
+
 ### Project designed by:
 Julio Tena
 
