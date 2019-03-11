@@ -32,7 +32,7 @@ arduino_sweep: .BYTE 12 ; 0x01 ... 0x0C (12th)
 .EQU DELAY_COUNT_OUTER = 201
 .EQU BUBBLE_OUTER_COUNT =  12 ; 
 .EQU BUBBLE_INNER_COUNT = 12
-.EQU SWEEP_COUNT = 12
+.EQU SWEEP_COUNT = 2
 ;-------------------------------------------------
 .CSEG
 .ORG 0x0D
@@ -46,6 +46,7 @@ main:
 	CALL bubble_sort
 	CALL goBestLocation 
 	CALL delay
+	WSP R31 ; have stack pointer go back to 0
 	BRN main
 
 ;------------------------------------------------------------------------------------
