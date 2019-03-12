@@ -43,6 +43,8 @@ main:
 	SEI ; set interupts
 	CALL sweep
 	CALL delay
+	CALL delay
+	CALL delay
 	CALL bubble_sort
 	CALL goBestLocation 
 	CALL delay
