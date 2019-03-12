@@ -256,6 +256,7 @@ goBestLocation:
 ;--------------------------------------------------------------------
 
 ISR:
+	MOV R18, 0
 	IN R18, SWITCH_PORT
 	AND R18, 131  ;telling ardino we are in isr by setting sw[7] ==1 and setting sw[6:2] = 0 (masking)
 	OUT R18, ARDUINO_PORT ; output that sw[7] high and the value inputted
