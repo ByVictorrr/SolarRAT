@@ -39,6 +39,7 @@ arduino_sweep: .BYTE 12 ; 0x01 ... 0x0C (12th)
 
 ;-----Sweep function consatns----
 .EQU SWEEP_COUNT = 13
+.EQU SWEEP_OUTPUT_DELAY = 2
 ;-------------------------------------------------
 .CSEG
 .ORG 0x0D
@@ -71,12 +72,12 @@ main:
 ;--------------------------------------------------------------------
 
 sweep: 
-	MOV R3, SWEEP_COUNT
 
+	MOV R3, SWEEP_COUNT
 
 sweep_loop:
 
-	MOV R6, SWEEP_COUNT
+	MOV R6, DELAY_COUNT_OUTER
 
 	CMP R3, 0 ; is sweep_count == 0?
 
@@ -101,24 +102,31 @@ sweep_loop:
 
 	ST R0, (R4) ; SCR[12 - sweep_count] = arduino[7:0]
 
-    	SUB R3, 1 ; sweep_count = sweep_count - 1
+   
 	
 
-outer_loop:	MOV R7, DELAY_COUNT_MIDDLE
+outer_loop:	
+		MOV R7, DELAY_COUNT_MIDDLE
+		AND R1, 15 
 		OUT R1, ARDUINO_PORT 
  	
 middle_loop:	MOV R8, DELAY_COUNT_INNER
 		
-inner_loop:	SUB R8, 1 
+inner_loop:	
+
+		SUB R8, 1
+		 
 		BRNE inner_loop
+		
+		SUB R7, 1
 		
 		BRNE middle_loop
 		
-
+		SUB R6, 1
 		BRNE outer_loop
 		
-
-		BRN sweep_loop
+		SUB R3, 1 ; sweep_count = sweep_count - 1
+		BRNE sweep_loop
 
 
 return_sweep:		RET
