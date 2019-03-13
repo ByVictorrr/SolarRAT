@@ -91,7 +91,7 @@ sweep_loop:
 	
 	CALL delay
 	
-	CALL delay
+	;CALL delay
 	
 	OR R1, R2 ; arduino[7:0]  = {arduino[7:4],arduino[3:0]}
 
@@ -170,5 +170,21 @@ return:		RET
 
 end:
 
-
  
+
+ sweep_check:
+			MOV R10, 0
+sweep_check_loop:
+			LSL R10	 ; starting sweep
+			OUT R10, ARDUINO_PORT
+			CALL delay 
+			CALL delay
+			IN R10, ARDUINO_PORT
+			RET
+			
+			
+			
+ 
+ 
+
+

@@ -58,9 +58,9 @@ C5:  Raw line from source code.
 (0042)                     0x00D  || main:
 (0043)                            || 	;SEI ; set interupts
 (0044)  CS-0x00D  0x08089         || 	CALL sweep
-(0045)  CS-0x00E  0x08121         || 	CALL delay
+(0045)  CS-0x00E  0x08119         || 	CALL delay
 (0046)  CS-0x00F  0x15F00         || 	WSP R31 ; have stack pointer go back to 0
-(0047)  CS-0x010  0x081D0         || 	BRN end
+(0047)  CS-0x010  0x081C8         || 	BRN end
 (0048)                            || 
 (0049)                            || ;------------------------------------------------------------------------------------
 (0050)                            || ; sweep  subroutine - goes through 12 degrees every 2s collects data and moves servo
@@ -88,7 +88,7 @@ C5:  Raw line from source code.
 (0072)                            || 
 (0073)  CS-0x014  0x30300         || 	CMP R3, 0 ; is sweep_count == 0?
 (0074)                            || 	
-(0075)  CS-0x015  0x0811A         || 	BREQ reset_sweep ; if yes == > PC = reset_sweep
+(0075)  CS-0x015  0x08112         || 	BREQ reset_sweep ; if yes == > PC = reset_sweep
 (0076)                            || 	;else	
 (0077)                            || 
 (0078)  CS-0x016  0x36403         || 	MOV R4, SWEEP_COUNT
@@ -101,31 +101,31 @@ C5:  Raw line from source code.
 (0085)                            || 
 (0086)                            || 
 (0087)                            || 
-(0088)  CS-0x01A  0x08121         || 	CALL delay
+(0088)  CS-0x01A  0x08119         || 	CALL delay
 (0089)                            || 
 (0090)  CS-0x01B  0x34169         || 	OUT R1, ARDUINO_PORT ; output arduino[3:0] to Arduino_ID
 (0091)                            || 	
-(0092)  CS-0x01C  0x08121         || 	CALL delay
+(0092)  CS-0x01C  0x08119         || 	CALL delay
 (0093)                            || 	
-(0094)  CS-0x01D  0x08121         || 	CALL delay
+(0094)                            || 	;CALL delay
 (0095)                            || 	
-(0096)  CS-0x01E  0x00111         || 	OR R1, R2 ; arduino[7:0]  = {arduino[7:4],arduino[3:0]}
+(0096)  CS-0x01D  0x00111         || 	OR R1, R2 ; arduino[7:0]  = {arduino[7:4],arduino[3:0]}
 (0097)                            || 
-(0098)  CS-0x01F  0x04009         || 	MOV R0, R1 ; 
+(0098)  CS-0x01E  0x04009         || 	MOV R0, R1 ; 
 (0099)                            || 
 (0100)                            || 	; before storing arduino[7:0] got to concatenate its componets
 (0101)                            || 
-(0102)  CS-0x020  0x04023         || 	ST R0, (R4) ; SCR[12 - sweep_count] = arduino[7:0]
+(0102)  CS-0x01F  0x04023         || 	ST R0, (R4) ; SCR[12 - sweep_count] = arduino[7:0]
 (0103)                            || 
-(0104)  CS-0x021  0x2C301         ||     SUB R3, 1 ; sweep_count = sweep_count - 1
+(0104)  CS-0x020  0x2C301         ||     SUB R3, 1 ; sweep_count = sweep_count - 1
 (0105)                            || 	
-(0106)  CS-0x022  0x080A0         || 	BRN sweep_loop 
+(0106)  CS-0x021  0x080A0         || 	BRN sweep_loop 
 (0107)                            || 
 (0108)                            || 
-(0109)                     0x023  || reset_sweep:
+(0109)                     0x022  || reset_sweep:
 (0110)                            || ;	MOV R1, 0
 (0111)                            || ;	OUT R1, ARDUINO_PORT
-(0112)  CS-0x023  0x18002         || 	RET
+(0112)  CS-0x022  0x18002         || 	RET
 (0113)                            || 
 (0114)                            || 
 (0115)                            || 
@@ -151,43 +151,59 @@ C5:  Raw line from source code.
 (0135)                            || ;1 outer
 (0136)                            || 
 (0137)                            || 
-(0138)  CS-0x024  0x3660A  0x024  || delay:	MOV R6, DELAY_COUNT_OUTER ; R1 = BUBBLE_OUTER_COUNT
+(0138)  CS-0x023  0x3660A  0x023  || delay:	MOV R6, DELAY_COUNT_OUTER ; R1 = BUBBLE_OUTER_COUNT
 (0139)                            || 
-(0140)  CS-0x025  0x3670A  0x025  || outer_loop:	MOV R7, DELAY_COUNT_MIDDLE
+(0140)  CS-0x024  0x3670A  0x024  || outer_loop:	MOV R7, DELAY_COUNT_MIDDLE
 (0141)                            || 				
 (0142)                            ||  	
-(0143)  CS-0x026  0x3680A  0x026  || middle_loop:	MOV R8, DELAY_COUNT_INNER
+(0143)  CS-0x025  0x3680A  0x025  || middle_loop:	MOV R8, DELAY_COUNT_INNER
 (0144)                            || 		
-(0145)  CS-0x027  0x2C801  0x027  || inner_loop:	SUB R8, 1 
-(0146)  CS-0x028  0x18000         || 		CLC
-(0147)  CS-0x029  0x18000         || 		CLC
-(0148)  CS-0x02A  0x18000         || 		CLC
-(0149)  CS-0x02B  0x18000         || 		CLC
-(0150)  CS-0x02C  0x0813B         || 		BRNE inner_loop
+(0145)  CS-0x026  0x2C801  0x026  || inner_loop:	SUB R8, 1 
+(0146)  CS-0x027  0x18000         || 		CLC
+(0147)  CS-0x028  0x18000         || 		CLC
+(0148)  CS-0x029  0x18000         || 		CLC
+(0149)  CS-0x02A  0x18000         || 		CLC
+(0150)  CS-0x02B  0x08133         || 		BRNE inner_loop
 (0151)                            || 		
-(0152)  CS-0x02D  0x18000         || 		CLC
-(0153)  CS-0x02E  0x18000         || 		CLC
-(0154)  CS-0x02F  0x08133         || 		BRNE middle_loop
+(0152)  CS-0x02C  0x18000         || 		CLC
+(0153)  CS-0x02D  0x18000         || 		CLC
+(0154)  CS-0x02E  0x0812B         || 		BRNE middle_loop
 (0155)                            || 		
-(0156)  CS-0x030  0x18000         || 		CLC
-(0157)  CS-0x031  0x18000         || 		CLC
-(0158)  CS-0x032  0x18000         || 		CLC
-(0159)  CS-0x033  0x18000         || 		CLC
-(0160)  CS-0x034  0x18000         || 		CLC
-(0161)  CS-0x035  0x18000         || 		CLC
-(0162)  CS-0x036  0x18000         || 		CLC
-(0163)  CS-0x037  0x18000         || 		CLC
-(0164)  CS-0x038  0x0812B         || 		BRNE outer_loop
+(0156)  CS-0x02F  0x18000         || 		CLC
+(0157)  CS-0x030  0x18000         || 		CLC
+(0158)  CS-0x031  0x18000         || 		CLC
+(0159)  CS-0x032  0x18000         || 		CLC
+(0160)  CS-0x033  0x18000         || 		CLC
+(0161)  CS-0x034  0x18000         || 		CLC
+(0162)  CS-0x035  0x18000         || 		CLC
+(0163)  CS-0x036  0x18000         || 		CLC
+(0164)  CS-0x037  0x08123         || 		BRNE outer_loop
 (0165)                            || 		
-(0166)  CS-0x039  0x18002  0x039  || return:		RET
+(0166)  CS-0x038  0x18002  0x038  || return:		RET
 (0167)                            || 
 (0168)                            || 
 (0169)                            || 
 (0170)                            || 
-(0171)                     0x03A  || end:
+(0171)                     0x039  || end:
 (0172)                            || 
-(0173)                            || 
-(0174)                            ||  
+(0173)                            ||  
+(0174)                            || 
+(0175)                     0x039  ||  sweep_check:
+(0176)  CS-0x039  0x36A00         || 			MOV R10, 0
+(0177)                     0x03A  || sweep_check_loop:
+(0178)  CS-0x03A  0x10A00         || 			LSL R10	 ; starting sweep
+(0179)  CS-0x03B  0x34A69         || 			OUT R10, ARDUINO_PORT
+(0180)  CS-0x03C  0x08119         || 			CALL delay 
+(0181)  CS-0x03D  0x08119         || 			CALL delay
+(0182)  CS-0x03E  0x32A69         || 			IN R10, ARDUINO_PORT
+(0183)  CS-0x03F  0x18002         || 			RET
+(0184)                            || 			
+(0185)                            || 			
+(0186)                            || 			
+(0187)                            ||  
+(0188)                            ||  
+(0189)                            || 
+(0190)                            || 
 
 
 
@@ -206,15 +222,17 @@ C4+: source code line number of where symbol is referenced
 
 -- Labels
 ------------------------------------------------------------ 
-DELAY          0x024   (0138)  ||  0045 0088 0092 0094 
-END            0x03A   (0171)  ||  0047 
-INNER_LOOP     0x027   (0145)  ||  0150 
+DELAY          0x023   (0138)  ||  0045 0088 0092 0180 0181 
+END            0x039   (0171)  ||  0047 
+INNER_LOOP     0x026   (0145)  ||  0150 
 MAIN           0x00D   (0042)  ||  
-MIDDLE_LOOP    0x026   (0143)  ||  0154 
-OUTER_LOOP     0x025   (0140)  ||  0164 
-RESET_SWEEP    0x023   (0109)  ||  0075 
-RETURN         0x039   (0166)  ||  
+MIDDLE_LOOP    0x025   (0143)  ||  0154 
+OUTER_LOOP     0x024   (0140)  ||  0164 
+RESET_SWEEP    0x022   (0109)  ||  0075 
+RETURN         0x038   (0166)  ||  
 SWEEP          0x011   (0066)  ||  0044 
+SWEEP_CHECK    0x039   (0175)  ||  
+SWEEP_CHECK_LOOP 0x03A   (0177)  ||  
 SWEEP_LOOP     0x014   (0071)  ||  0106 
 
 
@@ -225,7 +243,7 @@ ARDUINO_SWEEP  0x00D   (0020)  ||
 
 -- Directives: .EQU
 ------------------------------------------------------------ 
-ARDUINO_PORT   0x069   (0025)  ||  0090 
+ARDUINO_PORT   0x069   (0025)  ||  0090 0179 0182 
 BUBBLE_INNER_COUNT 0x00C   (0034)  ||  
 BUBBLE_OUTER_COUNT 0x00C   (0033)  ||  
 DELAY_COUNT_INNER 0x00A   (0030)  ||  0143 

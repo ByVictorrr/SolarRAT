@@ -26,13 +26,16 @@ arduino_sweep: .BYTE 12 ; 0x01 ... 0x0C (12th)
 .EQU SWITCH_PORT = 0x22
 ;--------------------------------------------
 
-;----CONSTANT DECLARATION-------------------
-.EQU DELAY_COUNT_INNER = 255
-.EQU DELAY_COUNT_MIDDLE = 255
-.EQU DELAY_COUNT_OUTER = 255
+;=====CONSTANT DECLARATION========
+;----Delay Constants--------------
+.EQU DELAY_COUNT_INNER = 12
+.EQU DELAY_COUNT_MIDDLE = 12
+.EQU DELAY_COUNT_OUTER = 12
+;--------------------------------
 .EQU BUBBLE_OUTER_COUNT =  12 ; 
 .EQU BUBBLE_INNER_COUNT = 12
-.EQU SWEEP_COUNT = 2
+.EQU SWEEP_DELAY_COUNT = 1
+.EQU SWEEP_COUNT = 13
 ;-------------------------------------------------
 .CSEG
 .ORG 0x0D
@@ -42,12 +45,8 @@ arduino_sweep: .BYTE 12 ; 0x01 ... 0x0C (12th)
 main:
 	SEI ; set interupts
 	CALL sweep
-	CALL delay
-	CALL delay
-	CALL delay
 	CALL bubble_sort
 	CALL goBestLocation 
-	CALL delay
 	WSP R31 ; have stack pointer go back to 0
 	BRN main
 
@@ -70,24 +69,27 @@ main:
 
 sweep:
 	MOV R3, SWEEP_COUNT ;sweep_count = 12
-	MOV R4, SWEEP_COUNT  
 
 sweep_loop:
 
 	CMP R3, 0 ; is sweep_count == 0?
 	BREQ reset_sweep ; if yes == > PC = reset_sweep
 	;else
-        MOV R4, SWEEP_COUNT ;	
+    MOV R4, SWEEP_COUNT ;	
 
 	SUB R4, R3 ; R4 = 12 - sweep_count  (R4 == the location in which the motor is currently at)
 
 	MOV R1, R4 ; aruino[3:0] = 12-sweep count
-
+	
+	CALL delay
+	
 	IN R2, LIGHT_PORT ; arduino[7:4] = from LIGHT_PORT
 
 	CALL delay
 
 	OUT R1, ARDUINO_PORT ; output arduino[3:0] to Arduino_ID
+	
+	CALL delay
 	
 	OR R1, R2 ; arduino[7:0]  = {arduino[7:4],arduino[3:0]}
 
@@ -97,14 +99,14 @@ sweep_loop:
 
 	ST R0, (R4) ; SCR[12 - sweep_count] = arduino[7:0]
 
-        SUB R3, 1 ; sweep_count = sweep_count - 1
+    SUB R3, 1 ; sweep_count = sweep_count - 1
 	
 	BRN sweep_loop 
 
 
 reset_sweep:
-	MOV R1, 0
-	OUT R1, ARDUINO_PORT
+	;MOV R1, 0
+	;OUT R1, ARDUINO_PORT
 	RET
 
 
@@ -241,10 +243,10 @@ swap:   ;swap(arr[ADD_i], arr[ADD_i+1])
 goBestLocation:
 		WSP R31 ; reg that has value of 0
 		POP R17
-	        AND R17, 15 ; masking so R17 outputs 0000 loc[3:0] 	
+	    AND R17, 15 ; masking so R17 outputs 0000 loc[3:0] 	
+goBestLocation_output
 		OUT R17, ARDUINO_PORT
-		CALL delay 	
-		RET 
+	    BRN goBestLocation_output
 		
 		
 ;---------------------------------------------
