@@ -90,3 +90,32 @@ reset_sweep:
 	BRN end
 
 end:
+delay:MOV R6, DELAY_COUNT_OUTER ; R1 = BUBBLE_OUTER_COUNT
+
+outer_loop:MOV R7, DELAY_COUNT_MIDDLE
+
+ 
+middle_loop:MOV R8, DELAY_COUNT_INNER
+
+inner_loop:SUB R8, 1 
+CLC
+CLC
+CLC
+CLC
+BRNE inner_loop
+
+CLC
+CLC
+BRNE middle_loop
+
+CLC
+CLC
+CLC
+CLC
+CLC
+CLC
+CLC
+CLC
+BRNE outer_loop
+
+return:RET
