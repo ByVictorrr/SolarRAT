@@ -38,7 +38,7 @@ arduino_sweep: .BYTE 12 ; 0x01 ... 0x0C (12th)
 ;-------------------------------
 
 ;-----Sweep function consatns----
-.EQU SWEEP_COUNT = 13
+.EQU SWEEP_COUNT =3
 ;-------------------------------------------------
 .CSEG
 .ORG 0x0D
@@ -82,7 +82,8 @@ sweep_loop:
 
 	BREQ return_sweep ; if yes == > PC = reset_sweep
 	;else
-    	MOV R4, SWEEP_COUNT ;	
+   
+    MOV R4, SWEEP_COUNT ;	
 
 	SUB R4, R3 ; R4 = 12 - sweep_count  (R4 == the location in which the motor is currently at)
 
@@ -117,6 +118,7 @@ inner_loop:	SUB R8, 1
 		BRNE outer_loop
 		
 
+		BRN sweep_loop
 
 
 return_sweep:		RET
@@ -215,7 +217,7 @@ goBestLocation:
 		WSP R31 ; reg that has value of 0
 		POP R17
 	    AND R17, 15 ; masking so R17 outputs 0000 loc[3:0] 	
-goBestLocation_output
+goBestLocation_output:
 		OUT R17, ARDUINO_PORT
 	    BRN goBestLocation_output
 		
@@ -235,8 +237,6 @@ ISR:
 	IN R18, SWITCH_PORT
 	AND R18, 131  ;telling ardino we are in isr by setting sw[7] ==1 and setting sw[6:2] = 0 (masking)
 	OUT R18, ARDUINO_PORT ; output that sw[7] high and the value inputted
-	CALL delay 
-
 	AND R18, 128 ; check if we need to return from isr
 	
 	CMP R18, 128
