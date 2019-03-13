@@ -28,9 +28,9 @@ arduino_sweep: .BYTE 12 ; 0x01 ... 0x0C (12th)
 
 ;=====CONSTANT DECLARATION========
 ;----General Delay Constants--------------
-.EQU DELAY_COUNT_INNER = 12
-.EQU DELAY_COUNT_MIDDLE = 12
-.EQU DELAY_COUNT_OUTER = 12
+.EQU DELAY_COUNT_INNER = 24
+.EQU DELAY_COUNT_MIDDLE = 4
+.EQU DELAY_COUNT_OUTER = 2
 ;--------------------------------
 ;----Bubble sort Constants------
 .EQU BUBBLE_OUTER_COUNT =  12 ; 
@@ -38,7 +38,7 @@ arduino_sweep: .BYTE 12 ; 0x01 ... 0x0C (12th)
 ;-------------------------------
 
 ;-----Sweep function consatns----
-.EQU SWEEP_COUNT =3
+.EQU SWEEP_COUNT = 13
 ;-------------------------------------------------
 .CSEG
 .ORG 0x0D
