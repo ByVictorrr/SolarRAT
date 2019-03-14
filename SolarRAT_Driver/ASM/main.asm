@@ -32,8 +32,8 @@ arduino_sweep: .BYTE 12 ; 0x01 ... 0x0C (12th)
 .EQU DELAY_COUNT_OUTER = 201
 .EQU BUBBLE_OUTER_COUNT =  12 ;
 .EQU BUBBLE_INNER_COUNT = 12
-.EQU SWEEP_COUNT = 12
-.EQU MAIN_COUNT = 7
+.EQU SWEEP_COUNT = 13
+.EQU MAIN_COUNT = 200
 ;-------------------------------------------------
 .CSEG
 .ORG 0x0D
@@ -44,6 +44,7 @@ MOV R29, MAIN_COUNT
 main:
 	SEI ; set interupts
 	CALL sweep
+	CALL delay
 	CALL delay
 	CALL bubble_sort
 	CALL goBestLocation
