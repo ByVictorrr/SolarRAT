@@ -255,40 +255,40 @@ C5:  Raw line from source code.
 (0239)                     0x053  || goBestLocation:
 (0240)  CS-0x053  0x15F00         || 		WSP R31 ; reg that has value of 0
 (0241)  CS-0x054  0x13102         || 		POP R17
-(0242)  CS-0x055  0x35169         || 		OUT R17, ARDUINO_PORT
-(0243)  CS-0x056  0x08139         || 		CALL delay 	
-(0244)  CS-0x057  0x18002         || 		RET 
-(0245)                            || 		
+(0242)  CS-0x055  0x2110F         || 		AND R17, 15
+(0243)  CS-0x056  0x35169         || 		OUT R17, ARDUINO_PORT
+(0244)  CS-0x057  0x08139         || 		CALL delay 	
+(0245)  CS-0x058  0x18002         || 		RET 
 (0246)                            || 		
-(0247)                            || ;---------------------------------------------
-(0248)                            || 
-(0249)                            || ;-----------------------------------------------------------------------------
-(0250)                            || ; ISR - allows someone to go in manual mode, turn servo using SW's 45 degrees each
-(0251)                            || ;
-(0252)                            || ; Tweaked parameters:
-(0253)                            || ; R18 - {1,0,0,0,0,SW[2],SW[1:0]} 
-(0254)                            || ; - first bit tells arduino isr mode
-(0255)                            || ; - SW[2] tells us to go back from isr mode if high
-(0256)                            || ;--------------------------------------------------------------------
-(0257)                            || 
-(0258)                     0x058  || ISR:
-(0259)  CS-0x058  0x332FF         || 	IN R18, SWITCH_PORT
-(0260)  CS-0x059  0x21283         || 	AND R18, 131
-(0261)  CS-0x05A  0x35269         || 	OUT R18, ARDUINO_PORT
-(0262)  CS-0x05B  0x21280         || 	AND R18, 128 ; check if we need to return from isr	
-(0263)  CS-0x05C  0x31280         || 	CMP R18, 128
-(0264)                            || 	
-(0265)                            || 	;z == 1 if they are equal thus SW[2] is high
-(0266)  CS-0x05D  0x082C2         || 	BREQ ISR
-(0267)                            || 
-(0268)  CS-0x05E  0x1A003         || 	RETIE
-(0269)                            || 	
-(0270)                            || .CSEG
-(0271)                       1023  || .ORG 0x3FF
-(0272)  CS-0x3FF  0x082C0         || BRN ISR
-(0273)                            || 
-(0274)                            || 	
-(0275)                            || 
+(0247)                            || 		
+(0248)                            || ;---------------------------------------------
+(0249)                            || 
+(0250)                            || ;-----------------------------------------------------------------------------
+(0251)                            || ; ISR - allows someone to go in manual mode, turn servo using SW's 45 degrees each
+(0252)                            || ;
+(0253)                            || ; Tweaked parameters:
+(0254)                            || ; R18 - {1,0,0,0,0,SW[2],SW[1:0]} 
+(0255)                            || ; - first bit tells arduino isr mode
+(0256)                            || ; - SW[2] tells us to go back from isr mode if high
+(0257)                            || ;--------------------------------------------------------------------
+(0258)                            || 
+(0259)                     0x059  || ISR:
+(0260)  CS-0x059  0x332FF         || 	IN R18, SWITCH_PORT
+(0261)  CS-0x05A  0x21283         || 	AND R18, 131
+(0262)  CS-0x05B  0x35269         || 	OUT R18, ARDUINO_PORT
+(0263)  CS-0x05C  0x21280         || 	AND R18, 128 ; check if we need to return from isr	
+(0264)  CS-0x05D  0x31280         || 	CMP R18, 128
+(0265)                            || 	
+(0266)                            || 	;z == 1 if they are equal thus SW[2] is high
+(0267)  CS-0x05E  0x082CA         || 	BREQ ISR
+(0268)                            || 
+(0269)  CS-0x05F  0x1A003         || 	RETIE
+(0270)                            || 	
+(0271)                            || .CSEG
+(0272)                       1023  || .ORG 0x3FF
+(0273)  CS-0x3FF  0x082C8         || BRN ISR
+(0274)                            || 
+(0275)                            || 	
 (0276)                            || 
 (0277)                            || 
 (0278)                            || 
@@ -299,7 +299,8 @@ C5:  Raw line from source code.
 (0283)                            || 
 (0284)                            || 
 (0285)                            || 
-(0286)                            ||  
+(0286)                            || 
+(0287)                            ||  
 
 
 
@@ -322,10 +323,10 @@ BUBBLE_INNER_LOOP 0x03F   (0186)  ||  0214
 BUBBLE_OUTER_LOOP 0x03E   (0182)  ||  0217 
 BUBBLE_SORT    0x03D   (0178)  ||  0046 
 DECREMENT_COUNT_INNER 0x048   (0212)  ||  0226 
-DELAY          0x027   (0132)  ||  0045 0048 0086 0243 
+DELAY          0x027   (0132)  ||  0045 0048 0086 0244 
 GOBESTLOCATION 0x053   (0239)  ||  0047 
 INNER_LOOP     0x02A   (0139)  ||  0144 
-ISR            0x058   (0258)  ||  0266 0272 
+ISR            0x059   (0259)  ||  0267 0273 
 MAIN           0x00D   (0042)  ||  0050 
 MIDDLE_LOOP    0x029   (0137)  ||  0148 
 OUTER_LOOP     0x028   (0134)  ||  0158 
@@ -343,7 +344,7 @@ ARDUINO_SWEEP  0x00D   (0020)  ||
 
 -- Directives: .EQU
 ------------------------------------------------------------ 
-ARDUINO_PORT   0x069   (0025)  ||  0088 0105 0242 0261 
+ARDUINO_PORT   0x069   (0025)  ||  0088 0105 0243 0262 
 BUBBLE_INNER_COUNT 0x00D   (0034)  ||  0184 0190 0194 
 BUBBLE_OUTER_COUNT 0x00D   (0033)  ||  0180 
 DELAY_COUNT_INNER 0x0EC   (0030)  ||  0137 
@@ -351,7 +352,7 @@ DELAY_COUNT_MIDDLE 0x0B0   (0031)  ||  0134
 DELAY_COUNT_OUTER 0x0C9   (0032)  ||  0132 
 LIGHT_PORT     0x096   (0024)  ||  0084 
 SWEEP_COUNT    0x00D   (0035)  ||  0070 0071 0078 
-SWITCH_PORT    0x0FF   (0026)  ||  0259 
+SWITCH_PORT    0x0FF   (0026)  ||  0260 
 
 
 -- Directives: .DEF
