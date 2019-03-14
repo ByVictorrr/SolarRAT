@@ -239,6 +239,7 @@ swap:   ;swap(arr[ADD_i], arr[ADD_i+1])
 goBestLocation:
 		WSP R31 ; reg that has value of 0
 		POP R17
+		AND R17, 15
 		OUT R17, ARDUINO_PORT
 		CALL delay 	
 		RET 
