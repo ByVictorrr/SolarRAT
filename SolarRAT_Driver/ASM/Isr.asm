@@ -14,19 +14,33 @@
 
 
 
-ISR:
-IN R18, SWITCH_PORT
-AND R18, 131 ;telling ardino we are in isr by setting sw[7] ==1 and setting sw[6:2] = 0 (masking)
-MOV R19, R18
-OUT R18, ARDUINO_PORT ; output that sw[7] high and the value inputted
-AND R18, 128 ; check if we need to return from isr
-CMP R18, 128
-;z == 1 if they are equal thus SW[7] is high
-BRNE ISR
-BRN output
+ISR: ;keeping it on the sw[7]
 
-output: 
+IN R18, SWITCH_PORT ;reading an input 
+AND R18, 131 ;telling ardino we are in isr by setting sw[7] ==1 and setting sw[6:2] = 0 (masking)
+MOV R19, R18 ;setting a number equal to R19 before masking
+OUT R18, ARDUINO_PORT ; output that sw[7] high and the value inputted
+
+;is sw[7] == 1
+
+AND R18, 128 ; SW[7] && 1
+
+CMP R18, 128  
+
+;is SW[7] === 1?
+;if Sw[7] != 1 then branch to isr
+BREQ ISR
+
+output: ;loop for sw[7] being off
+;keeping the sw[7] on  
 OUT R19, ARDUINO_PORT
+IN R19, SWITCH_PORT
+
+AND R19, 128 ; SW[7] && 1
+
+CMP R19, 128 
+
+BREQ ISR
 BRN output
 
  
