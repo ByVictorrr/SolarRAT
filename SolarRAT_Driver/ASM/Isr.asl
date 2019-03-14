@@ -16,26 +16,26 @@ C5:  Raw line from source code.
 
 (0001)                       150  || .EQU SWITCH_PORT = 0x96
 (0002)                       105  || .EQU ARDUINO_PORT =  0x69
-(0003)                       001  || .ORG 0x01
-(0004)                            || 
-(0005)                            || ;-----------------------------------------------------------------------------
-(0006)                            || ; ISR - allows someone to go in manual mode, turn servo using SW's 45 degrees each
-(0007)                            || ;
-(0008)                            || ; Tweaked parameters:
-(0009)                            || ; R18 - {1,0,0,0,0,0,SW[1:0]} 
-(0010)                            || ; - SW[7] tells us to go back from isr mode if high
-(0011)                            || ;--------------------------------------------------------------------
-(0012)                            || 
-(0013)                            || 
+(0003)                            || .CSEG
+(0004)                       001  || .ORG 0x01
+(0005)                            || 
+(0006)                            || 
+(0007)                            || ;-----------------------------------------------------------------------------
+(0008)                            || ; ISR - allows someone to go in manual mode, turn servo using SW's 45 degrees each
+(0009)                            || ;
+(0010)                            || ; Tweaked parameters:
+(0011)                            || ; R18 - {1,0,0,0,0,0,SW[1:0]} 
+(0012)                            || ; - SW[7] tells us to go back from isr mode if high
+(0013)                            || ;--------------------------------------------------------------------
 (0014)                            || 
-(0015)                     0x001  || ISR:
-(0016)  CS-0x001  0x33296         || IN R18, SWITCH_PORT
-(0017)  CS-0x002  0x05391         || MOV R19, R18
-(0018)  CS-0x003  0x21283         || AND R18, 131 ;telling ardino we are in isr by setting sw[7] ==1 and setting sw[6:2] = 0 (masking)
-(0019)  CS-0x004  0x35269         || OUT R18, ARDUINO_PORT ; output that sw[7] high and the value inputted
-(0020)                            ||  
-(0021)  CS-0x005  0x21280         || AND R18, 128 ; check if we need to return from isr
-(0022)                            || 
+(0015)                            || 
+(0016)                            || 
+(0017)                     0x001  || ISR:
+(0018)  CS-0x001  0x33296         || IN R18, SWITCH_PORT
+(0019)  CS-0x002  0x21283         || AND R18, 131 ;telling ardino we are in isr by setting sw[7] ==1 and setting sw[6:2] = 0 (masking)
+(0020)  CS-0x003  0x05391         || MOV R19, R18
+(0021)  CS-0x004  0x35269         || OUT R18, ARDUINO_PORT ; output that sw[7] high and the value inputted
+(0022)  CS-0x005  0x21280         || AND R18, 128 ; check if we need to return from isr
 (0023)  CS-0x006  0x31280         || CMP R18, 128
 (0024)                            || ;z == 1 if they are equal thus SW[7] is high
 (0025)  CS-0x007  0x0800B         || BRNE ISR
@@ -64,7 +64,7 @@ C4+: source code line number of where symbol is referenced
 
 -- Labels
 ------------------------------------------------------------ 
-ISR            0x001   (0015)  ||  0025 
+ISR            0x001   (0017)  ||  0025 
 OUTPUT         0x009   (0028)  ||  0026 0030 
 
 
@@ -75,8 +75,8 @@ OUTPUT         0x009   (0028)  ||  0026 0030
 
 -- Directives: .EQU
 ------------------------------------------------------------ 
-ARDUINO_PORT   0x069   (0002)  ||  0019 0029 
-SWITCH_PORT    0x096   (0001)  ||  0016 
+ARDUINO_PORT   0x069   (0002)  ||  0021 0029 
+SWITCH_PORT    0x096   (0001)  ||  0018 
 
 
 -- Directives: .DEF
