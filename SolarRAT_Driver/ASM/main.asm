@@ -33,7 +33,7 @@ arduino_sweep: .BYTE 12 ; 0x01 ... 0x0C (12th)
 .EQU BUBBLE_OUTER_COUNT =  12 ;
 .EQU BUBBLE_INNER_COUNT = 12
 .EQU SWEEP_COUNT = 13
-.EQU MAIN_COUNT = 225
+.EQU MAIN_COUNT = 200
 ;-------------------------------------------------
 .CSEG
 .ORG 0x0D
@@ -44,6 +44,8 @@ MOV R29, MAIN_COUNT
 main:
 	SEI ; set interupts
 	CALL sweep
+	CALL delay
+	CALL delay
 	CALL bubble_sort
 	CALL goBestLocation
 	SUB R29, 1
@@ -83,7 +85,7 @@ sweep_loop:
 
 	IN R2, LIGHT_PORT ; arduino[7:4] = from LIGHT_PORT
 
-	CALL delay
+	;CALL delay
 
 	OUT R1, ARDUINO_PORT ; output arduino[3:0] to Arduino_ID
 
@@ -259,11 +261,11 @@ stayBestLocation:
 
 
 ISR: ;keeping it on the sw[7]
+	
 
 IN R18, SWITCH_PORT ;reading an input 
 AND R18, 131 ;telling ardino we are in isr by setting sw[7] ==1 and setting sw[6:2] = 0 (masking)
 MOV R19, R18 ;setting a number equal to R19 before masking
-OUT R18, ARDUINO_PORT ; output that sw[7] high and the value inputted
 
 ;is sw[7] == 1
 
