@@ -46,13 +46,14 @@ MOV R29, MAIN_COUNT
 main:
 	SEI ; set interupts
 	CALL sweep
-	CALL delay
+	;CALL delay
 	CALL bubble_sort
-	CALL delay
+	;CALL delay
 	CALL goBestLocation
 	SUB R29, 1
 	BREQ main
 	SUB R30, 1
+	CALL delay
 	BRN main_main
 
 ;------------------------------------------------------------------------------------
@@ -81,7 +82,8 @@ sweep_loop:
 	CMP R3, 0 ; is sweep_count == 0?
 	BREQ reset_sweep ; if yes == > PC = reset_sweep
 	;else
-        MOV R4, SWEEP_COUNT ;
+   
+    MOV R4, SWEEP_COUNT ;
 
 	SUB R4, R3 ; R4 = 12 - sweep_count  (R4 == the location in which the motor is currently at)
 
@@ -221,6 +223,7 @@ decrement_count_inner:
 	SUB R9, 1 ;count_outer = count_outer - 1
 
 	BRNE bubble_outer_loop
+	CALL delay
 	RET
 
 swap:   ;swap(arr[ADD_i], arr[ADD_i+1])
@@ -248,7 +251,7 @@ goBestLocation:
 		AND R17, 15
 stayBestLocation:
 		OUT R17, ARDUINO_PORT
-		;CALL delay
+		CALL delay
 		CMP R30, 1
 		BREQ stayBestLocation
 		RET
