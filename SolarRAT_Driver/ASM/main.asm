@@ -33,23 +33,27 @@ arduino_sweep: .BYTE 12 ; 0x01 ... 0x0C (12th)
 .EQU BUBBLE_OUTER_COUNT =  12 ;
 .EQU BUBBLE_INNER_COUNT = 12
 .EQU SWEEP_COUNT = 13
-.EQU MAIN_COUNT = 200
+.EQU MAIN_COUNT = 255
 ;-------------------------------------------------
 .CSEG
 .ORG 0x0D
 
+MOV R30, MAIN_COUNT
 
+main_main:
 MOV R29, MAIN_COUNT
 
 main:
 	SEI ; set interupts
 	CALL sweep
 	CALL delay
-	CALL delay
 	CALL bubble_sort
+	CALL delay
 	CALL goBestLocation
 	SUB R29, 1
-	BRN main
+	BREQ main
+	SUB R30, 1
+	BRN main_main
 
 ;------------------------------------------------------------------------------------
 ; sweep  subroutine - goes through 12 degrees every 2s collects data and moves servo
@@ -245,7 +249,7 @@ goBestLocation:
 stayBestLocation:
 		OUT R17, ARDUINO_PORT
 		;CALL delay
-		CMP R29, 1
+		CMP R30, 1
 		BREQ stayBestLocation
 		RET
 
