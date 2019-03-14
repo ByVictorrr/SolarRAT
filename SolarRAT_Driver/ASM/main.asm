@@ -45,8 +45,8 @@ main:
 	SEI ; set interupts
 	CALL sweep
 	CALL delay
-	CALL delay
 	CALL bubble_sort
+	CALL delay
 	CALL goBestLocation
 	SUB R29, 1
 	BRN main
@@ -97,7 +97,7 @@ sweep_loop:
 
 	ST R0, (R4) ; SCR[12 - sweep_count] = arduino[7:0]
 
-        SUB R3, 1 ; sweep_count = sweep_count - 1
+    SUB R3, 1 ; sweep_count = sweep_count - 1
 
 	BRN sweep_loop
 
@@ -244,7 +244,7 @@ goBestLocation:
 		AND R17, 15
 stayBestLocation:
 		OUT R17, ARDUINO_PORT
-		;CALL delay
+		CALL delay
 		CMP R29, 1
 		BREQ stayBestLocation
 		RET
