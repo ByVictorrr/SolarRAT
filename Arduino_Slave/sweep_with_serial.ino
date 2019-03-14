@@ -25,7 +25,7 @@ Servo myservo;  // create servo object to control a servo
 
 #define PIN10 10
 
-int pos = 0;    // variable to store the servo position
+int pos = 15;    // variable to store the servo position
 int basys_in[8] = {0};
 
 
@@ -50,41 +50,44 @@ void loop() {
     // Note: might need time delay to allow time to read all values
     myservo.write(pos);
     readPorts(basys_in);
-    sweep(basys_in, pos);
+    if(interrupt(basys_in[7]))
+    {
+      delay(1000);
+      readPorts(basys_in);
+      manualMode(basys_in,pos);
+      Serial.println("INTERRUPT ENABLE");
+      Serial.print("PORTS 7: ");
+      Serial.print(basys_in[7]);
+      Serial.print("\n");
+    }
+    else
+    {
+        sweep(basys_in, pos);
+      //delay(750);
+      Serial.print("PORTS 0:");
+      Serial.println(basys_in[0]);
+      Serial.print("PORTS 1:");
+      Serial.println(basys_in[1]);
+      Serial.print("PORTS 2:");
+      Serial.println(basys_in[2]);
+      Serial.print("PORTS 3:");
+      Serial.println(basys_in[3]);
+      Serial.print("PORTS 4:");
+      Serial.println(basys_in[4]);
+      Serial.print("PORTS 5:");
+      Serial.println(basys_in[5]);
+      Serial.print("PORTS 6:");
+      Serial.println(basys_in[6]);
+      Serial.print("PORTS 7:");
+      Serial.println(basys_in[7]);
+      Serial.print("POS:");
+      Serial.println(pos);
+      delay(2000);
+           
+    }
     
-    //delay(1000);
-    Serial.print("PORTS 0:");
-    Serial.println(basys_in[0]);
-    Serial.print("PORTS 1:");
-    Serial.println(basys_in[1]);
-    Serial.print("PORTS 2:");
-    Serial.println(basys_in[2]);
-    Serial.print("PORTS 3:");
-    Serial.println(basys_in[3]);
-    Serial.print("PORTS 4:");
-    Serial.println(basys_in[4]);
-    Serial.print("PORTS 5:");
-    Serial.println(basys_in[5]);
-    Serial.print("PORTS 6:");
-    Serial.println(basys_in[6]);
-    Serial.print("PORTS 7:");
-    Serial.println(basys_in[0]);
-    Serial.print("POS:");
-    Serial.println(pos);
-    delay(2000);
-    //Serial.print("PORT 0:");
-    //Serial.println(basys_in[0]);
     
 
     
     
 }
-
-
-
-
-
-    
-    
-}
-
