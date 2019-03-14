@@ -1,4 +1,4 @@
-# SolarRAT
+# SolarRAT - Solar Tracker that is RAT fast 
 
 ![solar rat logo](https://github.com/ByVictorrr/SolarRAT/blob/master/images/SolarRat_Logo.png)
 
@@ -64,8 +64,12 @@ the 4 least bits is the location
 
 ![Flow Chart of firmware](https://github.com/ByVictorrr/SolarRAT/tree/master/SolarRAT_Driver/ASM/Flowcharts/images/main.png)
 
-### ARDUINO CODE
-[Servo Driver]()
+This source code was entirely writen by Victor Delaplaine
+
+### ARDUINO CODE 
+[Servo Driver](https://github.com/byvictorrr)
+
+This source code was entirely writen by [Julio Tena](https://github.com/jctenav)
 
 ### Delay time - 2S
 
