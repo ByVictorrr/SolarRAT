@@ -109,14 +109,20 @@ This source code was entirely writen by [Victor Delaplaine](https://github.com/b
 
 This source code was entirely writen by [Julio Tena](https://github.com/jctenav)
 
+### VERILOG HDL (RAT MCU)
+
+![mcu]()
+
 
 ## Schmatic 
 
-![assembled schematic](https://github.com/ByVictorrr/SolarRAT/blob/master/images/SolarRAT_assembled.jpg)
 
 ![computer schematic]()
 
 ## Hardware
+
+![assembled schematic](https://github.com/ByVictorrr/SolarRAT/blob/master/images/SolarRAT_assembled.jpg)
+
 [Basys 3 Artix-7 FPGA](https://store.digilentinc.com/basys-3-artix-7-fpga-trainer-board-recommended-for-introductory-users/)
 
 [Arduino uno](https://store.arduino.cc/usa/arduino-uno-rev3)
