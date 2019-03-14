@@ -46,27 +46,27 @@ C5:  Raw line from source code.
 (0030)                       236  || .EQU DELAY_COUNT_INNER = 236
 (0031)                       176  || .EQU DELAY_COUNT_MIDDLE = 176
 (0032)                       201  || .EQU DELAY_COUNT_OUTER = 201
-(0033)                       012  || .EQU BUBBLE_OUTER_COUNT =  12 ;
-(0034)                       012  || .EQU BUBBLE_INNER_COUNT = 12
+(0033)                       013  || .EQU BUBBLE_OUTER_COUNT =  13 ;
+(0034)                       013  || .EQU BUBBLE_INNER_COUNT = 13
 (0035)                       013  || .EQU SWEEP_COUNT = 13
-(0036)                       200  || .EQU MAIN_COUNT = 200
+(0036)                            || 
 (0037)                            || ;-------------------------------------------------
 (0038)                            || .CSEG
 (0039)                       013  || .ORG 0x0D
 (0040)                            || 
 (0041)                            || 
-(0042)  CS-0x00D  0x37DC8         || MOV R29, MAIN_COUNT
+(0042)                            || 
 (0043)                            || 
-(0044)                     0x00E  || main:
-(0045)  CS-0x00E  0x1A000         || 	SEI ; set interupts
-(0046)  CS-0x00F  0x080B9         || 	CALL sweep
-(0047)  CS-0x010  0x08149         || 	CALL delay
-(0048)  CS-0x011  0x08149         || 	CALL delay
-(0049)  CS-0x012  0x081F9         || 	CALL bubble_sort
-(0050)  CS-0x013  0x082A9         || 	CALL goBestLocation
-(0051)  CS-0x014  0x08149         || 	CALL delay
-(0052)  CS-0x015  0x2DD01         || 	SUB R29, 1
-(0053)  CS-0x016  0x08070         || 	BRN main
+(0044)                     0x00D  || main:
+(0045)  CS-0x00D  0x1A000         || 	SEI ; set interupts
+(0046)  CS-0x00E  0x080B1         || 	CALL sweep
+(0047)  CS-0x00F  0x08141         || 	CALL delay
+(0048)  CS-0x010  0x08141         || 	CALL delay
+(0049)  CS-0x011  0x081F1         || 	CALL bubble_sort
+(0050)  CS-0x012  0x082A1         || 	CALL goBestLocation
+(0051)  CS-0x013  0x08141         || 	CALL delay
+(0052)  CS-0x014  0x2DD01         || 	SUB R29, 1
+(0053)  CS-0x015  0x08068         || 	BRN main
 (0054)                            || 
 (0055)                            || ;------------------------------------------------------------------------------------
 (0056)                            || ; sweep  subroutine - goes through 12 degrees every 2s collects data and moves servo
@@ -85,44 +85,44 @@ C5:  Raw line from source code.
 (0069)                            || ;
 (0070)                            || ;--------------------------------------------------------------------
 (0071)                            || 
-(0072)                     0x017  || sweep:
-(0073)  CS-0x017  0x3630D         || 	MOV R3, SWEEP_COUNT ;sweep_count = 12
-(0074)  CS-0x018  0x3640D         || 	MOV R4, SWEEP_COUNT
+(0072)                     0x016  || sweep:
+(0073)  CS-0x016  0x3630D         || 	MOV R3, SWEEP_COUNT ;sweep_count = 12
+(0074)  CS-0x017  0x3640D         || 	MOV R4, SWEEP_COUNT
 (0075)                            || 
-(0076)                     0x019  || sweep_loop:
+(0076)                     0x018  || sweep_loop:
 (0077)                            || 
-(0078)  CS-0x019  0x30300         || 	CMP R3, 0 ; is sweep_count == 0?
-(0079)  CS-0x01A  0x08132         || 	BREQ reset_sweep ; if yes == > PC = reset_sweep
+(0078)  CS-0x018  0x30300         || 	CMP R3, 0 ; is sweep_count == 0?
+(0079)  CS-0x019  0x0812A         || 	BREQ reset_sweep ; if yes == > PC = reset_sweep
 (0080)                            || 	;else
-(0081)  CS-0x01B  0x3640D         ||         MOV R4, SWEEP_COUNT ;
+(0081)  CS-0x01A  0x3640D         ||         MOV R4, SWEEP_COUNT ;
 (0082)                            || 
-(0083)  CS-0x01C  0x0241A         || 	SUB R4, R3 ; R4 = 12 - sweep_count  (R4 == the location in which the motor is currently at)
+(0083)  CS-0x01B  0x0241A         || 	SUB R4, R3 ; R4 = 12 - sweep_count  (R4 == the location in which the motor is currently at)
 (0084)                            || 
-(0085)  CS-0x01D  0x04121         || 	MOV R1, R4 ; aruino[3:0] = 12-sweep count
+(0085)  CS-0x01C  0x04121         || 	MOV R1, R4 ; aruino[3:0] = 12-sweep count
 (0086)                            || 
-(0087)  CS-0x01E  0x32296         || 	IN R2, LIGHT_PORT ; arduino[7:4] = from LIGHT_PORT
+(0087)  CS-0x01D  0x32296         || 	IN R2, LIGHT_PORT ; arduino[7:4] = from LIGHT_PORT
 (0088)                            || 
-(0089)  CS-0x01F  0x08149         || 	CALL delay
+(0089)  CS-0x01E  0x08141         || 	CALL delay
 (0090)                            || 
-(0091)  CS-0x020  0x34169         || 	OUT R1, ARDUINO_PORT ; output arduino[3:0] to Arduino_ID
+(0091)  CS-0x01F  0x34169         || 	OUT R1, ARDUINO_PORT ; output arduino[3:0] to Arduino_ID
 (0092)                            || 
-(0093)  CS-0x021  0x00111         || 	OR R1, R2 ; arduino[7:0]  = {arduino[7:4],arduino[3:0]}
+(0093)  CS-0x020  0x00111         || 	OR R1, R2 ; arduino[7:0]  = {arduino[7:4],arduino[3:0]}
 (0094)                            || 
-(0095)  CS-0x022  0x04009         || 	MOV R0, R1 ;
+(0095)  CS-0x021  0x04009         || 	MOV R0, R1 ;
 (0096)                            || 
 (0097)                            || 	; before storing arduino[7:0] got to concatenate its componets
 (0098)                            || 
-(0099)  CS-0x023  0x04023         || 	ST R0, (R4) ; SCR[12 - sweep_count] = arduino[7:0]
+(0099)  CS-0x022  0x04023         || 	ST R0, (R4) ; SCR[12 - sweep_count] = arduino[7:0]
 (0100)                            || 
-(0101)  CS-0x024  0x2C301         ||         SUB R3, 1 ; sweep_count = sweep_count - 1
+(0101)  CS-0x023  0x2C301         ||         SUB R3, 1 ; sweep_count = sweep_count - 1
 (0102)                            || 
-(0103)  CS-0x025  0x080C8         || 	BRN sweep_loop
+(0103)  CS-0x024  0x080C0         || 	BRN sweep_loop
 (0104)                            || 
 (0105)                            || 
-(0106)                     0x026  || reset_sweep:
-(0107)  CS-0x026  0x36100         || 	MOV R1, 0
-(0108)  CS-0x027  0x34169         || 	OUT R1, ARDUINO_PORT
-(0109)  CS-0x028  0x18002         || 	RET
+(0106)                     0x025  || reset_sweep:
+(0107)  CS-0x025  0x36100         || 	MOV R1, 0
+(0108)  CS-0x026  0x34169         || 	OUT R1, ARDUINO_PORT
+(0109)  CS-0x027  0x18002         || 	RET
 (0110)                            || 
 (0111)                            || 
 (0112)                            || 
@@ -148,35 +148,35 @@ C5:  Raw line from source code.
 (0132)                            || ;1 outer
 (0133)                            || 
 (0134)                            || 
-(0135)  CS-0x029  0x366C9  0x029  || delay:	MOV R6, DELAY_COUNT_OUTER ; R1 = BUBBLE_OUTER_COUNT
+(0135)  CS-0x028  0x366C9  0x028  || delay:	MOV R6, DELAY_COUNT_OUTER ; R1 = BUBBLE_OUTER_COUNT
 (0136)                            || 
-(0137)  CS-0x02A  0x367B0  0x02A  || outer_loop:	MOV R7, DELAY_COUNT_MIDDLE
+(0137)  CS-0x029  0x367B0  0x029  || outer_loop:	MOV R7, DELAY_COUNT_MIDDLE
 (0138)                            || 
 (0139)                            || 
-(0140)  CS-0x02B  0x368EC  0x02B  || middle_loop:	MOV R8, DELAY_COUNT_INNER
+(0140)  CS-0x02A  0x368EC  0x02A  || middle_loop:	MOV R8, DELAY_COUNT_INNER
 (0141)                            || 
-(0142)  CS-0x02C  0x2C801  0x02C  || inner_loop:	SUB R8, 1
-(0143)  CS-0x02D  0x18000         || 		CLC
-(0144)  CS-0x02E  0x18000         || 		CLC
-(0145)  CS-0x02F  0x18000         || 		CLC
-(0146)  CS-0x030  0x18000         || 		CLC
-(0147)  CS-0x031  0x08163         || 		BRNE inner_loop
+(0142)  CS-0x02B  0x2C801  0x02B  || inner_loop:	SUB R8, 1
+(0143)  CS-0x02C  0x18000         || 		CLC
+(0144)  CS-0x02D  0x18000         || 		CLC
+(0145)  CS-0x02E  0x18000         || 		CLC
+(0146)  CS-0x02F  0x18000         || 		CLC
+(0147)  CS-0x030  0x0815B         || 		BRNE inner_loop
 (0148)                            || 
-(0149)  CS-0x032  0x18000         || 		CLC
-(0150)  CS-0x033  0x18000         || 		CLC
-(0151)  CS-0x034  0x0815B         || 		BRNE middle_loop
+(0149)  CS-0x031  0x18000         || 		CLC
+(0150)  CS-0x032  0x18000         || 		CLC
+(0151)  CS-0x033  0x08153         || 		BRNE middle_loop
 (0152)                            || 
-(0153)  CS-0x035  0x18000         || 		CLC
-(0154)  CS-0x036  0x18000         || 		CLC
-(0155)  CS-0x037  0x18000         || 		CLC
-(0156)  CS-0x038  0x18000         || 		CLC
-(0157)  CS-0x039  0x18000         || 		CLC
-(0158)  CS-0x03A  0x18000         || 		CLC
-(0159)  CS-0x03B  0x18000         || 		CLC
-(0160)  CS-0x03C  0x18000         || 		CLC
-(0161)  CS-0x03D  0x08153         || 		BRNE outer_loop
+(0153)  CS-0x034  0x18000         || 		CLC
+(0154)  CS-0x035  0x18000         || 		CLC
+(0155)  CS-0x036  0x18000         || 		CLC
+(0156)  CS-0x037  0x18000         || 		CLC
+(0157)  CS-0x038  0x18000         || 		CLC
+(0158)  CS-0x039  0x18000         || 		CLC
+(0159)  CS-0x03A  0x18000         || 		CLC
+(0160)  CS-0x03B  0x18000         || 		CLC
+(0161)  CS-0x03C  0x0814B         || 		BRNE outer_loop
 (0162)                            || 
-(0163)  CS-0x03E  0x18002  0x03E  || return:		RET
+(0163)  CS-0x03D  0x18002  0x03D  || return:		RET
 (0164)                            || ;-----------------------------------------------------------
 (0165)                            || 
 (0166)                            || 
@@ -194,55 +194,55 @@ C5:  Raw line from source code.
 (0178)                            || ; R16 - value for arr[i+1]
 (0179)                            || ;--------------------------------------------------------------------
 (0180)                            || 
-(0181)                     0x03F  || bubble_sort:
+(0181)                     0x03E  || bubble_sort:
 (0182)                            || 
-(0183)  CS-0x03F  0x3690C         || 	MOV R9, BUBBLE_OUTER_COUNT ; outer_count = 10
+(0183)  CS-0x03E  0x3690D         || 	MOV R9, BUBBLE_OUTER_COUNT ; outer_count = 10
 (0184)                            || 
-(0185)                     0x040  || bubble_outer_loop:
+(0185)                     0x03F  || bubble_outer_loop:
 (0186)                            || 
-(0187)  CS-0x040  0x36A0C         || 	MOV R10, BUBBLE_INNER_COUNT ; inner_count = 3
+(0187)  CS-0x03F  0x36A0D         || 	MOV R10, BUBBLE_INNER_COUNT ; inner_count = 3
 (0188)                            || 
-(0189)                     0x041  || bubble_inner_loop:
+(0189)                     0x040  || bubble_inner_loop:
 (0190)                            || 	;get index of k and k+1 from 0->
 (0191)                            || 
 (0192)                            ||         ;ADDR_i = 4
-(0193)  CS-0x041  0x36B0C         || 	MOV R11, BUBBLE_INNER_COUNT
+(0193)  CS-0x040  0x36B0D         || 	MOV R11, BUBBLE_INNER_COUNT
 (0194)                            || 	;ADD R11, 1
 (0195)                            || 
 (0196)                            || 	; ADDR_i+1 = 5
-(0197)  CS-0x042  0x36C0C         || 	MOV R12, BUBBLE_INNER_COUNT
-(0198)  CS-0x043  0x28C01         || 	ADD R12, 1
+(0197)  CS-0x041  0x36C0D         || 	MOV R12, BUBBLE_INNER_COUNT
+(0198)  CS-0x042  0x28C01         || 	ADD R12, 1
 (0199)                            || 
-(0200)  CS-0x044  0x02B52         || 	SUB R11, R10 ; ADDR_i = 5 - count_inner
-(0201)  CS-0x045  0x02C52         || 	SUB R12, R10 ; ADDR_i+1 = 6 - count_inner
+(0200)  CS-0x043  0x02B52         || 	SUB R11, R10 ; ADDR_i = 5 - count_inner
+(0201)  CS-0x044  0x02C52         || 	SUB R12, R10 ; ADDR_i+1 = 6 - count_inner
 (0202)                            || 
 (0203)                            || 	;get those values stored in the addres
-(0204)  CS-0x046  0x04F5A         || 	LD R15, (R11) ; Y = arr[ADDR_i]
-(0205)  CS-0x047  0x05062         || 	LD R16, (R12) ; Z = arr[ADDR_i+1]
+(0204)  CS-0x045  0x04F5A         || 	LD R15, (R11) ; Y = arr[ADDR_i]
+(0205)  CS-0x046  0x05062         || 	LD R16, (R12) ; Z = arr[ADDR_i+1]
 (0206)                            || 
 (0207)                            || 	;COMPARE now
 (0208)                            || 
-(0209)  CS-0x048  0x04F80         || 	CMP R15, R16 ;
+(0209)  CS-0x047  0x04F80         || 	CMP R15, R16 ;
 (0210)                            || 
 (0211)                            || ;if we get c = 1 that means arr[ADDR_i+1] is greater than or equal to arr[ADDR_i]
 (0212)                            || ;so lets swap if this is the case
-(0213)  CS-0x049  0x0A278         || 	BRCS swap
+(0213)  CS-0x048  0x0A270         || 	BRCS swap
 (0214)                            || 
-(0215)                     0x04A  || decrement_count_inner:
-(0216)  CS-0x04A  0x2CA01         || 	SUB R10, 1 ; count_inner = count_inner -1
-(0217)  CS-0x04B  0x0820B         || 	BRNE bubble_inner_loop
-(0218)  CS-0x04C  0x2C901         || 	SUB R9, 1 ;count_outer = count_outer - 1
+(0215)                     0x049  || decrement_count_inner:
+(0216)  CS-0x049  0x2CA01         || 	SUB R10, 1 ; count_inner = count_inner -1
+(0217)  CS-0x04A  0x08203         || 	BRNE bubble_inner_loop
+(0218)  CS-0x04B  0x2C901         || 	SUB R9, 1 ;count_outer = count_outer - 1
 (0219)                            || 
-(0220)  CS-0x04D  0x08203         || 	BRNE bubble_outer_loop
-(0221)  CS-0x04E  0x18002         || 	RET
+(0220)  CS-0x04C  0x081FB         || 	BRNE bubble_outer_loop
+(0221)  CS-0x04D  0x18002         || 	RET
 (0222)                            || 
-(0223)                     0x04F  || swap:   ;swap(arr[ADD_i], arr[ADD_i+1])
-(0224)  CS-0x04F  0x04D79         || 	MOV R13, R15 ; temp = arr[ADDR_i]
-(0225)  CS-0x050  0x04F81         || 	MOV R15, R16 ; arr[ADDR_i] = arr[ADDR_i+1]
-(0226)  CS-0x051  0x05069         || 	MOV R16, R13 ; arr[ADDR_i+1]  = temp
-(0227)  CS-0x052  0x05063         || 	ST R16, (R12)
-(0228)  CS-0x053  0x04F5B         || 	ST R15, (R11)
-(0229)  CS-0x054  0x08250         || 	BRN decrement_count_inner
+(0223)                     0x04E  || swap:   ;swap(arr[ADD_i], arr[ADD_i+1])
+(0224)  CS-0x04E  0x04D79         || 	MOV R13, R15 ; temp = arr[ADDR_i]
+(0225)  CS-0x04F  0x04F81         || 	MOV R15, R16 ; arr[ADDR_i] = arr[ADDR_i+1]
+(0226)  CS-0x050  0x05069         || 	MOV R16, R13 ; arr[ADDR_i+1]  = temp
+(0227)  CS-0x051  0x05063         || 	ST R16, (R12)
+(0228)  CS-0x052  0x04F5B         || 	ST R15, (R11)
+(0229)  CS-0x053  0x08248         || 	BRN decrement_count_inner
 (0230)                            || 
 (0231)                            || 
 (0232)                            || 
@@ -255,49 +255,46 @@ C5:  Raw line from source code.
 (0239)                            || ; R31 - using for zero
 (0240)                            || ;--------------------------------------------------------------------
 (0241)                            || 
-(0242)                     0x055  || goBestLocation:
-(0243)  CS-0x055  0x15F00         || 		WSP R31 ; reg that has value of 0
-(0244)  CS-0x056  0x13102         || 		POP R17
-(0245)                     0x057  || stayBestLocation:
-(0246)  CS-0x057  0x35169         || 		OUT R17, ARDUINO_PORT
-(0247)  CS-0x058  0x08149         || 		CALL delay
-(0248)  CS-0x059  0x31D01         || 		CMP R29, 1
-(0249)  CS-0x05A  0x082BA         || 		BREQ stayBestLocation
-(0250)  CS-0x05B  0x18002         || 		RET
-(0251)                            || 
-(0252)                            || 
-(0253)                            || ;-----------------------------------------------------------------------------
-(0254)                            || ; ISR - allows someone to go in manual mode, turn servo using SW's 45 degrees each
-(0255)                            || ;
-(0256)                            || ; Tweaked parameters:
-(0257)                            || ; R18 - {1,0,0,0,0,0,SW[1:0]} 
-(0258)                            || ; - SW[7] tells us to go back from isr mode if high
-(0259)                            || ;--------------------------------------------------------------------
-(0260)                            || 
+(0242)                     0x054  || goBestLocation:
+(0243)  CS-0x054  0x15F00         || 		WSP R31 ; reg that has value of 0
+(0244)  CS-0x055  0x13102         || 		POP R17
+(0245)  CS-0x056  0x35169         || 		OUT R17, ARDUINO_PORT
+(0246)  CS-0x057  0x08141         || 		CALL delay
+(0247)  CS-0x058  0x18002         || 		RET
+(0248)                            || 
+(0249)                            || 
+(0250)                            || ;-----------------------------------------------------------------------------
+(0251)                            || ; ISR - allows someone to go in manual mode, turn servo using SW's 45 degrees each
+(0252)                            || ;
+(0253)                            || ; Tweaked parameters:
+(0254)                            || ; R18 - {1,0,0,0,0,0,SW[1:0]} 
+(0255)                            || ; - SW[7] tells us to go back from isr mode if high
+(0256)                            || ;--------------------------------------------------------------------
+(0257)                            || 
+(0258)                            || 
+(0259)                            || 
+(0260)                     0x059  || ISR: ;keeping it on the sw[7]
 (0261)                            || 
-(0262)                            || 
-(0263)                     0x05C  || ISR: ;keeping it on the sw[7]
-(0264)                            || 
-(0265)  CS-0x05C  0x332FF         || IN R18, SWITCH_PORT ;reading an input 
-(0266)  CS-0x05D  0x21283         || AND R18, 131 ;telling ardino we are in isr by setting sw[7] ==1 and setting sw[6:2] = 0 (masking)
-(0267)  CS-0x05E  0x05391         || MOV R19, R18 ;setting a number equal to R19 before masking
-(0268)  CS-0x05F  0x35269         || OUT R18, ARDUINO_PORT ; output that sw[7] high and the value inputted
-(0269)                            || 
-(0270)                            || ;is sw[7] == 1
-(0271)                            || 
-(0272)  CS-0x060  0x21280         || AND R18, 128 ; SW[7] && 1
-(0273)                            || 
-(0274)  CS-0x061  0x31280         || CMP R18, 128  
+(0262)  CS-0x059  0x332FF         || IN R18, SWITCH_PORT ;reading an input 
+(0263)  CS-0x05A  0x21283         || AND R18, 131 ;telling ardino we are in isr by setting sw[7] ==1 and setting sw[6:2] = 0 (masking)
+(0264)  CS-0x05B  0x05391         || MOV R19, R18 ;setting a number equal to R19 before masking
+(0265)  CS-0x05C  0x35269         || OUT R18, ARDUINO_PORT ; output that sw[7] high and the value inputted
+(0266)                            || 
+(0267)                            || ;is sw[7] == 1
+(0268)                            || 
+(0269)  CS-0x05D  0x21280         || AND R18, 128 ; SW[7] && 1
+(0270)                            || 
+(0271)  CS-0x05E  0x31280         || CMP R18, 128  
+(0272)                            || 
+(0273)                            || ;is SW[7] === 1 go to ISR
+(0274)  CS-0x05F  0x082CA         || BREQ ISR
 (0275)                            || 
-(0276)                            || ;is SW[7] === 1 go to ISR
-(0277)  CS-0x062  0x082E2         || BREQ ISR
+(0276)  CS-0x060  0x1A003         || RETIE
+(0277)                            || 
 (0278)                            || 
-(0279)  CS-0x063  0x1A003         || RETIE
-(0280)                            || 
-(0281)                            || 
-(0282)                            || .CSEG
-(0283)                       1023  || .ORG 0x3FF
-(0284)  CS-0x3FF  0x082E0         || BRN ISR
+(0279)                            || .CSEG
+(0280)                       1023  || .ORG 0x3FF
+(0281)  CS-0x3FF  0x082C8         || BRN ISR
 
 
 
@@ -316,23 +313,22 @@ C4+: source code line number of where symbol is referenced
 
 -- Labels
 ------------------------------------------------------------ 
-BUBBLE_INNER_LOOP 0x041   (0189)  ||  0217 
-BUBBLE_OUTER_LOOP 0x040   (0185)  ||  0220 
-BUBBLE_SORT    0x03F   (0181)  ||  0049 
-DECREMENT_COUNT_INNER 0x04A   (0215)  ||  0229 
-DELAY          0x029   (0135)  ||  0047 0048 0051 0089 0247 
-GOBESTLOCATION 0x055   (0242)  ||  0050 
-INNER_LOOP     0x02C   (0142)  ||  0147 
-ISR            0x05C   (0263)  ||  0277 0284 
-MAIN           0x00E   (0044)  ||  0053 
-MIDDLE_LOOP    0x02B   (0140)  ||  0151 
-OUTER_LOOP     0x02A   (0137)  ||  0161 
-RESET_SWEEP    0x026   (0106)  ||  0079 
-RETURN         0x03E   (0163)  ||  
-STAYBESTLOCATION 0x057   (0245)  ||  0249 
-SWAP           0x04F   (0223)  ||  0213 
-SWEEP          0x017   (0072)  ||  0046 
-SWEEP_LOOP     0x019   (0076)  ||  0103 
+BUBBLE_INNER_LOOP 0x040   (0189)  ||  0217 
+BUBBLE_OUTER_LOOP 0x03F   (0185)  ||  0220 
+BUBBLE_SORT    0x03E   (0181)  ||  0049 
+DECREMENT_COUNT_INNER 0x049   (0215)  ||  0229 
+DELAY          0x028   (0135)  ||  0047 0048 0051 0089 0246 
+GOBESTLOCATION 0x054   (0242)  ||  0050 
+INNER_LOOP     0x02B   (0142)  ||  0147 
+ISR            0x059   (0260)  ||  0274 0281 
+MAIN           0x00D   (0044)  ||  0053 
+MIDDLE_LOOP    0x02A   (0140)  ||  0151 
+OUTER_LOOP     0x029   (0137)  ||  0161 
+RESET_SWEEP    0x025   (0106)  ||  0079 
+RETURN         0x03D   (0163)  ||  
+SWAP           0x04E   (0223)  ||  0213 
+SWEEP          0x016   (0072)  ||  0046 
+SWEEP_LOOP     0x018   (0076)  ||  0103 
 
 
 -- Directives: .BYTE
@@ -342,16 +338,15 @@ ARDUINO_SWEEP  0x00D   (0020)  ||
 
 -- Directives: .EQU
 ------------------------------------------------------------ 
-ARDUINO_PORT   0x069   (0025)  ||  0091 0108 0246 0268 
-BUBBLE_INNER_COUNT 0x00C   (0034)  ||  0187 0193 0197 
-BUBBLE_OUTER_COUNT 0x00C   (0033)  ||  0183 
+ARDUINO_PORT   0x069   (0025)  ||  0091 0108 0245 0265 
+BUBBLE_INNER_COUNT 0x00D   (0034)  ||  0187 0193 0197 
+BUBBLE_OUTER_COUNT 0x00D   (0033)  ||  0183 
 DELAY_COUNT_INNER 0x0EC   (0030)  ||  0140 
 DELAY_COUNT_MIDDLE 0x0B0   (0031)  ||  0137 
 DELAY_COUNT_OUTER 0x0C9   (0032)  ||  0135 
 LIGHT_PORT     0x096   (0024)  ||  0087 
-MAIN_COUNT     0x0C8   (0036)  ||  0042 
 SWEEP_COUNT    0x00D   (0035)  ||  0073 0074 0081 
-SWITCH_PORT    0x0FF   (0026)  ||  0265 
+SWITCH_PORT    0x0FF   (0026)  ||  0262 
 
 
 -- Directives: .DEF
