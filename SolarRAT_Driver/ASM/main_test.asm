@@ -39,7 +39,7 @@ arduino_sweep: .BYTE 12 ; 0x01 ... 0x0C (12th)
 
 ;-----Sweep function consatns----
 .EQU SWEEP_COUNT = 13
-.EQU SWEEP_OUTPUT_DELAY = 2
+.EQU SWEEP_OUTPUT_DELAY = 4
 ;-------------------------------------------------
 .CSEG
 .ORG 0x0D
@@ -71,7 +71,6 @@ main:
 ;--------------------------------------------------------------------
 
 sweep: 
-
 	MOV R3, SWEEP_COUNT
 
 sweep_loop:
@@ -104,7 +103,8 @@ outer_loop:
 		MOV R7, DELAY_COUNT_MIDDLE
 		OUT R1, ARDUINO_PORT 
  	
-middle_loop:	MOV R8, DELAY_COUNT_INNER
+middle_loop:	
+		MOV R8, DELAY_COUNT_INNER
 		
 inner_loop:	
 

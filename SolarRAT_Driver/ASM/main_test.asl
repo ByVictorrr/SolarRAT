@@ -55,7 +55,7 @@ C5:  Raw line from source code.
 (0039)                            || 
 (0040)                            || ;-----Sweep function consatns----
 (0041)                       013  || .EQU SWEEP_COUNT = 13
-(0042)                       002  || .EQU SWEEP_OUTPUT_DELAY = 2
+(0042)                       004  || .EQU SWEEP_OUTPUT_DELAY = 4
 (0043)                            || ;-------------------------------------------------
 (0044)                            || .CSEG
 (0045)                       013  || .ORG 0x0D
@@ -87,40 +87,40 @@ C5:  Raw line from source code.
 (0071)                            || ;--------------------------------------------------------------------
 (0072)                            || 
 (0073)                     0x013  || sweep: 
-(0074)                            || 
-(0075)  CS-0x013  0x3630D         || 	MOV R3, SWEEP_COUNT
-(0076)                            || 
-(0077)                     0x014  || sweep_loop:
-(0078)                            || 
-(0079)  CS-0x014  0x36602         || 	MOV R6, DELAY_COUNT_OUTER
-(0080)                            || 
-(0081)  CS-0x015  0x30300         || 	CMP R3, 0 ; is sweep_count == 0?
-(0082)                            || 
-(0083)  CS-0x016  0x0814A         || 	BREQ return_sweep ; if yes == > PC = reset_sweep
-(0084)                            || 	;else
-(0085)                            ||    
-(0086)  CS-0x017  0x3640D         ||     MOV R4, SWEEP_COUNT ;	
-(0087)                            || 
-(0088)  CS-0x018  0x0241A         || 	SUB R4, R3 ; R4 = 12 - sweep_count  (R4 == the location in which the motor is currently at)
-(0089)                            || 
-(0090)  CS-0x019  0x04121         || 	MOV R1, R4 ; aruino[3:0] = 12-sweep count
-(0091)                            || 		
-(0092)  CS-0x01A  0x32296         || 	IN R2, LIGHT_PORT ; arduino[7:4] = from LIGHT_PORT
-(0093)                            || 	
-(0094)  CS-0x01B  0x00111         || 	OR R1, R2 ; arduino[7:0]  = {arduino[7:4],arduino[3:0]}
-(0095)                            || 
-(0096)  CS-0x01C  0x04009         || 	MOV R0, R1 ; 
-(0097)                            || 
-(0098)                            || 	; before storing arduino[7:0] got to concatenate its componets
-(0099)                            || 
-(0100)  CS-0x01D  0x04023         || 	ST R0, (R4) ; SCR[12 - sweep_count] = arduino[7:0]
-(0101)                            || 
-(0102)                            ||    
-(0103)                     0x01E  || outer_loop:	
-(0104)  CS-0x01E  0x36704         || 		MOV R7, DELAY_COUNT_MIDDLE
-(0105)  CS-0x01F  0x34169         || 		OUT R1, ARDUINO_PORT 
-(0106)                            ||  	
-(0107)  CS-0x020  0x36818  0x020  || middle_loop:	MOV R8, DELAY_COUNT_INNER
+(0074)  CS-0x013  0x3630D         || 	MOV R3, SWEEP_COUNT
+(0075)                            || 
+(0076)                     0x014  || sweep_loop:
+(0077)                            || 
+(0078)  CS-0x014  0x36602         || 	MOV R6, DELAY_COUNT_OUTER
+(0079)                            || 
+(0080)  CS-0x015  0x30300         || 	CMP R3, 0 ; is sweep_count == 0?
+(0081)                            || 
+(0082)  CS-0x016  0x0814A         || 	BREQ return_sweep ; if yes == > PC = reset_sweep
+(0083)                            || 	;else
+(0084)                            ||    
+(0085)  CS-0x017  0x3640D         ||     MOV R4, SWEEP_COUNT ;	
+(0086)                            || 
+(0087)  CS-0x018  0x0241A         || 	SUB R4, R3 ; R4 = 12 - sweep_count  (R4 == the location in which the motor is currently at)
+(0088)                            || 
+(0089)  CS-0x019  0x04121         || 	MOV R1, R4 ; aruino[3:0] = 12-sweep count
+(0090)                            || 		
+(0091)  CS-0x01A  0x32296         || 	IN R2, LIGHT_PORT ; arduino[7:4] = from LIGHT_PORT
+(0092)                            || 	
+(0093)  CS-0x01B  0x00111         || 	OR R1, R2 ; arduino[7:0]  = {arduino[7:4],arduino[3:0]}
+(0094)                            || 
+(0095)  CS-0x01C  0x04009         || 	MOV R0, R1 ; 
+(0096)                            || 
+(0097)                            || 	; before storing arduino[7:0] got to concatenate its componets
+(0098)                            || 
+(0099)  CS-0x01D  0x04023         || 	ST R0, (R4) ; SCR[12 - sweep_count] = arduino[7:0]
+(0100)                            || 
+(0101)                            ||    
+(0102)                     0x01E  || outer_loop:	
+(0103)  CS-0x01E  0x36704         || 		MOV R7, DELAY_COUNT_MIDDLE
+(0104)  CS-0x01F  0x34169         || 		OUT R1, ARDUINO_PORT 
+(0105)                            ||  	
+(0106)                     0x020  || middle_loop:	
+(0107)  CS-0x020  0x36818         || 		MOV R8, DELAY_COUNT_INNER
 (0108)                            || 		
 (0109)                     0x021  || inner_loop:	
 (0110)                            || 
@@ -290,12 +290,12 @@ GOBESTLOCATION_OUTPUT 0x043   (0210)  ||  0212
 INNER_LOOP     0x021   (0109)  ||  0113 
 ISR            0x045   (0225)  ||  0237 0242 
 MAIN           0x00D   (0048)  ||  0054 
-MIDDLE_LOOP    0x020   (0107)  ||  0117 
-OUTER_LOOP     0x01E   (0103)  ||  0120 
-RETURN_SWEEP   0x029   (0126)  ||  0083 
+MIDDLE_LOOP    0x020   (0106)  ||  0117 
+OUTER_LOOP     0x01E   (0102)  ||  0120 
+RETURN_SWEEP   0x029   (0126)  ||  0082 
 SWAP           0x03A   (0187)  ||  0177 
 SWEEP          0x013   (0073)  ||  0050 
-SWEEP_LOOP     0x014   (0077)  ||  0123 
+SWEEP_LOOP     0x014   (0076)  ||  0123 
 
 
 -- Directives: .BYTE
@@ -305,15 +305,15 @@ ARDUINO_SWEEP  0x00D   (0020)  ||
 
 -- Directives: .EQU
 ------------------------------------------------------------ 
-ARDUINO_PORT   0x069   (0025)  ||  0105 0211 0229 
+ARDUINO_PORT   0x069   (0025)  ||  0104 0211 0229 
 BUBBLE_INNER_COUNT 0x00C   (0037)  ||  0151 0157 0161 
 BUBBLE_OUTER_COUNT 0x00C   (0036)  ||  0147 
 DELAY_COUNT_INNER 0x018   (0031)  ||  0107 
-DELAY_COUNT_MIDDLE 0x004   (0032)  ||  0104 
-DELAY_COUNT_OUTER 0x002   (0033)  ||  0079 
-LIGHT_PORT     0x096   (0024)  ||  0092 
-SWEEP_COUNT    0x00D   (0041)  ||  0075 0086 
-SWEEP_OUTPUT_DELAY 0x002   (0042)  ||  
+DELAY_COUNT_MIDDLE 0x004   (0032)  ||  0103 
+DELAY_COUNT_OUTER 0x002   (0033)  ||  0078 
+LIGHT_PORT     0x096   (0024)  ||  0091 
+SWEEP_COUNT    0x00D   (0041)  ||  0074 0085 
+SWEEP_OUTPUT_DELAY 0x004   (0042)  ||  
 SWITCH_PORT    0x022   (0026)  ||  0227 
 
 
