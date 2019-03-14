@@ -49,13 +49,13 @@ C5:  Raw line from source code.
 (0033)                       012  || .EQU BUBBLE_OUTER_COUNT =  12 ;
 (0034)                       012  || .EQU BUBBLE_INNER_COUNT = 12
 (0035)                       013  || .EQU SWEEP_COUNT = 13
-(0036)                       200  || .EQU MAIN_COUNT = 200
+(0036)                       255  || .EQU MAIN_COUNT = 255
 (0037)                            || ;-------------------------------------------------
 (0038)                            || .CSEG
 (0039)                       013  || .ORG 0x0D
 (0040)                            || 
 (0041)                            || 
-(0042)  CS-0x00D  0x37DC8         || MOV R29, MAIN_COUNT
+(0042)  CS-0x00D  0x37DFF         || MOV R29, MAIN_COUNT
 (0043)                            || 
 (0044)                     0x00E  || main:
 (0045)  CS-0x00E  0x1A000         || 	SEI ; set interupts
@@ -350,7 +350,7 @@ DELAY_COUNT_INNER 0x0EC   (0030)  ||  0140
 DELAY_COUNT_MIDDLE 0x0B0   (0031)  ||  0137 
 DELAY_COUNT_OUTER 0x0C9   (0032)  ||  0135 
 LIGHT_PORT     0x096   (0024)  ||  0087 
-MAIN_COUNT     0x0C8   (0036)  ||  0042 
+MAIN_COUNT     0x0FF   (0036)  ||  0042 
 SWEEP_COUNT    0x00D   (0035)  ||  0073 0074 0081 
 SWITCH_PORT    0x0FF   (0026)  ||  0266 
 

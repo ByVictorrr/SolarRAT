@@ -33,7 +33,7 @@ arduino_sweep: .BYTE 12 ; 0x01 ... 0x0C (12th)
 .EQU BUBBLE_OUTER_COUNT =  12 ;
 .EQU BUBBLE_INNER_COUNT = 12
 .EQU SWEEP_COUNT = 13
-.EQU MAIN_COUNT = 200
+.EQU MAIN_COUNT = 255
 ;-------------------------------------------------
 .CSEG
 .ORG 0x0D
