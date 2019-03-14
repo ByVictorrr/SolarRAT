@@ -1,7 +1,7 @@
 //---------------------------------------------------------------------------
 // Author: Julio Tena
 // Description: Using arduino as slave for basys board output from switches
-// 
+//
 //
 // Todo:
 //      - Finish all cases
@@ -27,6 +27,8 @@ Servo myservo;  // create servo object to control a servo
 
 int pos = 15;    // variable to store the servo position
 int basys_in[8] = {0};
+int check = 0;
+
 
 
 void setup() {
@@ -39,7 +41,8 @@ void setup() {
   pinMode(PIN7,INPUT);
   pinMode(PIN8,INPUT);
   pinMode(PIN9,INPUT);
-      
+
+
   Serial.begin(9600);
   myservo.attach(PIN10);  // attaches the servo on pin 10 to the servo object
 }
@@ -50,15 +53,32 @@ void loop() {
     // Note: might need time delay to allow time to read all values
     myservo.write(pos);
     readPorts(basys_in);
-    if(interrupt(basys_in[7]))
+
+    if(interrupt(basys_in))
     {
       delay(1000);
       readPorts(basys_in);
       manualMode(basys_in,pos);
+      if(basys_in[0] == 1 && basys_in[1] == 1)
+      {
+        for (int pos = 0; pos <= 165; pos += 15) { // goes from 0 degrees to 180 degrees
+        // in steps of 1 degree
+        myservo.write(pos);              // tell servo to go to position in variable 'pos'
+        delay(250);                       // waits 15ms for the servo to reach the position
+      }
+      for (int pos = 165; pos >= 0; pos -= 15) { // goes from 180 degrees to 0 degrees
+      myservo.write(pos);              // tell servo to go to position in variable 'pos'
+      delay(250);                       // waits 15ms for the servo to reach the position
+      }
+      }
+      //check = digitalRead(PIN9);
       Serial.println("INTERRUPT ENABLE");
       Serial.print("PORTS 7: ");
       Serial.print(basys_in[7]);
       Serial.print("\n");
+      //Serial.print("CHECK: ");
+      //Serial.print(check);
+      //Serial.print("\n");
     }
     else
     {
@@ -82,12 +102,12 @@ void loop() {
       Serial.println(basys_in[7]);
       Serial.print("POS:");
       Serial.println(pos);
-      delay(2000);
-           
-    }
-    
-    
+      delay(1000);
 
-    
-    
+    }
+
+
+
+
+
 }
