@@ -38,7 +38,7 @@ arduino_sweep: .BYTE 12 ; 0x01 ... 0x0C (12th)
 ;-------------------------------
 
 ;-----Sweep function consatns----
-.EQU SWEEP_COUNT = 2
+.EQU SWEEP_COUNT = 13
 .EQU SWEEP_OUTPUT_DELAY = 2
 ;-------------------------------------------------
 .CSEG

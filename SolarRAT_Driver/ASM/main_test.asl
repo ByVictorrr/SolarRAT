@@ -54,7 +54,7 @@ C5:  Raw line from source code.
 (0038)                            || ;-------------------------------
 (0039)                            || 
 (0040)                            || ;-----Sweep function consatns----
-(0041)                       002  || .EQU SWEEP_COUNT = 2
+(0041)                       013  || .EQU SWEEP_COUNT = 13
 (0042)                       002  || .EQU SWEEP_OUTPUT_DELAY = 2
 (0043)                            || ;-------------------------------------------------
 (0044)                            || .CSEG
@@ -88,7 +88,7 @@ C5:  Raw line from source code.
 (0072)                            || 
 (0073)                     0x013  || sweep: 
 (0074)                            || 
-(0075)  CS-0x013  0x36302         || 	MOV R3, SWEEP_COUNT
+(0075)  CS-0x013  0x3630D         || 	MOV R3, SWEEP_COUNT
 (0076)                            || 
 (0077)                     0x014  || sweep_loop:
 (0078)                            || 
@@ -99,7 +99,7 @@ C5:  Raw line from source code.
 (0083)  CS-0x016  0x0814A         || 	BREQ return_sweep ; if yes == > PC = reset_sweep
 (0084)                            || 	;else
 (0085)                            ||    
-(0086)  CS-0x017  0x36402         ||     MOV R4, SWEEP_COUNT ;	
+(0086)  CS-0x017  0x3640D         ||     MOV R4, SWEEP_COUNT ;	
 (0087)                            || 
 (0088)  CS-0x018  0x0241A         || 	SUB R4, R3 ; R4 = 12 - sweep_count  (R4 == the location in which the motor is currently at)
 (0089)                            || 
@@ -312,7 +312,7 @@ DELAY_COUNT_INNER 0x018   (0031)  ||  0107
 DELAY_COUNT_MIDDLE 0x004   (0032)  ||  0104 
 DELAY_COUNT_OUTER 0x002   (0033)  ||  0079 
 LIGHT_PORT     0x096   (0024)  ||  0092 
-SWEEP_COUNT    0x002   (0041)  ||  0075 0086 
+SWEEP_COUNT    0x00D   (0041)  ||  0075 0086 
 SWEEP_OUTPUT_DELAY 0x002   (0042)  ||  
 SWITCH_PORT    0x022   (0026)  ||  0227 
 
