@@ -273,22 +273,22 @@ C5:  Raw line from source code.
 (0257)                            || 
 (0258)                     0x058  || ISR:
 (0259)  CS-0x058  0x332FF         || 	IN R18, SWITCH_PORT
-(0260)  CS-0x059  0x23280         || 	OR R18, 128
+(0260)  CS-0x059  0x21283         || 	AND R18, 131
 (0261)  CS-0x05A  0x35269         || 	OUT R18, ARDUINO_PORT
-(0262)  CS-0x05B  0x08139         || 	CALL delay
-(0263)  CS-0x05C  0x21204         || 	AND R18, 4 ; check if we need to return from isr
+(0262)  CS-0x05B  0x21280         || 	AND R18, 128 ; check if we need to return from isr	
+(0263)  CS-0x05C  0x31280         || 	CMP R18, 128
 (0264)                            || 	
-(0265)  CS-0x05D  0x31204         || 	CMP R18, 4
-(0266)                            || 	
-(0267)                            || 	;z == 1 if they are equal thus SW[2] is high
-(0268)  CS-0x05E  0x082C3         || 	BRNE ISR
-(0269)  CS-0x05F  0x1A003         || 	RETIE
-(0270)                            || 	
-(0271)                            || .CSEG
-(0272)                       1023  || .ORG 0x3FF
-(0273)  CS-0x3FF  0x082C0         || BRN ISR
-(0274)                            || 
-(0275)                            || 	
+(0265)                            || 	;z == 1 if they are equal thus SW[2] is high
+(0266)  CS-0x05D  0x082C2         || 	BREQ ISR
+(0267)                            || 
+(0268)  CS-0x05E  0x1A003         || 	RETIE
+(0269)                            || 	
+(0270)                            || .CSEG
+(0271)                       1023  || .ORG 0x3FF
+(0272)  CS-0x3FF  0x082C0         || BRN ISR
+(0273)                            || 
+(0274)                            || 	
+(0275)                            || 
 (0276)                            || 
 (0277)                            || 
 (0278)                            || 
@@ -299,8 +299,7 @@ C5:  Raw line from source code.
 (0283)                            || 
 (0284)                            || 
 (0285)                            || 
-(0286)                            || 
-(0287)                            ||  
+(0286)                            ||  
 
 
 
@@ -323,10 +322,10 @@ BUBBLE_INNER_LOOP 0x03F   (0186)  ||  0214
 BUBBLE_OUTER_LOOP 0x03E   (0182)  ||  0217 
 BUBBLE_SORT    0x03D   (0178)  ||  0046 
 DECREMENT_COUNT_INNER 0x048   (0212)  ||  0226 
-DELAY          0x027   (0132)  ||  0045 0048 0086 0243 0262 
+DELAY          0x027   (0132)  ||  0045 0048 0086 0243 
 GOBESTLOCATION 0x053   (0239)  ||  0047 
 INNER_LOOP     0x02A   (0139)  ||  0144 
-ISR            0x058   (0258)  ||  0268 0273 
+ISR            0x058   (0258)  ||  0266 0272 
 MAIN           0x00D   (0042)  ||  0050 
 MIDDLE_LOOP    0x029   (0137)  ||  0148 
 OUTER_LOOP     0x028   (0134)  ||  0158 
