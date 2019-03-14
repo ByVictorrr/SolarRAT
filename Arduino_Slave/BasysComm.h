@@ -30,6 +30,24 @@ void readPorts(int basys_inputs[8])
   basys_inputs[7] = digitalRead(9);
 }
 
+bool interrupt(int basys_input[7])
+{
+    return basys_input[7];
+}
+
+
+void manualMode(int basys_input[8],int &pos_in)
+{
+  if (basys_input[0] == 0 && basys_input[1] == 0)
+    pos_in = 20;
+  else if(basys_input[0] == 1 && basys_input[1] == 0)
+    pos_in = 45;
+  else if(basys_input[0] == 0 && basys_input[1] == 1)
+    pos_in = 90;
+  else if(basys_input[0] == 1 && basys_input[1] == 1)
+    pos_in = 135;
+}
+
 void sweep(int basys_input[8], int &pos_in)
 {
 
@@ -80,12 +98,12 @@ void sweep(int basys_input[8], int &pos_in)
     pos_in = 150;
 
   //location 11:
-  if (basys_input[0] == 1 && basys_input[1] == 1 && basys_input[2] == 0 && basys_input[3] == 1)
-    pos_in = 165;
+  //if (basys_input[0] == 1 && basys_input[1] == 1 && basys_input[2] == 0 && basys_input[3] == 1)
+    //pos_in = 165;
 
   //location 12:
-  if (basys_input[0] == 0 && basys_input[1] == 0 && basys_input[2] == 1 && basys_input[3] == 1)
-    pos_in = 180;
+  //if (basys_input[0] == 0 && basys_input[1] == 0 && basys_input[2] == 1 && basys_input[3] == 1)
+    //pos_in = 180;
 
 
 }
