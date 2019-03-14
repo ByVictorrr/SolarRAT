@@ -27,13 +27,12 @@ AND R18, 128 ; SW[7] && 1
 
 CMP R18, 128  
 
-;is SW[7] === 1?
-;if Sw[7] != 1 then branch to isr
+;is SW[7] === 1 go to ISR
 BREQ ISR
 
 output: ;loop for sw[7] being off
 ;keeping the sw[7] on  
-OUT R19, ARDUINO_PORT
+;OUT R19, ARDUINO_PORT
 IN R19, SWITCH_PORT
 
 AND R19, 128 ; SW[7] && 1
@@ -41,6 +40,7 @@ AND R19, 128 ; SW[7] && 1
 CMP R19, 128 
 
 BREQ ISR
+
 BRN output
 
  
