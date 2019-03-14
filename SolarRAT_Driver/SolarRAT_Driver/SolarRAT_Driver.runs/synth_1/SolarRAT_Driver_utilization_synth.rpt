@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
-| Date         : Sat Mar  9 15:31:25 2019
+| Date         : Thu Mar 14 12:36:12 2019
 | Host         : TheShell running 64-bit unknown
 | Command      : report_utilization -file SolarRAT_Driver_utilization_synth.rpt -pb SolarRAT_Driver_utilization_synth.pb
 | Design       : SolarRAT_Driver
@@ -35,8 +35,8 @@ Table of Contents
 |   LUT as Memory            |   56 |     0 |      9600 |  0.58 |
 |     LUT as Distributed RAM |   56 |     0 |           |       |
 |     LUT as Shift Register  |    0 |     0 |           |       |
-| Slice Registers            |  237 |     0 |     41600 |  0.57 |
-|   Register as Flip Flop    |  237 |     0 |     41600 |  0.57 |
+| Slice Registers            |  236 |     0 |     41600 |  0.57 |
+|   Register as Flip Flop    |  236 |     0 |     41600 |  0.57 |
 |   Register as Latch        |    0 |     0 |     41600 |  0.00 |
 | F7 Muxes                   |   30 |     0 |     16300 |  0.18 |
 | F8 Muxes                   |   14 |     0 |      8150 |  0.17 |
@@ -59,7 +59,7 @@ Table of Contents
 | 0     |          Yes |           - |          Set |
 | 0     |          Yes |           - |        Reset |
 | 1     |          Yes |         Set |            - |
-| 236   |          Yes |       Reset |            - |
+| 235   |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -154,14 +154,14 @@ Table of Contents
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
 | LUT6     |  360 |                 LUT |
-| LUT3     |  246 |                 LUT |
-| FDRE     |  236 |        Flop & Latch |
-| LUT4     |  196 |                 LUT |
+| LUT3     |  252 |                 LUT |
+| FDRE     |  235 |        Flop & Latch |
+| LUT4     |  186 |                 LUT |
 | CARRY4   |  168 |          CarryLogic |
-| LUT2     |  163 |                 LUT |
+| LUT2     |  167 |                 LUT |
 | LUT5     |  149 |                 LUT |
 | RAMS64E  |   40 |  Distributed Memory |
-| OBUF     |   35 |                  IO |
+| OBUF     |   36 |                  IO |
 | MUXF7    |   30 |               MuxFx |
 | LUT1     |   19 |                 LUT |
 | RAMD32   |   16 |  Distributed Memory |
@@ -169,7 +169,6 @@ Table of Contents
 | IBUF     |   13 |                  IO |
 | BUFG     |    2 |               Clock |
 | RAMB18E1 |    1 |        Block Memory |
-| OBUFT    |    1 |                  IO |
 | FDSE     |    1 |        Flop & Latch |
 | DSP48E1  |    1 |    Block Arithmetic |
 +----------+------+---------------------+

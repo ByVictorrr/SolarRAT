@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
-| Date         : Sat Mar  9 15:32:51 2019
+| Date         : Thu Mar 14 12:37:23 2019
 | Host         : TheShell running 64-bit unknown
 | Command      : report_control_sets -verbose -file SolarRAT_Driver_control_sets_placed.rpt
 | Design       : SolarRAT_Driver
@@ -23,8 +23,8 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Number of unique control sets                            |    18 |
-| Unused register locations in slices containing registers |    36 |
+| Number of unique control sets                            |    19 |
+| Unused register locations in slices containing registers |    38 |
 +----------------------------------------------------------+-------+
 
 
@@ -36,7 +36,7 @@ Table of Contents
 +--------+--------------+
 |      4 |            1 |
 |      6 |            1 |
-|      8 |            1 |
+|      8 |            2 |
 |     12 |            1 |
 |    16+ |           14 |
 +--------+--------------+
@@ -50,10 +50,10 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | No           | No                    | No                     |             100 |           25 |
 | No           | No                    | Yes                    |               0 |            0 |
-| No           | Yes                   | No                     |              24 |            5 |
-| Yes          | No                    | No                     |             180 |           45 |
+| No           | Yes                   | No                     |              24 |            6 |
+| Yes          | No                    | No                     |             170 |           34 |
 | Yes          | No                    | Yes                    |               0 |            0 |
-| Yes          | Yes                   | No                     |             172 |           40 |
+| Yes          | Yes                   | No                     |             180 |           39 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
@@ -65,22 +65,23 @@ Table of Contents
 +------------------------------+-------------------------------+------------------------------------+------------------+----------------+
 |  s_clk_50_BUFG               | MCU/CU/out[3]                 |                                    |                2 |              4 |
 |  WIZARD/segment1/XLXI_47/CLK |                               |                                    |                1 |              6 |
-|  s_clk_50_BUFG               |                               | BTNR_IBUF                          |                3 |              8 |
-|  s_clk_50_BUFG               |                               |                                    |                5 |             12 |
-|  s_clk_50_BUFG               |                               | ONESHOT/s_db_count[7]_i_1_n_0      |                2 |             16 |
+|  s_clk_50_BUFG               |                               | BTNR_IBUF                          |                2 |              8 |
+|  CLK_IBUF_BUFG               | WIZARD/XLXI_7/drdy_out        | WIZARD/led[13]_i_1_n_0             |                1 |              8 |
+|  s_clk_50_BUFG               |                               |                                    |                4 |             12 |
+|  s_clk_50_BUFG               |                               | ONESHOT/s_db_count[7]_i_1_n_0      |                4 |             16 |
+|  CLK_IBUF_BUFG               | MCU/PC/r_arduino_reg[0][0]    |                                    |                4 |             16 |
 |  s_clk_50_BUFG               | MCU/PC/E[0]                   | MCU/PC/RST                         |                2 |             16 |
-|  CLK_IBUF_BUFG               | MCU/PC/r_arduino_reg[0][0]    |                                    |                5 |             16 |
 |  s_clk_50_BUFG               | MCU/CU/E[0]                   | MCU/PC/RST                         |                8 |             20 |
-|  CLK_IBUF_BUFG               | WIZARD/m_b2d/data             |                                    |                9 |             22 |
-|  CLK_IBUF_BUFG               | WIZARD/m_b2d/sseg_data        | WIZARD/m_b2d/sseg_data_reg[0]_1    |                4 |             30 |
+|  CLK_IBUF_BUFG               | WIZARD/m_b2d/data             |                                    |                5 |             22 |
+|  CLK_IBUF_BUFG               | WIZARD/m_b2d/sseg_data        | WIZARD/m_b2d/sseg_data_reg[0]_1    |                5 |             30 |
+|  CLK_IBUF_BUFG               | WIZARD/XLXI_7/drdy_out        |                                    |                6 |             30 |
+|  CLK_IBUF_BUFG               | WIZARD/m_b2d/dout[15]_i_1_n_0 |                                    |                5 |             32 |
 |  s_clk_50_BUFG               | MCU/PC/RF_WR                  |                                    |                2 |             32 |
-|  CLK_IBUF_BUFG               | WIZARD/m_b2d/dout[15]_i_1_n_0 |                                    |                6 |             32 |
-|  CLK_IBUF_BUFG               | WIZARD/m_b2d/data             | WIZARD/m_b2d/byte_count[0]_i_1_n_0 |               17 |             40 |
-|  CLK_IBUF_BUFG               | WIZARD/XLXI_7/drdy_out        |                                    |                9 |             40 |
-|  CLK_IBUF_BUFG               | WIZARD/m_b2d/div[28]_i_1_n_0  |                                    |               14 |             66 |
+|  CLK_IBUF_BUFG               | WIZARD/m_b2d/data             | WIZARD/m_b2d/byte_count[0]_i_1_n_0 |               14 |             40 |
+|  CLK_IBUF_BUFG               | WIZARD/m_b2d/div[28]_i_1_n_0  |                                    |               12 |             66 |
 |  CLK_IBUF_BUFG               | WIZARD/count[32]_i_2_n_0      | WIZARD/count[32]_i_1_n_0           |                9 |             66 |
 |  s_clk_50_BUFG               | MCU/CU/SCR_WE                 |                                    |               10 |             80 |
-|  CLK_IBUF_BUFG               |                               |                                    |               19 |             82 |
+|  CLK_IBUF_BUFG               |                               |                                    |               20 |             82 |
 +------------------------------+-------------------------------+------------------------------------+------------------+----------------+
 
 

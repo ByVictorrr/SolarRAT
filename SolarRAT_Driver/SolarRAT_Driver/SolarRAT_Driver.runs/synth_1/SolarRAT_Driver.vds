@@ -2,8 +2,8 @@
 # Vivado v2018.2 (64-bit)
 # SW Build 2258646 on Thu Jun 14 20:02:38 MDT 2018
 # IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
-# Start of session at: Sat Mar  9 15:30:37 2019
-# Process ID: 27893
+# Start of session at: Thu Mar 14 12:35:18 2019
+# Process ID: 16422
 # Current directory: /home/victor/SolarRAT/SolarRAT_Driver/SolarRAT_Driver/SolarRAT_Driver.runs/synth_1
 # Command line: vivado -log SolarRAT_Driver.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source SolarRAT_Driver.tcl
 # Log file: /home/victor/SolarRAT/SolarRAT_Driver/SolarRAT_Driver/SolarRAT_Driver.runs/synth_1/SolarRAT_Driver.vds
@@ -15,10 +15,10 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 27918 
+INFO: Helper process launched with PID 16433 
 WARNING: [Synth 8-2490] overwriting previous definition of module XADC [/home/victor/SolarRAT/SolarRAT_Driver/XADC/XADC.v:23]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1270.668 ; gain = 93.008 ; free physical = 10764 ; free virtual = 16804
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1270.668 ; gain = 93.008 ; free physical = 2486 ; free virtual = 13159
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'SolarRAT_Driver' [/home/victor/SolarRAT/SolarRAT_Driver/SolarRAT_Driver.sv:23]
 	Parameter SW_ID bound to: 8'b11111111 
@@ -77,10 +77,10 @@ INFO: [Synth 8-6157] synthesizing module 'XADC' [/home/victor/SolarRAT/SolarRAT_
 	Parameter S_IDLE bound to: 0 - type: integer 
 	Parameter S_FRAME_WAIT bound to: 1 - type: integer 
 	Parameter S_CONVERSION bound to: 2 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'photoresistor_xadc' [/home/victor/SolarRAT/SolarRAT_Driver/SolarRAT_Driver/SolarRAT_Driver.runs/synth_1/.Xil/Vivado-27893-TheShell/realtime/photoresistor_xadc_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'photoresistor_xadc' (14#1) [/home/victor/SolarRAT/SolarRAT_Driver/SolarRAT_Driver/SolarRAT_Driver.runs/synth_1/.Xil/Vivado-27893-TheShell/realtime/photoresistor_xadc_stub.v:5]
-WARNING: [Synth 8-350] instance 'XLXI_7' of module 'photoresistor_xadc' requires 21 connections, but only 13 given [/home/victor/SolarRAT/SolarRAT_Driver/XADC/XADC.v:54]
-INFO: [Synth 8-155] case statement is not full and has no default [/home/victor/SolarRAT/SolarRAT_Driver/XADC/XADC.v:98]
+INFO: [Synth 8-6157] synthesizing module 'photoresistor_xadc' [/home/victor/SolarRAT/SolarRAT_Driver/SolarRAT_Driver/SolarRAT_Driver.runs/synth_1/.Xil/Vivado-16422-TheShell/realtime/photoresistor_xadc_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'photoresistor_xadc' (14#1) [/home/victor/SolarRAT/SolarRAT_Driver/SolarRAT_Driver/SolarRAT_Driver.runs/synth_1/.Xil/Vivado-16422-TheShell/realtime/photoresistor_xadc_stub.v:5]
+WARNING: [Synth 8-350] instance 'XLXI_7' of module 'photoresistor_xadc' requires 21 connections, but only 15 given [/home/victor/SolarRAT/SolarRAT_Driver/XADC/XADC.v:55]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/victor/SolarRAT/SolarRAT_Driver/XADC/XADC.v:101]
 INFO: [Synth 8-6157] synthesizing module 'bin2dec' [/home/victor/SolarRAT/SolarRAT_Driver/XADC/bin2dec.v:19]
 	Parameter S_IDLE bound to: 0 - type: integer 
 	Parameter S_DONE bound to: 1 - type: integer 
@@ -102,18 +102,15 @@ INFO: [Synth 8-6155] done synthesizing module 'counter3bit' (19#1) [/home/victor
 INFO: [Synth 8-6157] synthesizing module 'decoder_3_8' [/home/victor/SolarRAT/SolarRAT_Driver/XADC/decoder3_8.v:21]
 INFO: [Synth 8-6155] done synthesizing module 'decoder_3_8' (20#1) [/home/victor/SolarRAT/SolarRAT_Driver/XADC/decoder3_8.v:21]
 INFO: [Synth 8-6155] done synthesizing module 'DigitToSeg' (21#1) [/home/victor/SolarRAT/SolarRAT_Driver/XADC/DigitToSeg.v:23]
-WARNING: [Synth 8-3848] Net Address_in in module/entity XADC does not have driver. [/home/victor/SolarRAT/SolarRAT_Driver/XADC/XADC.v:37]
+WARNING: [Synth 8-3848] Net vp_in in module/entity XADC does not have driver. [/home/victor/SolarRAT/SolarRAT_Driver/XADC/XADC.v:65]
+WARNING: [Synth 8-3848] Net vn_in in module/entity XADC does not have driver. [/home/victor/SolarRAT/SolarRAT_Driver/XADC/XADC.v:64]
 INFO: [Synth 8-6155] done synthesizing module 'XADC' (22#1) [/home/victor/SolarRAT/SolarRAT_Driver/XADC/XADC.v:23]
-WARNING: [Synth 8-689] width (32) of port connection 'dp' does not match port width (1) of module 'XADC' [/home/victor/SolarRAT/SolarRAT_Driver/SolarRAT_Driver.sv:131]
-WARNING: [Synth 8-2900] ignoring illegal expression in output port connection [/home/victor/SolarRAT/SolarRAT_Driver/SolarRAT_Driver.sv:131]
-WARNING: [Synth 8-689] width (8) of port connection 'data_digital' does not match port width (4) of module 'XADC' [/home/victor/SolarRAT/SolarRAT_Driver/SolarRAT_Driver.sv:133]
+WARNING: [Synth 8-350] instance 'WIZARD' of module 'XADC' requires 9 connections, but only 8 given [/home/victor/SolarRAT/SolarRAT_Driver/SolarRAT_Driver.sv:125]
 WARNING: [Synth 8-6014] Unused sequential element r_seg_reg was removed.  [/home/victor/SolarRAT/SolarRAT_Driver/SolarRAT_Driver.sv:97]
-WARNING: [Synth 8-3848] Net dp in module/entity SolarRAT_Driver does not have driver. [/home/victor/SolarRAT/SolarRAT_Driver/SolarRAT_Driver.sv:35]
 INFO: [Synth 8-6155] done synthesizing module 'SolarRAT_Driver' (23#1) [/home/victor/SolarRAT/SolarRAT_Driver/SolarRAT_Driver.sv:23]
 WARNING: [Synth 8-3331] design counter3bit has unconnected port rst
-WARNING: [Synth 8-3331] design SolarRAT_Driver has unconnected port dp
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1304.793 ; gain = 127.133 ; free physical = 10777 ; free virtual = 16817
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1304.793 ; gain = 127.133 ; free physical = 2501 ; free virtual = 13172
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -123,30 +120,32 @@ Report Check Netlist:
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
 WARNING: [Synth 8-3295] tying undriven pin XLXI_47:rst to constant 0 [/home/victor/SolarRAT/SolarRAT_Driver/XADC/DigitToSeg.v:67]
-WARNING: [Synth 8-3295] tying undriven pin segment1:in5[3] to constant 0 [/home/victor/SolarRAT/SolarRAT_Driver/XADC/XADC.v:135]
-WARNING: [Synth 8-3295] tying undriven pin segment1:in5[2] to constant 0 [/home/victor/SolarRAT/SolarRAT_Driver/XADC/XADC.v:135]
-WARNING: [Synth 8-3295] tying undriven pin segment1:in5[1] to constant 0 [/home/victor/SolarRAT/SolarRAT_Driver/XADC/XADC.v:135]
-WARNING: [Synth 8-3295] tying undriven pin segment1:in5[0] to constant 0 [/home/victor/SolarRAT/SolarRAT_Driver/XADC/XADC.v:135]
-WARNING: [Synth 8-3295] tying undriven pin segment1:in6[3] to constant 0 [/home/victor/SolarRAT/SolarRAT_Driver/XADC/XADC.v:135]
-WARNING: [Synth 8-3295] tying undriven pin segment1:in6[2] to constant 0 [/home/victor/SolarRAT/SolarRAT_Driver/XADC/XADC.v:135]
-WARNING: [Synth 8-3295] tying undriven pin segment1:in6[1] to constant 0 [/home/victor/SolarRAT/SolarRAT_Driver/XADC/XADC.v:135]
-WARNING: [Synth 8-3295] tying undriven pin segment1:in6[0] to constant 0 [/home/victor/SolarRAT/SolarRAT_Driver/XADC/XADC.v:135]
-WARNING: [Synth 8-3295] tying undriven pin segment1:in7[3] to constant 0 [/home/victor/SolarRAT/SolarRAT_Driver/XADC/XADC.v:135]
-WARNING: [Synth 8-3295] tying undriven pin segment1:in7[2] to constant 0 [/home/victor/SolarRAT/SolarRAT_Driver/XADC/XADC.v:135]
-WARNING: [Synth 8-3295] tying undriven pin segment1:in7[1] to constant 0 [/home/victor/SolarRAT/SolarRAT_Driver/XADC/XADC.v:135]
-WARNING: [Synth 8-3295] tying undriven pin segment1:in7[0] to constant 0 [/home/victor/SolarRAT/SolarRAT_Driver/XADC/XADC.v:135]
-WARNING: [Synth 8-3295] tying undriven pin segment1:in8[3] to constant 0 [/home/victor/SolarRAT/SolarRAT_Driver/XADC/XADC.v:135]
-WARNING: [Synth 8-3295] tying undriven pin segment1:in8[2] to constant 0 [/home/victor/SolarRAT/SolarRAT_Driver/XADC/XADC.v:135]
-WARNING: [Synth 8-3295] tying undriven pin segment1:in8[1] to constant 0 [/home/victor/SolarRAT/SolarRAT_Driver/XADC/XADC.v:135]
-WARNING: [Synth 8-3295] tying undriven pin segment1:in8[0] to constant 0 [/home/victor/SolarRAT/SolarRAT_Driver/XADC/XADC.v:135]
+WARNING: [Synth 8-3295] tying undriven pin segment1:in5[3] to constant 0 [/home/victor/SolarRAT/SolarRAT_Driver/XADC/XADC.v:146]
+WARNING: [Synth 8-3295] tying undriven pin segment1:in5[2] to constant 0 [/home/victor/SolarRAT/SolarRAT_Driver/XADC/XADC.v:146]
+WARNING: [Synth 8-3295] tying undriven pin segment1:in5[1] to constant 0 [/home/victor/SolarRAT/SolarRAT_Driver/XADC/XADC.v:146]
+WARNING: [Synth 8-3295] tying undriven pin segment1:in5[0] to constant 0 [/home/victor/SolarRAT/SolarRAT_Driver/XADC/XADC.v:146]
+WARNING: [Synth 8-3295] tying undriven pin segment1:in6[3] to constant 0 [/home/victor/SolarRAT/SolarRAT_Driver/XADC/XADC.v:146]
+WARNING: [Synth 8-3295] tying undriven pin segment1:in6[2] to constant 0 [/home/victor/SolarRAT/SolarRAT_Driver/XADC/XADC.v:146]
+WARNING: [Synth 8-3295] tying undriven pin segment1:in6[1] to constant 0 [/home/victor/SolarRAT/SolarRAT_Driver/XADC/XADC.v:146]
+WARNING: [Synth 8-3295] tying undriven pin segment1:in6[0] to constant 0 [/home/victor/SolarRAT/SolarRAT_Driver/XADC/XADC.v:146]
+WARNING: [Synth 8-3295] tying undriven pin segment1:in7[3] to constant 0 [/home/victor/SolarRAT/SolarRAT_Driver/XADC/XADC.v:146]
+WARNING: [Synth 8-3295] tying undriven pin segment1:in7[2] to constant 0 [/home/victor/SolarRAT/SolarRAT_Driver/XADC/XADC.v:146]
+WARNING: [Synth 8-3295] tying undriven pin segment1:in7[1] to constant 0 [/home/victor/SolarRAT/SolarRAT_Driver/XADC/XADC.v:146]
+WARNING: [Synth 8-3295] tying undriven pin segment1:in7[0] to constant 0 [/home/victor/SolarRAT/SolarRAT_Driver/XADC/XADC.v:146]
+WARNING: [Synth 8-3295] tying undriven pin segment1:in8[3] to constant 0 [/home/victor/SolarRAT/SolarRAT_Driver/XADC/XADC.v:146]
+WARNING: [Synth 8-3295] tying undriven pin segment1:in8[2] to constant 0 [/home/victor/SolarRAT/SolarRAT_Driver/XADC/XADC.v:146]
+WARNING: [Synth 8-3295] tying undriven pin segment1:in8[1] to constant 0 [/home/victor/SolarRAT/SolarRAT_Driver/XADC/XADC.v:146]
+WARNING: [Synth 8-3295] tying undriven pin segment1:in8[0] to constant 0 [/home/victor/SolarRAT/SolarRAT_Driver/XADC/XADC.v:146]
+WARNING: [Synth 8-3295] tying undriven pin WIZARD:sw[1] to constant 0 [/home/victor/SolarRAT/SolarRAT_Driver/SolarRAT_Driver.sv:125]
+WARNING: [Synth 8-3295] tying undriven pin WIZARD:sw[0] to constant 0 [/home/victor/SolarRAT/SolarRAT_Driver/SolarRAT_Driver.sv:125]
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1304.793 ; gain = 127.133 ; free physical = 10778 ; free virtual = 16819
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1304.793 ; gain = 127.133 ; free physical = 2501 ; free virtual = 13172
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1304.793 ; gain = 127.133 ; free physical = 10778 ; free virtual = 16819
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1304.793 ; gain = 127.133 ; free physical = 2501 ; free virtual = 13172
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -156,7 +155,24 @@ Initializing timing engine
 Parsing XDC File [/home/victor/SolarRAT/SolarRAT_Driver/SolarRAT_Driver/SolarRAT_Driver.srcs/sources_1/ip/photoresistor_xadc/photoresistor_xadc/photoresistor_xadc_in_context.xdc] for cell 'WIZARD/XLXI_7'
 Finished Parsing XDC File [/home/victor/SolarRAT/SolarRAT_Driver/SolarRAT_Driver/SolarRAT_Driver.srcs/sources_1/ip/photoresistor_xadc/photoresistor_xadc/photoresistor_xadc_in_context.xdc] for cell 'WIZARD/XLXI_7'
 Parsing XDC File [/home/victor/SolarRAT/SolarRAT_Driver/Basys3_Master.xdc]
+WARNING: [Vivado 12-584] No ports matched 'SW[8]'. [/home/victor/SolarRAT/SolarRAT_Driver/Basys3_Master.xdc:28]
+WARNING: [Vivado 12-584] No ports matched 'SW[8]'. [/home/victor/SolarRAT/SolarRAT_Driver/Basys3_Master.xdc:29]
+WARNING: [Vivado 12-584] No ports matched 'SW[9]'. [/home/victor/SolarRAT/SolarRAT_Driver/Basys3_Master.xdc:30]
+WARNING: [Vivado 12-584] No ports matched 'SW[9]'. [/home/victor/SolarRAT/SolarRAT_Driver/Basys3_Master.xdc:31]
+WARNING: [Vivado 12-584] No ports matched 'SW[10]'. [/home/victor/SolarRAT/SolarRAT_Driver/Basys3_Master.xdc:32]
+WARNING: [Vivado 12-584] No ports matched 'SW[10]'. [/home/victor/SolarRAT/SolarRAT_Driver/Basys3_Master.xdc:33]
+WARNING: [Vivado 12-584] No ports matched 'SW[11]'. [/home/victor/SolarRAT/SolarRAT_Driver/Basys3_Master.xdc:34]
+WARNING: [Vivado 12-584] No ports matched 'SW[11]'. [/home/victor/SolarRAT/SolarRAT_Driver/Basys3_Master.xdc:35]
+WARNING: [Vivado 12-584] No ports matched 'SW[12]'. [/home/victor/SolarRAT/SolarRAT_Driver/Basys3_Master.xdc:36]
+WARNING: [Vivado 12-584] No ports matched 'SW[12]'. [/home/victor/SolarRAT/SolarRAT_Driver/Basys3_Master.xdc:37]
+WARNING: [Vivado 12-584] No ports matched 'SW[13]'. [/home/victor/SolarRAT/SolarRAT_Driver/Basys3_Master.xdc:38]
+WARNING: [Vivado 12-584] No ports matched 'SW[13]'. [/home/victor/SolarRAT/SolarRAT_Driver/Basys3_Master.xdc:39]
+WARNING: [Vivado 12-584] No ports matched 'SW[14]'. [/home/victor/SolarRAT/SolarRAT_Driver/Basys3_Master.xdc:40]
+WARNING: [Vivado 12-584] No ports matched 'SW[14]'. [/home/victor/SolarRAT/SolarRAT_Driver/Basys3_Master.xdc:41]
+WARNING: [Vivado 12-584] No ports matched 'SW[15]'. [/home/victor/SolarRAT/SolarRAT_Driver/Basys3_Master.xdc:42]
+WARNING: [Vivado 12-584] No ports matched 'SW[15]'. [/home/victor/SolarRAT/SolarRAT_Driver/Basys3_Master.xdc:43]
 Finished Parsing XDC File [/home/victor/SolarRAT/SolarRAT_Driver/Basys3_Master.xdc]
+WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [/home/victor/SolarRAT/SolarRAT_Driver/Basys3_Master.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/SolarRAT_Driver_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/victor/SolarRAT/SolarRAT_Driver/Basys3_Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/SolarRAT_Driver_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/SolarRAT_Driver_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
@@ -164,23 +180,23 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1635.121 ; gain = 0.000 ; free physical = 10522 ; free virtual = 16569
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1635.121 ; gain = 0.000 ; free physical = 2239 ; free virtual = 12911
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:21 . Memory (MB): peak = 1635.121 ; gain = 457.461 ; free physical = 10605 ; free virtual = 16647
+Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:23 . Memory (MB): peak = 1635.121 ; gain = 457.461 ; free physical = 2318 ; free virtual = 12990
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:21 . Memory (MB): peak = 1635.121 ; gain = 457.461 ; free physical = 10605 ; free virtual = 16647
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:23 . Memory (MB): peak = 1635.121 ; gain = 457.461 ; free physical = 2318 ; free virtual = 12990
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 Applied set_property DONT_TOUCH = true for WIZARD/XLXI_7. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:21 . Memory (MB): peak = 1635.121 ; gain = 457.461 ; free physical = 10607 ; free virtual = 16649
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:23 . Memory (MB): peak = 1635.121 ; gain = 457.461 ; free physical = 2320 ; free virtual = 12992
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'PS_reg' in module 'CONTROL_UNIT'
 INFO: [Synth 8-5545] ROM "FLG_SHAD_LD" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
@@ -248,7 +264,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'XADC__mod'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:23 . Memory (MB): peak = 1635.121 ; gain = 457.461 ; free physical = 10595 ; free virtual = 16637
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:25 . Memory (MB): peak = 1635.121 ; gain = 457.461 ; free physical = 2329 ; free virtual = 13001
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -280,6 +296,7 @@ Detailed RTL Component Info :
 	               16 Bit    Registers := 4     
 	               10 Bit    Registers := 1     
 	                8 Bit    Registers := 3     
+	                5 Bit    Registers := 1     
 	                4 Bit    Registers := 2     
 	                3 Bit    Registers := 1     
 	                2 Bit    Registers := 1     
@@ -468,6 +485,7 @@ Detailed RTL Component Info :
 +---Registers : 
 	               33 Bit    Registers := 1     
 	               16 Bit    Registers := 3     
+	                5 Bit    Registers := 1     
 	                4 Bit    Registers := 1     
 	                1 Bit    Registers := 1     
 +---Muxes : 
@@ -500,15 +518,23 @@ INFO: [Synth 8-5546] ROM "DB_BTN" won't be mapped to RAM because it is too spars
 INFO: [Synth 8-5546] ROM "s_count_rst" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5545] ROM "segment1/XLXI_47/count" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "segment1/XLXI_47/clk_div" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-WARNING: [Synth 8-6014] Unused sequential element b2d_din_reg was removed.  [/home/victor/SolarRAT/SolarRAT_Driver/XADC/XADC.v:110]
+WARNING: [Synth 8-6014] Unused sequential element b2d_din_reg was removed.  [/home/victor/SolarRAT/SolarRAT_Driver/XADC/XADC.v:113]
 DSP Report: Generating DSP m_b2d/data1, operation Mode is: A2*(B:0x3e8).
 DSP Report: register b2d_din_reg is absorbed into DSP m_b2d/data1.
 DSP Report: operator m_b2d/data1 is absorbed into DSP m_b2d/data1.
 INFO: [Synth 8-5546] ROM "O120" won't be mapped to RAM because it is too sparse
-WARNING: [Synth 8-3331] design SolarRAT_Driver has unconnected port dp
-INFO: [Synth 8-3886] merging instance 'WIZARD/led_reg[0]' (FDE) to 'WIZARD/led_reg[1]'
+INFO: [Synth 8-3886] merging instance 'WIZARD/Address_in_reg[0]' (FD) to 'WIZARD/Address_in_reg[3]'
+INFO: [Synth 8-3886] merging instance 'WIZARD/Address_in_reg[1]' (FD) to 'WIZARD/Address_in_reg[4]'
+INFO: [Synth 8-3886] merging instance 'WIZARD/Address_in_reg[2]' (FD) to 'WIZARD/Address_in_reg[4]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (WIZARD/\Address_in_reg[3] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (WIZARD/\Address_in_reg[4] )
+INFO: [Synth 8-3886] merging instance 'WIZARD/data_digital_reg[3]' (FDE) to 'WIZARD/led_reg[8]'
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (WIZARD/\led_reg[0] )
+WARNING: [Synth 8-3332] Sequential element (led_reg[0]) is unused and will be removed from module XADC__mod.
+WARNING: [Synth 8-3332] Sequential element (Address_in_reg[4]) is unused and will be removed from module XADC__mod.
+WARNING: [Synth 8-3332] Sequential element (Address_in_reg[3]) is unused and will be removed from module XADC__mod.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:26 . Memory (MB): peak = 1635.121 ; gain = 457.461 ; free physical = 10575 ; free virtual = 16620
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:28 . Memory (MB): peak = 1635.121 ; gain = 457.461 ; free physical = 2312 ; free virtual = 12986
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -557,13 +583,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:24 ; elapsed = 00:00:35 . Memory (MB): peak = 1637.121 ; gain = 459.461 ; free physical = 10425 ; free virtual = 16469
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:26 ; elapsed = 00:00:39 . Memory (MB): peak = 1637.121 ; gain = 459.461 ; free physical = 2165 ; free virtual = 12840
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:24 ; elapsed = 00:00:36 . Memory (MB): peak = 1652.137 ; gain = 474.477 ; free physical = 10418 ; free virtual = 16462
+Finished Timing Optimization : Time (s): cpu = 00:00:27 ; elapsed = 00:00:40 . Memory (MB): peak = 1653.137 ; gain = 475.477 ; free physical = 2159 ; free virtual = 12834
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -595,7 +621,7 @@ INFO: [Synth 8-3886] merging instance 'MCU/PROM/PROG_IR_reg_rep_bsel[5]' (FD) to
 INFO: [Synth 8-3886] merging instance 'MCU/PROM/PROG_IR_reg_rep_bsel[4]' (FD) to 'MCU/PROM/PROG_IR_reg[4]'
 INFO: [Synth 8-3886] merging instance 'MCU/PROM/PROG_IR_reg_rep_bsel[3]' (FD) to 'MCU/PROM/PROG_IR_reg[3]'
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:25 ; elapsed = 00:00:37 . Memory (MB): peak = 1670.152 ; gain = 492.492 ; free physical = 10416 ; free virtual = 16461
+Finished Technology Mapping : Time (s): cpu = 00:00:27 ; elapsed = 00:00:40 . Memory (MB): peak = 1670.152 ; gain = 492.492 ; free physical = 2157 ; free virtual = 12832
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -618,18 +644,11 @@ Start Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \WIZARD/XLXI_7  has unconnected pin daddr_in[6]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \WIZARD/XLXI_7  has unconnected pin daddr_in[5]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \WIZARD/XLXI_7  has unconnected pin daddr_in[4]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \WIZARD/XLXI_7  has unconnected pin daddr_in[3]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \WIZARD/XLXI_7  has unconnected pin daddr_in[2]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \WIZARD/XLXI_7  has unconnected pin daddr_in[1]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \WIZARD/XLXI_7  has unconnected pin daddr_in[0]
 CRITICAL WARNING: [Synth 8-4442] BlackBox module \WIZARD/XLXI_7  has unconnected pin reset_in
 CRITICAL WARNING: [Synth 8-4442] BlackBox module \WIZARD/XLXI_7  has unconnected pin vp_in
 CRITICAL WARNING: [Synth 8-4442] BlackBox module \WIZARD/XLXI_7  has unconnected pin vn_in
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:25 ; elapsed = 00:00:37 . Memory (MB): peak = 1670.152 ; gain = 492.492 ; free physical = 10416 ; free virtual = 16460
+Finished IO Insertion : Time (s): cpu = 00:00:28 ; elapsed = 00:00:41 . Memory (MB): peak = 1670.152 ; gain = 492.492 ; free physical = 2156 ; free virtual = 12831
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -642,7 +661,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:25 ; elapsed = 00:00:37 . Memory (MB): peak = 1670.152 ; gain = 492.492 ; free physical = 10416 ; free virtual = 16460
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:28 ; elapsed = 00:00:41 . Memory (MB): peak = 1670.152 ; gain = 492.492 ; free physical = 2156 ; free virtual = 12831
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -654,25 +673,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:26 ; elapsed = 00:00:37 . Memory (MB): peak = 1670.152 ; gain = 492.492 ; free physical = 10416 ; free virtual = 16460
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:28 ; elapsed = 00:00:41 . Memory (MB): peak = 1670.152 ; gain = 492.492 ; free physical = 2156 ; free virtual = 12831
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:26 ; elapsed = 00:00:37 . Memory (MB): peak = 1670.152 ; gain = 492.492 ; free physical = 10416 ; free virtual = 16460
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:28 ; elapsed = 00:00:41 . Memory (MB): peak = 1670.152 ; gain = 492.492 ; free physical = 2156 ; free virtual = 12831
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:26 ; elapsed = 00:00:37 . Memory (MB): peak = 1670.152 ; gain = 492.492 ; free physical = 10416 ; free virtual = 16460
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:28 ; elapsed = 00:00:41 . Memory (MB): peak = 1670.152 ; gain = 492.492 ; free physical = 2156 ; free virtual = 12831
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:26 ; elapsed = 00:00:37 . Memory (MB): peak = 1670.152 ; gain = 492.492 ; free physical = 10416 ; free virtual = 16460
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:28 ; elapsed = 00:00:41 . Memory (MB): peak = 1670.152 ; gain = 492.492 ; free physical = 2156 ; free virtual = 12831
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -694,9 +713,9 @@ Report Cell Usage:
 |3     |CARRY4             |   168|
 |4     |DSP48E1            |     1|
 |5     |LUT1               |    19|
-|6     |LUT2               |   163|
-|7     |LUT3               |   246|
-|8     |LUT4               |   196|
+|6     |LUT2               |   167|
+|7     |LUT3               |   252|
+|8     |LUT4               |   186|
 |9     |LUT5               |   149|
 |10    |LUT6               |   360|
 |11    |MUXF7              |    10|
@@ -704,18 +723,17 @@ Report Cell Usage:
 |13    |RAM256X1S          |    10|
 |14    |RAM32X1D           |     8|
 |15    |RAMB18E1_1         |     1|
-|16    |FDRE               |   236|
+|16    |FDRE               |   235|
 |17    |FDSE               |     1|
 |18    |IBUF               |    13|
-|19    |OBUF               |    35|
-|20    |OBUFT              |     1|
+|19    |OBUF               |    36|
 +------+-------------------+------+
 
 Report Instance Areas: 
 +------+--------------+------------------+------+
 |      |Instance      |Module            |Cells |
 +------+--------------+------------------+------+
-|1     |top           |                  |  1653|
+|1     |top           |                  |  1652|
 |2     |  MCU         |RAT_MCU           |   310|
 |3     |    CU        |CONTROL_UNIT      |    16|
 |4     |    INTR_REG  |I                 |     1|
@@ -726,18 +744,18 @@ Report Instance Areas:
 |9     |    alu       |ALU               |    13|
 |10    |    flag      |FLAGS             |    10|
 |11    |  ONESHOT     |debounce_one_shot |    34|
-|12    |  WIZARD      |XADC__mod         |  1248|
+|12    |  WIZARD      |XADC__mod         |  1247|
 |13    |    m_b2d     |bin2dec           |  1017|
 |14    |    segment1  |DigitToSeg        |   103|
 |15    |      XLXI_47 |segClkDevider     |    82|
 |16    |      XLXI_49 |counter3bit       |    21|
 +------+--------------+------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:26 ; elapsed = 00:00:37 . Memory (MB): peak = 1670.152 ; gain = 492.492 ; free physical = 10416 ; free virtual = 16460
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:28 ; elapsed = 00:00:41 . Memory (MB): peak = 1670.152 ; gain = 492.492 ; free physical = 2156 ; free virtual = 12831
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 10 critical warnings and 4 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:18 ; elapsed = 00:00:22 . Memory (MB): peak = 1670.152 ; gain = 162.164 ; free physical = 10486 ; free virtual = 16530
-Synthesis Optimization Complete : Time (s): cpu = 00:00:26 ; elapsed = 00:00:37 . Memory (MB): peak = 1670.160 ; gain = 492.492 ; free physical = 10486 ; free virtual = 16530
+Synthesis finished with 0 errors, 3 critical warnings and 6 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:21 ; elapsed = 00:00:25 . Memory (MB): peak = 1670.152 ; gain = 162.164 ; free physical = 2228 ; free virtual = 12902
+Synthesis Optimization Complete : Time (s): cpu = 00:00:28 ; elapsed = 00:00:42 . Memory (MB): peak = 1670.160 ; gain = 492.492 ; free physical = 2228 ; free virtual = 12902
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 215 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -749,11 +767,11 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   RAM32X1D => RAM32X1D (RAMD32, RAMD32): 8 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-117 Infos, 33 Warnings, 10 Critical Warnings and 0 Errors encountered.
+123 Infos, 51 Warnings, 3 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:28 ; elapsed = 00:00:39 . Memory (MB): peak = 1670.160 ; gain = 504.320 ; free physical = 10490 ; free virtual = 16534
+synth_design: Time (s): cpu = 00:00:30 ; elapsed = 00:00:43 . Memory (MB): peak = 1670.160 ; gain = 504.320 ; free physical = 2230 ; free virtual = 12904
 WARNING: [Constraints 18-5210] No constraint will be written out.
 INFO: [Common 17-1381] The checkpoint '/home/victor/SolarRAT/SolarRAT_Driver/SolarRAT_Driver/SolarRAT_Driver.runs/synth_1/SolarRAT_Driver.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file SolarRAT_Driver_utilization_synth.rpt -pb SolarRAT_Driver_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.03 . Memory (MB): peak = 1694.164 ; gain = 0.000 ; free physical = 10491 ; free virtual = 16534
-INFO: [Common 17-206] Exiting Vivado at Sat Mar  9 15:31:25 2019...
+report_utilization: Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.03 . Memory (MB): peak = 1694.164 ; gain = 0.000 ; free physical = 2232 ; free virtual = 12907
+INFO: [Common 17-206] Exiting Vivado at Thu Mar 14 12:36:12 2019...

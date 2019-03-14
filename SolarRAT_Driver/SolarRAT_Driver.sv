@@ -126,7 +126,7 @@ XADC WIZARD(
     .CLK100MHZ(CLK),
     .vauxp6(vauxp6),
     .vauxn6(vauxn6),
-   .sw(SW[1:0]),
+   //.sw(SW[1:0]),
     .led(led),
     .an(an),
     .dp(dp),
