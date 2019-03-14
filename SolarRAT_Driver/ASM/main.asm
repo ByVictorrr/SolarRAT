@@ -257,15 +257,14 @@ goBestLocation:
 
 ISR:
 	IN R18, SWITCH_PORT
-	OR R18, 128
+	AND R18, 131
 	OUT R18, ARDUINO_PORT
-	CALL delay
-	AND R18, 4 ; check if we need to return from isr
-	
-	CMP R18, 4
+	AND R18, 128 ; check if we need to return from isr	
+	CMP R18, 128
 	
 	;z == 1 if they are equal thus SW[2] is high
-	BRNE ISR
+	BREQ ISR
+
 	RETIE
 	
 .CSEG
