@@ -52,9 +52,9 @@ main:
 	;CALL delay
 	CALL goBestLocation
 	SUB R29, 1
-	BREQ main
+	BRNE main
 	SUB R30, 1
-	CALL delay
+	;CALL delay
 	BRN main_main
 
 ;------------------------------------------------------------------------------------
