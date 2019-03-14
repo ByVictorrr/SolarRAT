@@ -2,12 +2,15 @@
 
 ![solar rat logo](https://github.com/ByVictorrr/SolarRAT/blob/master/images/SolarRat_Logo.png)
 
+
 ### Project designed by:
 Julio Tena
 
 Victor Delaplaine
 
 Javier Flores 
+
+Instructor: Dr. Benson
 
 ## Mechanism
 Using A RAT MCU Created int CPE233, to input a set of data from a solar panel and have a bubble sort algorithm run every 5 min finding the highest voltage position.
