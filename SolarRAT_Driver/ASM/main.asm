@@ -34,11 +34,12 @@ arduino_sweep: .BYTE 12 ; 0x01 ... 0x0C (12th)
 .EQU BUBBLE_INNER_COUNT = 12
 .EQU SWEEP_COUNT = 13
 .EQU MAIN_COUNT = 255
+.EQU MAIN_OUTER_COUNT = 100
 ;-------------------------------------------------
 .CSEG
 .ORG 0x0D
 
-MOV R30, MAIN_COUNT
+MOV R30, MAIN_OUTER_COUNT
 
 main_main:
 MOV R29, MAIN_COUNT
@@ -223,7 +224,7 @@ decrement_count_inner:
 	SUB R9, 1 ;count_outer = count_outer - 1
 
 	BRNE bubble_outer_loop
-	CALL delay
+	;CALL delay
 	RET
 
 swap:   ;swap(arr[ADD_i], arr[ADD_i+1])
@@ -251,7 +252,7 @@ goBestLocation:
 		AND R17, 15
 stayBestLocation:
 		OUT R17, ARDUINO_PORT
-		CALL delay
+		;CALL delay
 		CMP R30, 1
 		BREQ stayBestLocation
 		RET
