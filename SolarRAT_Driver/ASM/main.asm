@@ -243,29 +243,34 @@ goBestLocation:
 		RET
 
 
-;---------------------------------------------
-
 ;-----------------------------------------------------------------------------
 ; ISR - allows someone to go in manual mode, turn servo using SW's 45 degrees each
 ;
 ; Tweaked parameters:
-; R18 - {1,0,0,0,0,SW[2],SW[1:0]}
-; - first bit tells arduino isr mode
-; - SW[2] tells us to go back from isr mode if high
+; R18 - {1,0,0,0,0,0,SW[1:0]} 
+; - SW[7] tells us to go back from isr mode if high
 ;--------------------------------------------------------------------
 
-ISR:
-	IN R18, SWITCH_PORT
-	OR R18, 128
-	OUT R18, ARDUINO_PORT
-	CALL delay
-	AND R18, 4 ; check if we need to return from isr
 
-	CMP R18, 4
 
-	;z == 1 if they are equal thus SW[2] is high
-	BRNE ISR
-	RETIE
+ISR: ;keeping it on the sw[7]
+
+IN R18, SWITCH_PORT ;reading an input 
+AND R18, 131 ;telling ardino we are in isr by setting sw[7] ==1 and setting sw[6:2] = 0 (masking)
+MOV R19, R18 ;setting a number equal to R19 before masking
+OUT R18, ARDUINO_PORT ; output that sw[7] high and the value inputted
+
+;is sw[7] == 1
+
+AND R18, 128 ; SW[7] && 1
+
+CMP R18, 128  
+
+;is SW[7] === 1 go to ISR
+BREQ ISR
+
+RETIE
+
 
 .CSEG
 .ORG 0x3FF
