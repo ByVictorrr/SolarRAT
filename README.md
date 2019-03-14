@@ -2,6 +2,8 @@
 
 ![solar rat logo](https://github.com/ByVictorrr/SolarRAT/blob/master/images/SolarRat_Logo.png)
 
+* Allows you to store optimize solar energy automomously
+* Works as a manual tracker
 
 ### Project designed by:
 Julio Tena
@@ -12,7 +14,7 @@ Javier Flores
 
 Instructor: Dr. Benson
 
-## Theory
+## How SolarRAT works
 
 Using A RAT MCU Created in CPE233, to input a set of data from a photoresitor using a servo to go through different set of locations (defined as a sweep subroutine). These locations (0-12 [4-bits] shown below in table 1) and the corresonding photon intensity (0-1V [4-bits]) are concatentated into one 8-bit register to be stored in the sctrach ram of the RAT MCU. This sweep repeats until it goes from location 0-12, then a bubble sort algorithm is then called. This bubble sort sorts the highest Register[7:4] value on the top os the stack(TOS). After a goToBestLocation is called to pop the highest voltage value of the stack and is outputed to the servo_driver(arduino) to give the servo instructions to stay there for a longer time than usual. 
 
@@ -71,14 +73,9 @@ the 4 least bits is the location
 
 ![Flow Chart of firmware](https://github.com/ByVictorrr/SolarRAT/tree/master/SolarRAT_Driver/ASM/Flowcharts/images/main.png)
 
-This source code was entirely writen by [Victor Delaplaine](https://github.com/byvictorrr)
 
-### ARDUINO CODE 
-[Servo Driver]()
 
-This source code was entirely writen by [Julio Tena](https://github.com/jctenav)
-
-### Delay time - 2S
+#### Delay time - 2S
 
 Since the Rat MCU completes one instruction / 40ns, and we want the function delay to delay 2s so equating a general equation below gives us an equation below that.
 
@@ -102,6 +99,19 @@ Using the guess in check method for all parameters we get:
 ![plugging in to 2s delay](https://latex.codecogs.com/gif.latex?C_1%28N_%7Bol%7D%20%3D2%20%2CN_1%20%3D%2010%2C%20N_2%20%3D%204%2C%20N_3%3D%206%2C%20C_2%20%3D%20176%2C%20C_3%20%3D236%20%29%20%5Capprox%20201%250)
 
 
+This source code was entirely writen by [Victor Delaplaine](https://github.com/byvictorrr)
+
+### ARDUINO CODE 
+[Servo Driver]()
+
+This source code was entirely writen by [Julio Tena](https://github.com/jctenav)
+
+
+## Schmatic 
+
+![assembled schematic](https://github.com/ByVictorrr/SolarRAT/blob/master/images/SolarRAT_assembled.jpg)
+
+![computer schematic]()
 
 ## Hardware
 [Basys 3 Artix-7 FPGA](https://store.digilentinc.com/basys-3-artix-7-fpga-trainer-board-recommended-for-introductory-users/)
