@@ -116,8 +116,7 @@ This source code was entirely writen by [Julio Tena](https://github.com/jctenav)
 
 ## Schmatic 
 
-
-![computer schematic]()
+![computer schematic](https://github.com/ByVictorrr/SolarRAT/tree/master/SolarRAT_Driver/RAT_MCU)
 
 ## Hardware
 
