@@ -33,11 +33,13 @@ arduino_sweep: .BYTE 12 ; 0x01 ... 0x0C (12th)
 .EQU BUBBLE_OUTER_COUNT =  12 ;
 .EQU BUBBLE_INNER_COUNT = 12
 .EQU SWEEP_COUNT = 12
+.EQU MAIN_COUNT = 7
 ;-------------------------------------------------
 .CSEG
 .ORG 0x0D
 
 
+MOV R29, MAIN_COUNT
 
 main:
 	SEI ; set interupts
@@ -46,6 +48,7 @@ main:
 	CALL bubble_sort
 	CALL goBestLocation
 	CALL delay
+	SUB R29, 1
 	BRN main
 
 ;------------------------------------------------------------------------------------
@@ -238,8 +241,11 @@ swap:   ;swap(arr[ADD_i], arr[ADD_i+1])
 goBestLocation:
 		WSP R31 ; reg that has value of 0
 		POP R17
+stayBestLocation:
 		OUT R17, ARDUINO_PORT
 		CALL delay
+		CMP R29, 1
+		BREQ stayBestLocation
 		RET
 
 
