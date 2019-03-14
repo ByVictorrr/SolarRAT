@@ -28,9 +28,9 @@ arduino_sweep: .BYTE 12 ; 0x01 ... 0x0C (12th)
 
 ;----CONSTANT DECLARATION-------------------
 .EQU DELAY_COUNT_INNER = 236
-.EQU DELAY_COUNT_MIDDLE = 176
-.EQU DELAY_COUNT_OUTER = 201
-.EQU BUBBLE_OUTER_COUNT =  13 ; 
+.EQU DELAY_COUNT_MIDDLE =  176
+.EQU DELAY_COUNT_OUTER =  201
+.EQU BUBBLE_OUTER_COUNT =  13 
 .EQU BUBBLE_INNER_COUNT = 13
 .EQU SWEEP_COUNT = 13
 ;-------------------------------------------------
@@ -42,7 +42,7 @@ arduino_sweep: .BYTE 12 ; 0x01 ... 0x0C (12th)
 main:
 	SEI ; set interupts
 	CALL sweep
-	CALL delay
+	;CALL delay
 	CALL bubble_sort
 	CALL goBestLocation 
 	CALL delay
@@ -83,9 +83,8 @@ sweep_loop:
 
 	IN R2, LIGHT_PORT ; arduino[7:4] = from LIGHT_PORT
 
-	CALL delay
 
-	OUT R1, ARDUINO_PORT ; output arduino[3:0] to Arduino_ID
+'	OUT R1, ARDUINO_PORT ; output arduino[3:0] to Arduino_ID
 	
 	OR R1, R2 ; arduino[7:0]  = {arduino[7:4],arduino[3:0]}
 
@@ -240,9 +239,11 @@ goBestLocation:
 		WSP R31 ; reg that has value of 0
 		POP R17
 		AND R17, 15
+stayBestLocation:
 		OUT R17, ARDUINO_PORT
-		CALL delay 	
-		RET 
+		BRN stayBestLocation
+		; 	
+		;RET 
 		
 		
 ;---------------------------------------------
