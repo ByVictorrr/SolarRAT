@@ -12,9 +12,9 @@ Javier Flores
 
 Instructor: Dr. Benson
 
-## Mechanism
-Using A RAT MCU Created int CPE233, to input a set of data from a solar panel and have a bubble sort algorithm run every 5 min finding the highest voltage position.
-
+## Theory
+Using A RAT MCU Created in CPE233, to input a set of data from a photoresitor using a servo to go through different set of locations (defined as a sweep subroutine). These locations (0-12 [4-bits] shown below in table 1) and the corresonding photon intensity (0-1V [4-bits]) are concatentated into one 8-bit register to be stored in the sctrach ram of the RAT MCU. This sweep repeats until it goes from location 0-12, then a bubble sort algorithm is then called. This bubble sort sorts the highest Register[7:4] value on the top os the stack(TOS). After a goToBestLocation is called to pop the highest voltage value of the stack and is outputed to the servo_driver(arduino) to give the servo instructions to stay there for a longer time than usual. 
+This procedure repeats until someone presses the BTNL button the RATMCU, this will put the Solar_RAT in manual mode and one can perform the operations shown in table 2.
 
 ## SolarRAT_Driver
 
@@ -25,7 +25,7 @@ the 4 least bits is the location
 
 
 
-### Table 1 - sweep function
+### Table 1 - sweep function 
  |  output from basys3  | Servo Rotation(Degrees)  | 
  |----------------------|--------------------------|
  |0000                  |    0°                    |  
@@ -43,26 +43,29 @@ the 4 least bits is the location
  |1100                  |    180°                  | 
  
 ### Table 2 - isr (manual mode)
- |  output (from basys3)      | Servo Rotation(Degrees)  | 
- |----------------------------|--------------------------|
- |100000_00                  |    0°                    |  
- |100000_01                  |    60°                   |  
- |100000_10                  |    120°                  |  
- |100000_11                  |    180°                  | 
- |000000_00                  |    OFF°                  |  
- |000000_01                  |    OFF°                  |  
- |000000_10                  |    OFF°                  |  
- |000000_11                  |    OFF°                  | 
+ | output[7:0](from basys3)  | Servo Rotation(Degrees)  | 
+ |---------------------------|--------------------------|
+ |100000_00                  |    15°                   |  
+ |100000_01                  |    75°                   |  
+ |100000_10                  |    135°                  |  
+ |100000_11                  |sweep(no data collection) | 
+ |000000_00                  |    sweep                 |  
+ |000000_01                  |    sweep                 |  
+ |000000_10                  |    sweep                 |  
+ |000000_11                  |    sweep                 | 
 
 
-* Note that in the table above for our manual mode, we use output[2] to indicate turn off manual mode.
 * Note that output[7] tells the arduino that we currently in manual mode.
 
 ## FirmWare
 
+### RAT_MCU CODE
 [SolarRAT Driver](https://github.com/ByVictorrr/SolarRAT/blob/master/SolarRAT_Driver/ASM/main.asm)
 
 ![Flow Chart of firmware](https://github.com/ByVictorrr/SolarRAT/tree/master/SolarRAT_Driver/ASM/Flowcharts/images/main.png)
+
+### ARDUINO CODE
+[Servo Driver]()
 
 ### Delay time - 2S
 
@@ -89,21 +92,18 @@ Using the guess in check method for all parameters we get:
 
 
 
-
-
 ## Hardware
 [Basys 3 Artix-7 FPGA](https://store.digilentinc.com/basys-3-artix-7-fpga-trainer-board-recommended-for-introductory-users/)
 
-[9g Micro Servo Motor (4.8V)](https://www.robotshop.com/en/9g-micro-servo-motor-4-8v.html)
+[Arduino uno](https://store.arduino.cc/usa/arduino-uno-rev3)
 
-[1787AHC125 - FRIENDLY 8-BIT LOGIC LEVEL SHIFTER](https://www.adafruit.com/product/735)
+[9g Micro Servo Motor (4.8V)](https://www.robotshop.com/en/9g-micro-servo-motor-4-8v.html)
 
 [Photoresistor](https://www.adafruit.com/product/161)
 
 [3d print for Servo](https://www.thingiverse.com/thing:2271734)
 
 [Mini solar panel](https://www.amazon.com/gp/product/B0736W4HK1/ref=ppx_yo_dt_b_asin_title_o01_s00?ie=UTF8&psc=1)
-
 
 ## Reference Links
 
@@ -115,9 +115,6 @@ https://www.thingiverse.com/thing:53321
 
 Servo Motor - 
 http://www.ee.ic.ac.uk/pcheung/teaching/de1_ee/stores/sg90_datasheet.pdf
-
-Level Shifter - 
-https://cdn-shop.adafruit.com/product-files/1787/1787AHC125.pdf
 
 3D Printing Services on Campus - 
 https://www.theinnovationsandbox.com/
