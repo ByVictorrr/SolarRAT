@@ -64,10 +64,10 @@ the 4 least bits is the location
 
 ![Flow Chart of firmware](https://github.com/ByVictorrr/SolarRAT/tree/master/SolarRAT_Driver/ASM/Flowcharts/images/main.png)
 
-This source code was entirely writen by Victor Delaplaine
+This source code was entirely writen by [Victor Delaplaine](https://github.com/byvictorrr)
 
 ### ARDUINO CODE 
-[Servo Driver](https://github.com/byvictorrr)
+[Servo Driver]()
 
 This source code was entirely writen by [Julio Tena](https://github.com/jctenav)
 
