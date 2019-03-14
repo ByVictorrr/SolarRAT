@@ -13,7 +13,7 @@
 /*
     Reads inputs from 8 different pins (pins 2 - 9)
 */
-void readPorts(int basys_inputs[8])
+void readPorts(int basys_inputs[])
 {
   // 4-bits to determine location of Servo
   // Range of location: 0 - 12 (decimal)
@@ -30,25 +30,29 @@ void readPorts(int basys_inputs[8])
   basys_inputs[7] = digitalRead(9);
 }
 
-bool interrupt(int basys_input[7])
+bool interrupt(int basys_input[])
 {
-    return basys_input[7];
+    if (basys_input[7] == 1 && basys_input[4] == 0 && basys_input[5] == 0 && basys_input[6] == 0)
+      return true;
+    return false;
 }
 
 
-void manualMode(int basys_input[8],int &pos_in)
+void manualMode(int basys_input[],int &pos_in)
 {
   if (basys_input[0] == 0 && basys_input[1] == 0)
-    pos_in = 20;
-  else if(basys_input[0] == 1 && basys_input[1] == 0)
     pos_in = 45;
-  else if(basys_input[0] == 0 && basys_input[1] == 1)
+  else if(basys_input[0] == 1 && basys_input[1] == 0)
     pos_in = 90;
-  else if(basys_input[0] == 1 && basys_input[1] == 1)
+  else if(basys_input[0] == 0 && basys_input[1] == 1)
     pos_in = 135;
+  else if(basys_input[0] == 1 && basys_input[1] == 1)
+  {
+    pos_in = 15;
+  }
 }
 
-void sweep(int basys_input[8], int &pos_in)
+void sweep(int basys_input[], int &pos_in)
 {
 
 
@@ -97,13 +101,6 @@ void sweep(int basys_input[8], int &pos_in)
   if (basys_input[0] == 0 && basys_input[1] == 1 && basys_input[2] == 0 && basys_input[3] == 1)
     pos_in = 150;
 
-  //location 11:
-  //if (basys_input[0] == 1 && basys_input[1] == 1 && basys_input[2] == 0 && basys_input[3] == 1)
-    //pos_in = 165;
-
-  //location 12:
-  //if (basys_input[0] == 0 && basys_input[1] == 0 && basys_input[2] == 1 && basys_input[3] == 1)
-    //pos_in = 180;
 
 
 }
