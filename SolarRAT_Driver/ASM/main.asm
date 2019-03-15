@@ -7,9 +7,31 @@
 ;		arduino 15 degrees more from its current location.
 ;
 ;
-;  
-;
-; Register uses:
+; Register Uses:
+; R0 - arduino[i][7:0]
+; R1 - arduino[i][3:0]
+; R2 - arduino[i][7:4]
+; R3 - Variable for sweep_count 
+; R4 - Variable for 12 - sweep_count
+; R5 - address of ith sweep position for arduino[i][7:0]
+; R6 - outer count variable  (C1)
+; R7 - middle count variable  (C2)
+; R8 - inner count variable  (C3)
+; R9 - outer count
+; R10 - inner count
+; R11 - ADDR for inner count arr[i]
+; R12 - ADDR for inner count + 1 ( arr[i+1])
+; R13 - temp
+; R14  - used for input and outputting values (X)
+; R15 - value fro arr[i] 
+; R16 - value for arr[i+1]
+; R17 - best location[3:0]
+; R18 - {ISR MODE ,0,0,0,0,0,SW[1:0]} 
+; R31 - using for zero
+;--------------------------------------------------------------------
+
+
+
 ;
 ;--------------------------------------------------------------------
 
@@ -167,7 +189,7 @@ return:		RET
 ; R9 - outer count
 ; R10 - inner count
 ; R11 - ADDR for inner count arr[i]
-; R12 - ADDR for inner count + 1 ( arr[i+1[)
+; R12 - ADDR for inner count + 1 ( arr[i+1])
 ; R13 - temp
 ; R14  - used for input and outputting values (X)
 ; R15 - value fro arr[i] 
@@ -249,7 +271,7 @@ goBestLocation:
 ; ISR - allows someone to go in manual mode, turn servo using SW's 45 degrees each
 ;
 ; Tweaked parameters:
-; R18 - {1,0,0,0,0,SW[2],SW[1:0]} 
+; R18 - {1,0,0,0,0,0,SW[1:0]} 
 ; - first bit tells arduino isr mode
 ;--------------------------------------------------------------------
 
