@@ -66,6 +66,36 @@ the 4 least bits is the location
 
 * Note that output[7] tells the arduino that we currently in manual mode.
 
+### XADC
+
+
+The XADC ports required a special implementation of the module that was done with the help of a wizard in the Vivado software. A short explanation is described below. The following guide works with Vivado 2018.2. Other version may have different ways of enabling the XADC ports.
+1.) In the Flow Navigator Window located in the left side of the code, locate and click on IP Catalog
+
+![ip catalog](https://github.com/ByVictorrr/SolarRAT/blob/master/images/ip_catalog.png)
+
+2.) Scroll to find the FPGA Features and Design folder and expand. Select XADC → XADC Wizard
+
+![wizard xadc](https://github.com/ByVictorrr/SolarRAT/blob/master/images/xadc_wizard.png)
+
+3.) Under the Basic tab, select Channel Sequencer and select the Channel Sequencer tab.
+Note: At the top, the Component Name can be edited. This is the same as naming a module.
+
+
+![ch seq 1](https://github.com/ByVictorrr/SolarRAT/blob/master/images/channel_sequencer.png)
+
+4.) Select the appropriate channel-pair to enable. More than one can be enabled. 
+Note: This example uses only 1 channel-pair
+
+![ch seq 2](https://github.com/ByVictorrr/SolarRAT/blob/master/images/channel_sequencer_2.png)
+
+5.) Finish by pressing OK at bottom right corner. 
+6.) The module can now be instantiated with the rest of your project. For more information see Appendix.
+
+
+This xadc tutorial was writen by [Julio Tena](https://github.com/jctenav)
+
+
 ## Servo_Driver
 
 
