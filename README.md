@@ -18,7 +18,7 @@ Javier Flores
 
 Instructor: Dr. Benson
 
-![Project report](https://github.com/ByVictorrr/SolarRAT/blob/master/SolarRAT.pdf) 
+[Project report](https://github.com/ByVictorrr/SolarRAT/blob/master/SolarRAT.pdf) 
 
 ## How SolarRAT works
 
