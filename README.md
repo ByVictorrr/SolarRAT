@@ -25,7 +25,7 @@ Using A RAT MCU Created in CPE233, to input a set of data from a photoresitor us
 
 ![sweep video](https://github.com/ByVictorrr/SolarRAT/blob/master/images/sweep.gif)
 
-**NOTE: When recorded we forgot to invert the data signal going into the solar_driver therefore this tracker find the darkest position**
+**NOTE: When recorded we forgot to invert the data signal going into the solar_driver therefore in the video it tracks darkest position**
 
 
 This procedure repeats until someone presses the BTNL button the RATMCU, this will put the Solar_RAT in manual mode and one can perform the operations shown in table 2.
