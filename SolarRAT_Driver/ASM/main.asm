@@ -33,12 +33,10 @@ arduino_sweep: .BYTE 12 ; 0x01 ... 0x0C (12th)
 .EQU BUBBLE_OUTER_COUNT =  13 ; 
 .EQU BUBBLE_INNER_COUNT = 13
 .EQU SWEEP_COUNT = 13
-.EQU MAIN_COUNT = 150
 ;-------------------------------------------------
 .CSEG
 .ORG 0x0D
 
-MOV R27, MAIN_COUNT
 
 main:
 	SEI ; set interupts
@@ -234,18 +232,14 @@ swap:   ;swap(arr[ADD_i], arr[ADD_i+1])
 ;
 ; Tweaked parameters:
 ; R17 - best location[3:0]
-; R31 - using for zero 
+; R31 - using for zero
 ;--------------------------------------------------------------------
 
 goBestLocation:
 		WSP R31 ; reg that has value of 0
 		POP R17
-stay:
-		
 		OUT R17, ARDUINO_PORT
-		CALL delay
-		CMP R27, 1 	
-		BREQ stay
+		CALL delay 	
 		RET 
 		
 		
@@ -257,7 +251,6 @@ stay:
 ; Tweaked parameters:
 ; R18 - {1,0,0,0,0,SW[2],SW[1:0]} 
 ; - first bit tells arduino isr mode
-; - SW[2] tells us to go back from isr mode if high
 ;--------------------------------------------------------------------
 
 ISR:
