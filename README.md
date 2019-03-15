@@ -161,6 +161,8 @@ This source code was entirely writen by [Julio Tena](https://github.com/jctenav)
 
 [Photoresistor](https://www.adafruit.com/product/161)
 
+[Potentiometer ](https://www.adafruit.com/product/562?gclid=CjwKCAjw96fkBRA2EiwAKZjFTSLwvKly44EqbvIkXQ16QzZ4vzWpp0l6KcqAAFwjvVuQISN1syU8zBoCd88QAvD_BwE
+
 [3d print for Servo](https://www.thingiverse.com/thing:2271734)
 
 [Mini solar panel](https://www.amazon.com/gp/product/B0736W4HK1/ref=ppx_yo_dt_b_asin_title_o01_s00?ie=UTF8&psc=1)
