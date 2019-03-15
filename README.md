@@ -2,7 +2,7 @@
 
 ![solar rat logo](https://github.com/ByVictorrr/SolarRAT/blob/master/images/SolarRat_Logo.png)
 
-* Allows you to store optimize solar energy automomously
+* Allows you to optimize solar energy automomously
 * Works as a manual tracker
 
 Note: This project had to completed in less than a week, so there are some minor bugs.
