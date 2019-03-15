@@ -7,6 +7,8 @@
 
 Note: This project had to completed in less than a week, so there are some minor bugs.
 
+
+
 ### Project designed by:
 Julio Tena
 
@@ -15,6 +17,8 @@ Victor Delaplaine
 Javier Flores 
 
 Instructor: Dr. Benson
+
+![Project report](https://github.com/ByVictorrr/SolarRAT/blob/master/SolarRAT.pdf) 
 
 ## How SolarRAT works
 
