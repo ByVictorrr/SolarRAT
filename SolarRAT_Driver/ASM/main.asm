@@ -71,7 +71,7 @@ main:
 	BRN main
 
 ;------------------------------------------------------------------------------------
-; sweep  subroutine - goes through 12 degrees every 2s collects data and moves servo
+; sweep  subroutine - goes through 15 degrees every 2s collects data and moves servo
 ;
 ; Tweaked Parameters : 
 ;	      
@@ -277,12 +277,12 @@ goBestLocation:
 
 ISR:
 	IN R18, SWITCH_PORT
-	AND R18, 131
+	AND R18, 131 ; cutting off any bits that arent SW[7],SW[1],SW[0]
 	OUT R18, ARDUINO_PORT
 	AND R18, 128 ; check if we need to return from isr	
 	CMP R18, 128
 	
-	;z == 1 if they are equal thus SW[2] is high
+	;z == 1 (SW[7] is high and stay in ISR)
 	BREQ ISR
 
 	RETIE
