@@ -5,8 +5,7 @@
 * Allows you to optimize solar energy automomously
 * Works as a manual tracker
 
-Note: This project had to completed in less than a week, so there are some minor bugs.
-
+Note: This project had to be completed in less than a week, so there are some minor bugs.
 
 
 ### Project designed by:
@@ -26,10 +25,14 @@ Using A RAT MCU Created in CPE233, to input a set of data from a photoresitor us
 
 ![sweep video](https://github.com/ByVictorrr/SolarRAT/blob/master/images/sweep.gif)
 
+** NOTE: When recorded we forgot to invert the data signal going into the solar_driver therefore this tracker find the darkest position **
+
 
 This procedure repeats until someone presses the BTNL button the RATMCU, this will put the Solar_RAT in manual mode and one can perform the operations shown in table 2.
 
 ![manual mode](https://github.com/ByVictorrr/SolarRAT/blob/master/images/manual_mode.gif)
+
+
 
 ## SolarRAT_Driver
 
