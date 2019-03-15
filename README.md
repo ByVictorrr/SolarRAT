@@ -135,18 +135,17 @@ Using the guess in check method for all parameters we get:
 This source code was entirely writen by [Victor Delaplaine](https://github.com/byvictorrr)
 
 ### ARDUINO CODE 
-[Servo Driver]()
+[Servo Driver](https://github.com/ByVictorrr/SolarRAT/blob/master/images/SolarRAT_assembled.jpg)
 
 This source code was entirely writen by [Julio Tena](https://github.com/jctenav)
 
 ### VERILOG HDL (RAT MCU)
 
-![mcu]()
-
+[mcu](https://github.com/ByVictorrr/SolarRAT/tree/master/SolarRAT_Driver/RAT_MCU)
 
 ## Schmatic 
 
-![computer schematic](https://github.com/ByVictorrr/SolarRAT/tree/master/SolarRAT_Driver/RAT_MCU)
+![computer schematic](https://github.com/ByVictorrr/SolarRAT/blob/master/images/Basys_Arduino_Servo_connection_with_photoresistor.png)
 
 ## Hardware
 
