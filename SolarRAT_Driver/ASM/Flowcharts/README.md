@@ -1,8 +1,7 @@
 # Flowcharts - Function used in SolarRAT
 
 ## main
-![main](https://github.com/ByVictorrr/SolarRAT/tree/master/SolarRAT_Driver/ASM/Flowcharts/images/delay.png)
-
+![main](https://github.com/ByVictorrr/SolarRAT/blob/master/SolarRAT_Driver/ASM/Flowcharts/images/main.png)
 
 ## Sweep
 ![sweep](https://github.com/ByVictorrr/SolarRAT/blob/master/SolarRAT_Driver/ASM/Flowcharts/images/sweep.png)
