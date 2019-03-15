@@ -106,7 +106,7 @@ This was the external module we attached to the SolarRat driver. It was used mai
 ### RAT_MCU CODE
 [SolarRAT Driver](https://github.com/ByVictorrr/SolarRAT/blob/master/SolarRAT_Driver/ASM/main.asm)
 
-![Flow Chart of firmware](https://github.com/ByVictorrr/SolarRAT/tree/master/SolarRAT_Driver/ASM/Flowcharts/images/main.png)
+![Flow Chart of firmware](https://github.com/ByVictorrr/SolarRAT/blob/master/SolarRAT_Driver/ASM/Flowcharts/images/main.png)
 
 
 #### Delay time - 2S
