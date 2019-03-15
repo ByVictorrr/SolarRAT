@@ -5,6 +5,8 @@
 * Allows you to store optimize solar energy automomously
 * Works as a manual tracker
 
+Note: This project had to completed in less than a week, so there are some minor bugs.
+
 ### Project designed by:
 Julio Tena
 
