@@ -35,7 +35,6 @@ its first 4 bits are the data of light intensity (in Volts) and corresponding to
 the 4 least bits is the location
 
 
-
 ### Table 1 - sweep function 
  |  output from basys3  | Servo Rotation(Degrees)  | 
  |----------------------|--------------------------|
@@ -70,8 +69,8 @@ the 4 least bits is the location
 
 ### XADC
 
-
 The XADC ports required a special implementation of the module that was done with the help of a wizard in the Vivado software. A short explanation is described below. The following guide works with Vivado 2018.2. Other version may have different ways of enabling the XADC ports.
+
 1.) In the Flow Navigator Window located in the left side of the code, locate and click on IP Catalog
 
 ![ip catalog](https://github.com/ByVictorrr/SolarRAT/blob/master/images/ip_catalog.png)
@@ -81,26 +80,26 @@ The XADC ports required a special implementation of the module that was done wit
 ![wizard xadc](https://github.com/ByVictorrr/SolarRAT/blob/master/images/xadc_wizard.png)
 
 3.) Under the Basic tab, select Channel Sequencer and select the Channel Sequencer tab.
-Note: At the top, the Component Name can be edited. This is the same as naming a module.
 
+Note: At the top, the Component Name can be edited. This is the same as naming a module.
 
 ![ch seq 1](https://github.com/ByVictorrr/SolarRAT/blob/master/images/channel_sequencer.png)
 
 4.) Select the appropriate channel-pair to enable. More than one can be enabled. 
+
 Note: This example uses only 1 channel-pair
 
 ![ch seq 2](https://github.com/ByVictorrr/SolarRAT/blob/master/images/channel_sequencer_2.png)
 
 5.) Finish by pressing OK at bottom right corner. 
-6.) The module can now be instantiated with the rest of your project. For more information see Appendix.
 
+6.) The module can now be instantiated with the rest of your project. For more information see Appendix.
 
 This xadc tutorial was writen by [Julio Tena](https://github.com/jctenav)
 
-
 ## Servo_Driver
 
-
+This was the external module we attached to the SolarRat driver. It was used mainly as a decoder for the reason the arduino has a built in servo library.
 
 ## FirmWare
 
@@ -145,7 +144,9 @@ This source code was entirely writen by [Julio Tena](https://github.com/jctenav)
 
 [mcu](https://github.com/ByVictorrr/SolarRAT/tree/master/SolarRAT_Driver/RAT_MCU)
 
-## Schmatic 
+This source code was developed over the course of CPE233 by [Julio Tena](https://github.com/jctenav) and [Victor Delaplaine](https://github.com/byvictorrr)
+
+## Sschematic
 
 ![computer schematic](https://github.com/ByVictorrr/SolarRAT/blob/master/images/Basys_Arduino_Servo_connection_with_photoresistor.png)
 
@@ -161,7 +162,7 @@ This source code was entirely writen by [Julio Tena](https://github.com/jctenav)
 
 [Photoresistor](https://www.adafruit.com/product/161)
 
-[Potentiometer ](https://www.adafruit.com/product/562?gclid=CjwKCAjw96fkBRA2EiwAKZjFTSLwvKly44EqbvIkXQ16QzZ4vzWpp0l6KcqAAFwjvVuQISN1syU8zBoCd88QAvD_BwE
+[Potentiometer ](https://www.adafruit.com/product/562?gclid=CjwKCAjw96fkBRA2EiwAKZjFTSLwvKly44EqbvIkXQ16QzZ4vzWpp0l6KcqAAFwjvVuQISN1syU8zBoCd88QAvD_BwE)
 
 [3d print for Servo](https://www.thingiverse.com/thing:2271734)
 
