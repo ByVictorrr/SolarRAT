@@ -144,6 +144,9 @@ This source code was entirely writen by [Julio Tena](https://github.com/jctenav)
 
 [mcu](https://github.com/ByVictorrr/SolarRAT/tree/master/SolarRAT_Driver/RAT_MCU)
 
+
+![MCU](https://github.com/ByVictorrr/SolarRAT/blob/master/images/MCU_RTL.png)
+
 This source code was developed over the course of CPE233 by [Julio Tena](https://github.com/jctenav) and [Victor Delaplaine](https://github.com/byvictorrr)
 
 ## Sschematic
