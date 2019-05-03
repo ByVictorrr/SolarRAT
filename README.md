@@ -21,7 +21,7 @@ Instructor: Dr. Benson
 
 ## How SolarRAT works
 
-Using A RAT MCU Created in CPE233, to input a set of data from a photoresitor using a servo to go through different set of locations (defined as a sweep subroutine). These locations (0-12 [4-bits] shown below in table 1) and the corresonding photon intensity (0-1V [4-bits]) are concatentated into one 8-bit register to be stored in the sctrach ram of the RAT MCU. This sweep repeats until it goes from location 0-12, then a bubble sort algorithm is then called. This bubble sort sorts the highest Register[7:4] value on the top os the stack(TOS). After a goToBestLocation is called to pop the highest voltage value of the stack and is outputed to the servo_driver(arduino) to give the servo instructions to stay there for a longer time than usual. 
+Using A RAT MCU Created in CPE233, to input a set of data from a photoresistor using a servo to go through a different set of locations (defined as a sweep subroutine). These locations (0-12 [4-bits] shown below in Table 1) and the corresponding photon intensity (0-1V [4-bits]) are concatenated into one 8-bit register to be stored in the scratch ram of the RAT MCU. This sweep repeats until it goes from location 0-12, then a bubble sort algorithm is then called. This bubble sort sorts the highest Register[7:4] value on the top os the stack(TOS). After a goToBestLocation is called to pop the highest voltage value of the stack and is outputted to the servo_driver(Arduino) to give the servo instructions to stay there for a longer time than usual. 
 
 ![sweep video](https://github.com/ByVictorrr/SolarRAT/blob/master/images/sweep.gif)
 
