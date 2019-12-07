@@ -9,9 +9,10 @@ Note: This project had to be completed in less than a week, so there are some mi
 
 
 ### Project designed by:
-Julio Tena
 
 Victor Delaplaine
+
+Julio Tena
 
 Javier Flores 
 
